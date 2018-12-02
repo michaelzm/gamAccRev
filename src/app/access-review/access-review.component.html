@@ -1,0 +1,15 @@
+<h2> Liste der Angestellten {{score}}</h2>
+<ul class="employees">
+  <li *ngFor="let employee of employeeList">
+    <span class="badge">
+       {{employee.firstName}} {{employee.lastName}}
+       </span>
+       <p>
+       {{employee.position}}
+       <p>
+         <button (click)="denieRight()" value="Erlauben">Verweigern</button>
+         <button (click)="permitRight()" value="Erlauben">Erlauben</button>
+  </li>
+</ul>
+
+<app-employee-detail></app-employee-detail>
