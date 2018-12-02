@@ -1,4 +1,4 @@
-<h2> Liste der Angestellten {{score}}</h2>
+<h2> Liste der Angestellten</h2>
 <ul class="employees">
   <li *ngFor="let employee of employeeList">
     <span class="badge">
@@ -7,8 +7,8 @@
        <p>
        {{employee.position}}
        <p>
-         <button (click)="denieRight()" value="Erlauben">Verweigern</button>
-         <button (click)="permitRight()" value="Erlauben">Erlauben</button>
+         <button class="denie" (click)="denieRight()" value="Erlauben">Verweigern</button>
+         <button class="permit" (click)="permitRight()" value="Erlauben">Erlauben</button>
   </li>
 </ul>
 
