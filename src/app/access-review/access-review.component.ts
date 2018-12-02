@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
+import { Tracker } from '../tracker';
 
 @Component({
   selector: 'app-access-review',
@@ -9,7 +10,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class AccessReviewComponent implements OnInit {
   employeeList: Employee[];
-  score = 0;
+
 
   constructor(private employeeService: EmployeeService) {}
 
