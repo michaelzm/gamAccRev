@@ -10,12 +10,12 @@ lastName = ["Meier", "Huber", "Walter", "Wortmann", "Crawford", "Burkhart",
  "Foenilius", "Oberberg", "Biedinghaus", "Furst", "Sanger", "Koenig", "Waechter",
   "Nussbaum", "Lemann", "Becker", "Finkel", "Barth", "Seiler", "Baier"]
 
-var position: string[];
-position = ["Werkstudent", "Praktikant", "Azubi", "Festangestellt"];
+var pos: string[];
+pos = ["Werkstudent", "Praktikant", "Azubi", "Festangestellt"];
 
 
 const EMPLOYEES: Employee[] = [];
-function pushNameToList: void {
+function pushNameToList(){
   for (var _i = 0; _i < 20; _i++) {
     var lnIndex = Math.floor((Math.random() * 19) + 1);
     var fnIndex = Math.floor((Math.random() * 14) + 1);
@@ -23,10 +23,10 @@ function pushNameToList: void {
     const newEmployee = new Employee();
     newEmployee.lastName = lastName[lnIndex];
     newEmployee.firstName = firstName[fnIndex];
-    newEmployee.position = position[posIndex];
+    newEmployee.position = pos[posIndex];
     EMPLOYEES.push(newEmployee);
   }
 }
 pushNameToList();
 
-export var EMPLOYEES;
+export { EMPLOYEES};

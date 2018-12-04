@@ -1,4 +1,5 @@
 export class Employee {
-  lastName: string;
-  firstName: string;
+  public lastName: string;
+  public firstName: string;
+  public position: string;
 }
