@@ -10,6 +10,10 @@ export class UserService {
   constructor() {
   }
 
+  setUserLastName(lastName: string){
+    MOCKUSER.user_lastName = lastName;
+  }
+
   getUser(){
     return MOCKUSER;
   }
