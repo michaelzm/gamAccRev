@@ -14,6 +14,7 @@ import { EMPLOYEES } from '../mock-employees';
 export class TableComponent implements OnInit {
   employees: Employee[];
   columns: string[];
+  dataSource = EMPLOYEES;
 
   constructor(private employeeService: EmployeeService) {
 
@@ -28,8 +29,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.getEmployeeList();
-    this.columns = ["Vorname", "Nachname", "Position",
-     "Zugriffsrecht"]
+    this.columns = ["Vorname", "Nachname", "Position", "Zugriffsberechtigung"];
      
   }
 
