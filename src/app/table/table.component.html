@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th *ngFor="let c of columns">{{c}}</th>
+  </tr>
+  <tr *ngFor="let e of employees">
+
+    <td>{{e.firstName}}</td>
+    <td>{{e.lastName}}</td>
+    <td>{{e.position}}</td>
+    <td>{{e.accessRight}}</td>
+</tr>
+</table>
