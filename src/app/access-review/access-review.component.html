@@ -7,13 +7,12 @@
        <p>
        Position: {{employee.position}}
        <p>
-       Berechtigung: todo
+       Berechtigung: {{employee.accessRight}}
        </div>
        </span>
 
        <p>
-         <button type="button" class="btn btn-warning" (click)="denieRight()">Verweigern</button>
-         <button class="permit" (click)="permitRight()">Erlauben</button>
+        <button mat-button color="warn" (click)="denieRight()">Verweigern</button>
+        <button mat-button color="primary" (click)="permitRight()">Erlauben</button>
   </li>
 </ul>
-

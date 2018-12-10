@@ -1,9 +1,9 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<nav>
-  <button mat-button routerLink="/accessreview">Berechtigungsverwaltung</button>
-  <button mat-button routerLink="/table">Tabellenuebersicht</button>
-  <button mat-button routerLink="/dashboard"> Dashboard</button>
-</nav>
-
+<!---->
+<button mat-button [matMenuTriggerFor]="menu">Access Manager</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/accessreview">Berechtigungsprüfung</button>
+  <button mat-menu-item routerLink="/table">Tabellenübersicht</button>
+  <button mat-menu-item routerLink="/dashboard">Dashboard</button>
+</mat-menu>
 
 <router-outlet></router-outlet>
