@@ -7,6 +7,8 @@ import { AccessReviewComponent } from './access-review/access-review.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { TableComponent } from './table/table.component';
+import { TableRowComponent } from './table-row/table-row.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { LoginComponent } from './login/login.component';
     AccessReviewComponent,
     EmployeeDetailComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    TableComponent,
+    TableRowComponent
   ],
   imports: [
     BrowserModule,
