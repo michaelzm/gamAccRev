@@ -13,6 +13,8 @@ lastName = ["Meier", "Huber", "Walter", "Wortmann", "Crawford", "Burkhart",
 var pos: string[];
 pos = ["Werkstudent", "Praktikant", "Azubi", "Festangestellt"];
 
+var mockAccessRight: string[];
+mockAccessRight = ["Kontozugriff", "Adminterminal", "Eingangstür"];
 
 
 const EMPLOYEES: Employee[] = [];
@@ -21,11 +23,12 @@ function pushNameToList(){
     var lnIndex = Math.floor((Math.random() * 19) + 1);
     var fnIndex = Math.floor((Math.random() * 14) + 1);
     var posIndex = Math.floor((Math.random() * 3) + 1);
+    var accessIndex = Math.floor((Math.random() * 2) + 1);
     const newEmployee = new Employee();
     newEmployee.lastName = lastName[lnIndex];
     newEmployee.firstName = firstName[fnIndex];
     newEmployee.position = pos[posIndex];
-    newEmployee.accessRight = "Gehaltsdatenbank";
+    newEmployee.accessRight = mockAccessRight[accessIndex];
     EMPLOYEES.push(newEmployee);
   }
 }
