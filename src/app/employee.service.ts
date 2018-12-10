@@ -12,10 +12,7 @@ export class EmployeeService {
 
   constructor() { }
 
-  getEmployeesDefault(){
-    return EMPLOYEES;
-  }
-  
+
   getEmployees(): Observable<Employee[]> {
     return of(EMPLOYEES);
   }
