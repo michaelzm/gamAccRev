@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
-import { UserService } from '../user.service';
-import { User } from '../user';
+import { Employee } from '../employee/employee';
+import { EmployeeService } from '../employee/employee.service';
+import { UserService } from '../user/user.service';
+import { User } from '../user/user';
 import {MatSnackBar} from '@angular/material';
 
 @Component({

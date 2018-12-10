@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Employee } from '../employee';
+import { Employee } from '../employee/employee';
 
 @Component({
   selector: 'app-table-row',

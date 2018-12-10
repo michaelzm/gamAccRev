@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../employee.service';
-import { Employee } from '../employee';
+import { EmployeeService } from '../employee/employee.service';
+import { Employee } from '../employee/employee';
 import { Observable } from 'rxjs';
-import { EMPLOYEES } from '../mock-employees';
+import { EMPLOYEES } from '../employee/mock-employees';
 
 
 @Component({
