@@ -3,6 +3,7 @@ import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 import { UserService } from '../user.service';
 import { User } from '../user';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-access-review',
@@ -15,8 +16,16 @@ export class AccessReviewComponent implements OnInit {
 
 
   constructor(private employeeService: EmployeeService,
-    private userService: UserService) {
+    private userService: UserService, public gamificationBar: MatSnackBar) {
+    
+  }
 
+  openGamificationBar(){
+    if(this.currentUser.user_counter%10==0){
+    this.gamificationBar.open("Erfolgreich 10 Berechtigungen geprüft", "Ok", {
+      duration:3000,
+    })
+  }
   }
 
   getEmployeeList(): void{
@@ -33,12 +42,14 @@ export class AccessReviewComponent implements OnInit {
   }
 
   permitRight(): void{
+    this.openGamificationBar();
     this.userService.increaseCounter();
     this.userService.increaseUserScore();
 
 
   }
   denieRight(): void{
+    this.openGamificationBar();
     this.userService.decreaseUserScore();
     this.userService.increaseCounter();
 
