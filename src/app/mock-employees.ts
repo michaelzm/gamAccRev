@@ -14,6 +14,7 @@ var pos: string[];
 pos = ["Werkstudent", "Praktikant", "Azubi", "Festangestellt"];
 
 
+
 const EMPLOYEES: Employee[] = [];
 function pushNameToList(){
   for (var _i = 0; _i < 100; _i++) {
@@ -24,6 +25,7 @@ function pushNameToList(){
     newEmployee.lastName = lastName[lnIndex];
     newEmployee.firstName = firstName[fnIndex];
     newEmployee.position = pos[posIndex];
+    newEmployee.accessRight = "Gehaltsdatenbank";
     EMPLOYEES.push(newEmployee);
   }
 }
