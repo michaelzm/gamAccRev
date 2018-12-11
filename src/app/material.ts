@@ -8,6 +8,9 @@ import { MatPaginatorModule } from "@angular/material";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatInputModule } from "@angular/material/input";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatListModule } from "@angular/material/list";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 import { NgModule } from "@angular/core";
 
@@ -20,7 +23,10 @@ import { NgModule } from "@angular/core";
     MatTableModule,
     MatTabsModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule,
+    MatListModule,
+    MatProgressBarModule
   ],
   exports: [
     MatButtonModule,
@@ -30,7 +36,10 @@ import { NgModule } from "@angular/core";
     MatTableModule,
     MatTabsModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule,
+    MatListModule,
+    MatProgressBarModule
   ]
 })
 export class MaterialModule {}

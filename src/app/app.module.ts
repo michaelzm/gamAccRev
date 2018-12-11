@@ -12,6 +12,7 @@ import { TableRowComponent } from "./table-row/table-row.component";
 import { MaterialModule } from "./material";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     DashboardComponent,
     LoginComponent,
     TableComponent,
-    TableRowComponent
+    TableRowComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
