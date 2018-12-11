@@ -1,18 +1,20 @@
-<h2> Liste der Angestellten</h2>
+<h2>Liste der Angestellten</h2>
 <ul class="employees">
   <li *ngFor="let employee of employeeList">
     <span class="badge">
-      <div class ="colored">
-       {{employee.firstName}} {{employee.lastName}}
-       <p>
-       Position: {{employee.position}}
-       <p>
-       Berechtigung: {{employee.accessRight}}
-       </div>
-       </span>
+      <div class="colored">
+        {{ employee.firstName }} {{ employee.lastName }}
+        <p>Position: {{ employee.position }}</p>
 
-       <p>
-        <button mat-button color="warn" (click)="denieRight()">Verweigern</button>
-        <button mat-button color="primary" (click)="permitRight()">Erlauben</button>
+        <p>Berechtigung: {{ employee.accessRight }}</p>
+      </div>
+    </span>
+
+    <p>
+      <button mat-button color="warn" (click)="denieRight()">Verweigern</button>
+      <button mat-button color="primary" (click)="permitRight()">
+        Erlauben
+      </button>
+    </p>
   </li>
 </ul>

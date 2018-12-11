@@ -1,25 +1,24 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="Vorname">
+    <th mat-header-cell *matHeaderCellDef>Vorname</th>
+    <td mat-cell *matCellDef="let employees">{{ employees.firstName }}</td>
+  </ng-container>
 
-    <ng-container matColumnDef="Vorname">
-        <th mat-header-cell *matHeaderCellDef> Vorname </th>
-        <td mat-cell *matCellDef="let employees"> {{employees.firstName}} </td>
-      </ng-container>
-  
   <ng-container matColumnDef="Nachname">
-    <th mat-header-cell *matHeaderCellDef> Nachname </th>
-    <td mat-cell *matCellDef="let employees"> {{employees.lastName}} </td>
+    <th mat-header-cell *matHeaderCellDef>Nachname</th>
+    <td mat-cell *matCellDef="let employees">{{ employees.lastName }}</td>
   </ng-container>
 
   <ng-container matColumnDef="Position">
-      <th mat-header-cell *matHeaderCellDef> Position </th>
-      <td mat-cell *matCellDef="let employees"> {{employees.position}} </td>
-    </ng-container>
+    <th mat-header-cell *matHeaderCellDef>Position</th>
+    <td mat-cell *matCellDef="let employees">{{ employees.position }}</td>
+  </ng-container>
 
-    <ng-container matColumnDef="Zugriffsberechtigung">
-        <th mat-header-cell *matHeaderCellDef> Zugriffsberechtigung </th>
-        <td mat-cell *matCellDef="let employees"> {{employees.accessRight}} </td>
-      </ng-container>
+  <ng-container matColumnDef="Zugriffsberechtigung">
+    <th mat-header-cell *matHeaderCellDef>Zugriffsberechtigung</th>
+    <td mat-cell *matCellDef="let employees">{{ employees.accessRight }}</td>
+  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let employees; columns: columns;"></tr>
+  <tr mat-row *matRowDef="let employees; columns: columns"></tr>
 </table>

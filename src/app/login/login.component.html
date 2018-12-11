@@ -1,11 +1,14 @@
 <form class="login-form">
-    <mat-form-field appearance="outline">
-        <mat-label>Nutzername</mat-label>
-        <input matInput placeholder="Mustermann" #usernameLogin>
-    </mat-form-field>
-  <button mat-button color="primary" (click)="login(usernameLogin)"
-    routerLink="/dashboard">Login
+  <mat-form-field appearance="outline">
+    <mat-label>Nutzername</mat-label>
+    <input matInput placeholder="Mustermann" #usernameLogin />
+  </mat-form-field>
+  <button
+    mat-button
+    color="primary"
+    (click)="login(usernameLogin)"
+    routerLink="/dashboard"
+  >
+    Login
   </button>
 </form>
-
-  

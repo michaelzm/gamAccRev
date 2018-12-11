@@ -1,21 +1,16 @@
-import { Injectable } from '@angular/core';
-import { EMPLOYEES } from './mock-employees';
-import { Employee } from './employee';
+import { Injectable } from "@angular/core";
+import { EMPLOYEES } from "./mock-employees";
+import { Employee } from "./employee";
 
-import { Observable, of} from 'rxjs';
+import { Observable, of } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class EmployeeService {
-
-
-  constructor() { }
-
+  constructor() {}
 
   getEmployees(): Observable<Employee[]> {
     return of(EMPLOYEES);
   }
-
-
 }

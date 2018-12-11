@@ -1,27 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { AccessReviewComponent } from '../access-review/access-review.component';
-import { UserService} from '../user/user.service';
+import { Component, OnInit } from "@angular/core";
+import { AccessReviewComponent } from "../access-review/access-review.component";
+import { UserService } from "../user/user.service";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: "app-dashboard",
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
   dashboardScore: number;
   dashboardCounter: number;
   dashboardUserName: string;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
-  getScore(){
+  getScore() {
     this.dashboardScore = this.userService.getUserScore();
-
   }
-  getCounter(){
+  getCounter() {
     this.dashboardCounter = this.userService.getUserCounter();
   }
 
-  getUserName(){
+  getUserName() {
     this.dashboardUserName = this.userService.getUserLName();
   }
 
@@ -30,5 +29,4 @@ export class DashboardComponent implements OnInit {
     this.getScore();
     this.getUserName();
   }
-
 }
