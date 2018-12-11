@@ -13,6 +13,7 @@ import { MatSnackBar } from "@angular/material";
 export class AccessReviewComponent implements OnInit {
   employeeList: Employee[];
   currentUser: User;
+  progressBarCounter: number;
 
   constructor(
     private employeeService: EmployeeService,
@@ -36,18 +37,28 @@ export class AccessReviewComponent implements OnInit {
   getUser(): void {
     this.currentUser = this.userService.getUser();
   }
+  /*
+  implement as rxjs observer
+  */
+
+  getUserCounter(): void {
+    this.progressBarCounter = this.userService.getUserCounter();
+  }
 
   ngOnInit() {
     this.getEmployeeList();
     this.getUser();
+    this.getUserCounter();
   }
 
   permitRight(): void {
+    this.getUserCounter();
     this.openGamificationBar();
     this.userService.increaseCounter();
     this.userService.increaseUserScore();
   }
   denieRight(): void {
+    this.getUserCounter();
     this.openGamificationBar();
     this.userService.decreaseUserScore();
     this.userService.increaseCounter();

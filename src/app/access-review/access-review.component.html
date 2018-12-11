@@ -1,6 +1,10 @@
 <h2>Liste der Angestellten</h2>
+<mat-progress-bar
+  mode="determinate"
+  value="{{progressBarCounter}}"
+></mat-progress-bar>
 <ul class="employees">
-  <li *ngFor="let employee of employeeList">
+  <mat-list role="list" *ngFor="let employee of employeeList">
     <span class="badge">
       <div class="colored">
         {{ employee.firstName }} {{ employee.lastName }}
@@ -16,5 +20,6 @@
         Erlauben
       </button>
     </p>
-  </li>
+    <mat-divider></mat-divider>
+  </mat-list>
 </ul>
