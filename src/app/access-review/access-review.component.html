@@ -1,13 +1,17 @@
 <h2>Liste der Angestellten</h2>
-<mat-progress-bar
-  mode="determinate"
-  value="{{progressBarCounter}}"
-></mat-progress-bar>
-<ul class="employees">
+<div class="top">
+  <mat-progress-bar
+    mode="determinate"
+    value="{{progressBarCounter}}"
+  ></mat-progress-bar>
+</div>
+
+<mat-list class="employees">
   <mat-list role="list" *ngFor="let employee of employeeList">
     <span class="badge">
       <div class="colored">
-        {{ employee.firstName }} {{ employee.lastName }}
+        <p>{{ employee.firstName }} {{ employee.lastName }}</p>
+
         <p>Position: {{ employee.position }}</p>
 
         <p>Berechtigung: {{ employee.accessRight }}</p>
@@ -22,4 +26,4 @@
     </p>
     <mat-divider></mat-divider>
   </mat-list>
-</ul>
+</mat-list>
