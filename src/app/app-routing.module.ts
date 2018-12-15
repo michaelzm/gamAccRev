@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "dashboard", component: DashboardComponent },
   { path: "login", component: LoginComponent },
   { path: "table", component: TableComponent },
-  { path: "formular", component: FormularComponent}
+  { path: "formular", component: FormularComponent },
   { path: "", redirectTo: "/login", pathMatch: "full" }
 ];
 
