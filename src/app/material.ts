@@ -11,6 +11,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 import { NgModule } from "@angular/core";
 
@@ -26,7 +27,8 @@ import { NgModule } from "@angular/core";
     MatInputModule,
     MatDividerModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +41,8 @@ import { NgModule } from "@angular/core";
     MatSnackBarModule,
     MatDividerModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModule {}
