@@ -10,11 +10,9 @@
   <mat-list role="list" *ngFor="let employee of employeeList">
     <span class="badge">
       <div class="colored">
-        <p>{{ employee.firstName }} {{ employee.lastName }}</p>
-
-        <p>Position: {{ employee.position }}</p>
-
-        <p>Berechtigung: {{ employee.accessRight }}</p>
+        <app-employee-detail
+          [employeeToDisplay]="employee"
+        ></app-employee-detail>
       </div>
     </span>
 
