@@ -14,6 +14,7 @@ import { MaterialModule } from "./material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { FormularComponent } from './formular/formular.component';
+import { AccessListComponent } from './access-list/access-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormularComponent } from './formular/formular.component';
     TableComponent,
     TableRowComponent,
     ProgressBarComponent,
-    FormularComponent
+    FormularComponent,
+    AccessListComponent
   ],
   imports: [
     BrowserModule,
