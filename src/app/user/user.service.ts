@@ -22,13 +22,15 @@ export class UserService {
   getUserLName() {
     return MOCKUSER.user_lastName;
   }
-
-  getUserCounter() {
-    return MOCKUSER.user_counter;
+  getUserFName() {
+    return MOCKUSER.user_firstName;
   }
 
-  increaseUserScore() {
-    MOCKUSER.score++;
+  getUserCounter(): number {
+    return MOCKUSER.user_counter;
+  }
+  increaseUserScoreByValue(value: number) {
+    MOCKUSER.score += value;
   }
   decreaseUserScore() {
     if (MOCKUSER.score > 0) {

@@ -22,12 +22,10 @@ export class AccessReviewComponent implements OnInit {
     public gamificationBar: MatSnackBar
   ) {}
 
-  openGamificationBar() {
-    if (this.currentUser.user_counter % 10 == 0) {
-      this.gamificationBar.open("Erfolgreich 10 Berechtigungen geprüft", "Ok", {
-        duration: 3000
-      });
-    }
+  openGamificationBar(message: string) {
+    this.gamificationBar.open(message, "Ok", {
+      duration: 3000
+    });
   }
 
   getEmployeeList(): void {
@@ -52,17 +50,9 @@ export class AccessReviewComponent implements OnInit {
     this.getUserCounter();
   }
 
-  permitRight(reviewedEmployee: Employee): void {
-    reviewedEmployee.accessRights.hasCal = true;
-    this.getUserCounter();
-    this.openGamificationBar();
+  permitRight(value: number): void {
     this.userService.increaseCounter();
-    this.userService.increaseUserScore();
-  }
-  denieRight(reviewedEmployee: Employee): void {
+    this.userService.increaseUserScoreByValue(value);
     this.getUserCounter();
-    this.openGamificationBar();
-    this.userService.decreaseUserScore();
-    this.userService.increaseCounter();
   }
 }

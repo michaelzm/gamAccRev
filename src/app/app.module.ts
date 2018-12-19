@@ -12,9 +12,10 @@ import { TableRowComponent } from "./table-row/table-row.component";
 import { MaterialModule } from "./material";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import { FormularComponent } from './formular/formular.component';
-import { AccessListComponent } from './access-list/access-list.component';
+import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
+import { FormularComponent } from "./formular/formular.component";
+import { AccessListComponent } from "./access-list/access-list.component";
+import { GreetingComponent } from "./greeting/greeting.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AccessListComponent } from './access-list/access-list.component';
     TableRowComponent,
     ProgressBarComponent,
     FormularComponent,
-    AccessListComponent
+    AccessListComponent,
+    GreetingComponent
   ],
   imports: [
     BrowserModule,

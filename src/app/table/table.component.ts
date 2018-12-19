@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { EmployeeService } from "../employee/employee.service";
 import { Employee } from "../employee/employee";
 import { Observable } from "rxjs";
 import { EMPLOYEES } from "../employee/mock-employees";
+import { MatPaginator, MatTableDataSource } from "@angular/material";
 
 @Component({
   selector: "app-table",
@@ -12,7 +13,9 @@ import { EMPLOYEES } from "../employee/mock-employees";
 export class TableComponent implements OnInit {
   employees: Employee[];
   columns: string[];
-  dataSource = EMPLOYEES;
+  dataSource = new MatTableDataSource<Employee>(EMPLOYEES);
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private employeeService: EmployeeService) {}
 
@@ -24,6 +27,7 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataSource.paginator = this.paginator;
     this.getEmployeeList();
     this.columns = [
       "Vorname",

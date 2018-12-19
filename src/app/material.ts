@@ -13,7 +13,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatStepperModule } from "@angular/material/stepper";
-
+import { MatToolbarModule } from "@angular/material/toolbar";
 import { NgModule } from "@angular/core";
 
 @NgModule({
@@ -30,7 +30,8 @@ import { NgModule } from "@angular/core";
     MatListModule,
     MatProgressBarModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatToolbarModule
   ],
   exports: [
     MatButtonModule,
@@ -45,7 +46,8 @@ import { NgModule } from "@angular/core";
     MatListModule,
     MatProgressBarModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatToolbarModule
   ]
 })
 export class MaterialModule {}

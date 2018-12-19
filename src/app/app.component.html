@@ -1,11 +1,13 @@
 <!---->
-<button mat-button [matMenuTriggerFor]="menu">Access Manager</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/accessreview">Berechtigungsprüfung</button>
-  <button mat-menu-item routerLink="/table">Tabellenübersicht</button>
-  <button mat-menu-item routerLink="/dashboard">Dashboard</button>
-</mat-menu>
+<mat-toolbar color="primary" style="position: fixed;">
+  <button mat-button [matMenuTriggerFor]="menu">Access Manager</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/accessreview">
+      Berechtigungsprüfung
+    </button>
+    <button mat-menu-item routerLink="/table">Tabellenübersicht</button>
+    <button mat-menu-item routerLink="/dashboard">Dashboard</button>
+  </mat-menu>
+</mat-toolbar>
 
-<button mat-button routerLink="/login" style="float: right;">Logout</button>
-
-<router-outlet></router-outlet>
+<div class="bottom"><router-outlet></router-outlet></div>
