@@ -8,7 +8,7 @@ import { Employee } from "../employee/employee";
   inputs: ["employeeToDisplay"]
 })
 export class AccessListComponent implements OnInit {
-  @Input() employeeToDisplay: Employee;
+  @Input() employeeToAlterRights: Employee;
   typesOfRights: string[] = [
     "ERP-System",
     "Kalender",
@@ -17,10 +17,60 @@ export class AccessListComponent implements OnInit {
   ];
   constructor() {}
   ngOnInit() {}
+  preselectOptions() {}
+
+  checkIfSelected(hasToGetChecked) {
+    switch (hasToGetChecked) {
+      case "ERP-System":
+        if (this.employeeToAlterRights.accessRights.hasErp == true) {
+          return true;
+        } else return false;
+      case "Kalender":
+        if (this.employeeToAlterRights.accessRights.hasCal) {
+          return true;
+        } else return false;
+      case "Quellcode Softwareprojekte":
+        if (this.employeeToAlterRights.accessRights.hasCode) {
+          return true;
+        } else return false;
+      case "vertrauliche Excel-Tabellen":
+        if (this.employeeToAlterRights.accessRights.hasExcel) {
+          return true;
+        } else return false;
+    }
+  }
+
+  printToConsole(toPrint) {
+    console.log(toPrint);
+  }
 
   changeAccessRights(selectedOptions): void {
+    this.wipeEmployeeRights();
     for (var _i = 0; _i < selectedOptions.length; _i++) {
-      console.log(selectedOptions[_i].value);
+      switch (selectedOptions[_i].value) {
+        case "Kalender": {
+          this.employeeToAlterRights.accessRights.hasCal = true;
+          break;
+        }
+        case "ERP-System": {
+          this.employeeToAlterRights.accessRights.hasErp = true;
+          break;
+        }
+        case "Quellcode Softwareprojekte": {
+          this.employeeToAlterRights.accessRights.hasCode = true;
+          break;
+        }
+        case "vertrauliche Excel-Tabellen": {
+          this.employeeToAlterRights.accessRights.hasExcel = true;
+          break;
+        }
+      }
     }
+  }
+  wipeEmployeeRights() {
+    this.employeeToAlterRights.accessRights.hasCal = false;
+    this.employeeToAlterRights.accessRights.hasCode = false;
+    this.employeeToAlterRights.accessRights.hasErp = false;
+    this.employeeToAlterRights.accessRights.hasExcel = false;
   }
 }

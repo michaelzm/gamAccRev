@@ -1,5 +1,9 @@
 <mat-selection-list #rights>
-  <mat-list-option *ngFor="let right of typesOfRights" [value]="right">
+  <mat-list-option
+    *ngFor="let right of typesOfRights"
+    [value]="right"
+    [selected]="checkIfSelected(right)"
+  >
     {{ right }}
   </mat-list-option>
   <p>
@@ -8,7 +12,7 @@
       color="primary"
       (click)="changeAccessRights(rights.selectedOptions.selected)"
     >
-      Berechtigungen vergeben
+      Überprüfung für diesen Angestellten abschliessen
     </button>
   </p>
 </mat-selection-list>
