@@ -1,4 +1,6 @@
 import { Employee } from "./employee";
+import { AccessRightCollection } from "../accessRight/access-right-collection";
+import { AccessRight } from "../accessRight/access-right";
 
 var firstName: string[];
 firstName = [
@@ -44,23 +46,24 @@ lastName = [
 ];
 
 var pos: string[];
-pos = ["Werkstudent", "Praktikant", "Azubi", "Festangestellt"];
-
-var mockAccessRight: string[];
-mockAccessRight = ["Kontozugriff", "Adminterminal", "Eingangstür"];
+pos = [
+  "Werkstudent",
+  "Festangestellt Materialwirtschaft",
+  "Festangestellt Entwicklung",
+  "Praktikant"
+];
 
 const EMPLOYEES: Employee[] = [];
 function pushNameToList() {
-  for (var _i = 0; _i < 100; _i++) {
-    var lnIndex = Math.floor(Math.random() * 19 + 1);
-    var fnIndex = Math.floor(Math.random() * 14 + 1);
-    var posIndex = Math.floor(Math.random() * 3 + 1);
-    var accessIndex = Math.floor(Math.random() * 2 + 1);
+  for (var _i = 0; _i < 20; _i++) {
+    var lnIndex = Math.floor(Math.random() * 19);
+    var fnIndex = Math.floor(Math.random() * 14);
+    var posIndex = Math.floor(Math.random() * 3);
     const newEmployee = new Employee();
     newEmployee.lastName = lastName[lnIndex];
     newEmployee.firstName = firstName[fnIndex];
     newEmployee.position = pos[posIndex];
-    newEmployee.accessRight = mockAccessRight[accessIndex];
+    newEmployee.accessRights = new AccessRightCollection();
     EMPLOYEES.push(newEmployee);
   }
 }

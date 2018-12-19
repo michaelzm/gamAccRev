@@ -4,6 +4,7 @@ import { EmployeeService } from "../employee/employee.service";
 import { UserService } from "../user/user.service";
 import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
+import { EmployeeDetailComponent } from "../employee-detail/employee-detail.component";
 
 @Component({
   selector: "app-access-review",
@@ -51,13 +52,14 @@ export class AccessReviewComponent implements OnInit {
     this.getUserCounter();
   }
 
-  permitRight(): void {
+  permitRight(reviewedEmployee: Employee): void {
+    reviewedEmployee.accessRights.hasCal = true;
     this.getUserCounter();
     this.openGamificationBar();
     this.userService.increaseCounter();
     this.userService.increaseUserScore();
   }
-  denieRight(): void {
+  denieRight(reviewedEmployee: Employee): void {
     this.getUserCounter();
     this.openGamificationBar();
     this.userService.decreaseUserScore();
