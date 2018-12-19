@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Employee } from "../employee/employee";
+import { AccessReviewComponent } from "../access-review/access-review.component";
+import { UserService } from "../user/user.service";
 
 @Component({
   selector: "app-access-list",
@@ -15,9 +17,11 @@ export class AccessListComponent implements OnInit {
     "Quellcode Softwareprojekte",
     "vertrauliche Excel-Tabellen"
   ];
-  constructor() {}
+  constructor(
+    private accessReviewComponent: AccessReviewComponent,
+    private userService: UserService
+  ) {}
   ngOnInit() {}
-  preselectOptions() {}
 
   checkIfSelected(hasToGetChecked) {
     switch (hasToGetChecked) {
@@ -45,15 +49,17 @@ export class AccessListComponent implements OnInit {
   }
 
   changeAccessRights(selectedOptions): void {
+    console.log(selectedOptions);
+    console.log(this.employeeToAlterRights.beenChecked);
     this.wipeEmployeeRights();
     for (var _i = 0; _i < selectedOptions.length; _i++) {
       switch (selectedOptions[_i].value) {
-        case "Kalender": {
-          this.employeeToAlterRights.accessRights.hasCal = true;
-          break;
-        }
         case "ERP-System": {
           this.employeeToAlterRights.accessRights.hasErp = true;
+          break;
+        }
+        case "Kalender": {
+          this.employeeToAlterRights.accessRights.hasCal = true;
           break;
         }
         case "Quellcode Softwareprojekte": {
@@ -66,7 +72,13 @@ export class AccessListComponent implements OnInit {
         }
       }
     }
+    console.log(selectedOptions.length);
+    if (this.employeeToAlterRights.beenChecked == false) {
+      this.accessReviewComponent.permitRight(selectedOptions.length);
+      this.employeeToAlterRights.beenChecked = true;
+    }
   }
+
   wipeEmployeeRights() {
     this.employeeToAlterRights.accessRights.hasCal = false;
     this.employeeToAlterRights.accessRights.hasCode = false;
