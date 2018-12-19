@@ -5,4 +5,5 @@ export class Employee {
   public firstName: string;
   public position: string;
   public accessRights: AccessRightCollection;
+  public beenChecked: boolean;
 }

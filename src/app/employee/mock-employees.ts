@@ -55,7 +55,7 @@ pos = [
 
 const EMPLOYEES: Employee[] = [];
 function pushNameToList() {
-  for (var _i = 0; _i < 20; _i++) {
+  for (var _i = 0; _i < 50; _i++) {
     var lnIndex = Math.floor(Math.random() * 19);
     var fnIndex = Math.floor(Math.random() * 14);
     var posIndex = Math.floor(Math.random() * 3);
@@ -64,6 +64,7 @@ function pushNameToList() {
     newEmployee.firstName = firstName[fnIndex];
     newEmployee.position = pos[posIndex];
     newEmployee.accessRights = new AccessRightCollection();
+    newEmployee.beenChecked = false;
     EMPLOYEES.push(newEmployee);
   }
 }
