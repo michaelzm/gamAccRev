@@ -1,47 +1,54 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container matColumnDef="Vorname">
-    <th mat-header-cell *matHeaderCellDef>Vorname</th>
-    <td mat-cell *matCellDef="let employees">{{ employees.firstName }}</td>
-  </ng-container>
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="Vorname">
+      <th mat-header-cell *matHeaderCellDef>Vorname</th>
+      <td mat-cell *matCellDef="let employees">{{ employees.firstName }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="Nachname">
-    <th mat-header-cell *matHeaderCellDef>Nachname</th>
-    <td mat-cell *matCellDef="let employees">{{ employees.lastName }}</td>
-  </ng-container>
+    <ng-container matColumnDef="Nachname">
+      <th mat-header-cell *matHeaderCellDef>Nachname</th>
+      <td mat-cell *matCellDef="let employees">{{ employees.lastName }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="Position">
-    <th mat-header-cell *matHeaderCellDef>Position</th>
-    <td mat-cell *matCellDef="let employees">{{ employees.position }}</td>
-  </ng-container>
+    <ng-container matColumnDef="Position">
+      <th mat-header-cell *matHeaderCellDef>Position</th>
+      <td mat-cell *matCellDef="let employees">{{ employees.position }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="ERP">
-    <th mat-header-cell *matHeaderCellDef>ERP-Zugriff</th>
-    <td mat-cell *matCellDef="let employees">
-      {{ convertToSymbol(employees.accessRights.hasErp) }}
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="ERP">
+      <th mat-header-cell *matHeaderCellDef>ERP-Zugriff</th>
+      <td mat-cell *matCellDef="let employees">
+        {{ convertToSymbol(employees.accessRights.hasErp) }}
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="Kalender">
-    <th mat-header-cell *matHeaderCellDef>Kalender-Zugriff</th>
-    <td mat-cell *matCellDef="let employees">
-      {{ convertToSymbol(employees.accessRights.hasCal) }}
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="Kalender">
+      <th mat-header-cell *matHeaderCellDef>Kalender-Zugriff</th>
+      <td mat-cell *matCellDef="let employees">
+        {{ convertToSymbol(employees.accessRights.hasCal) }}
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="Code">
-    <th mat-header-cell *matHeaderCellDef>Quellcode-Zugriff</th>
-    <td mat-cell *matCellDef="let employees">
-      {{ convertToSymbol(employees.accessRights.hasCode) }}
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="Code">
+      <th mat-header-cell *matHeaderCellDef>Quellcode-Zugriff</th>
+      <td mat-cell *matCellDef="let employees">
+        {{ convertToSymbol(employees.accessRights.hasCode) }}
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="Excel">
-    <th mat-header-cell *matHeaderCellDef>Excel-Zugriff</th>
-    <td mat-cell *matCellDef="let employees">
-      {{ convertToSymbol(employees.accessRights.hasExcel) }}
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="Excel">
+      <th mat-header-cell *matHeaderCellDef>Excel-Zugriff</th>
+      <td mat-cell *matCellDef="let employees">
+        {{ convertToSymbol(employees.accessRights.hasExcel) }}
+      </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let employees; columns: columns"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let employees; columns: columns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[10, 20, 50]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>
