@@ -1,0 +1,14 @@
+<mat-selection-list #rights>
+  <mat-list-option *ngFor="let right of typesOfRights" [value]="right">
+    {{ right }}
+  </mat-list-option>
+  <p>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="changeAccessRights(rights.selectedOptions.selected)"
+    >
+      Berechtigungen vergeben
+    </button>
+  </p>
+</mat-selection-list>
