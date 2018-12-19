@@ -1,18 +1,6 @@
-.employees .badge {
-  display: inline-block;
-  font-size: large;
-
-  line-height: 1em;
+.top {
   position: relative;
-  top: -4px;
-  height: 1.8em;
-
-  border-radius: 4px 0 0 4px;
-}
-.employees li {
-  text-align: left;
-  cursor: pointer;
-  list-style-type: none;
-  position: relative;
-  left: 0;
+  background: white;
+  height: 10%;
+  z-index: 5;
 }
