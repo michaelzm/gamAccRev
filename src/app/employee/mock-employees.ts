@@ -56,9 +56,9 @@ pos = [
 const EMPLOYEES: Employee[] = [];
 function pushNameToList() {
   for (var _i = 0; _i < 20; _i++) {
-    var lnIndex = Math.floor(Math.random() * 19 + 1);
-    var fnIndex = Math.floor(Math.random() * 14 + 1);
-    var posIndex = Math.floor(Math.random() * 3 + 1);
+    var lnIndex = Math.floor(Math.random() * 19);
+    var fnIndex = Math.floor(Math.random() * 14);
+    var posIndex = Math.floor(Math.random() * 3);
     const newEmployee = new Employee();
     newEmployee.lastName = lastName[lnIndex];
     newEmployee.firstName = firstName[fnIndex];
