@@ -25,6 +25,19 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
     this.getEmployeeList();
-    this.columns = ["Vorname", "Nachname", "Position", "Zugriffsberechtigung"];
+    this.columns = [
+      "Vorname",
+      "Nachname",
+      "Position",
+      "ERP",
+      "Kalender",
+      "Code",
+      "Excel"
+    ];
+  }
+  convertToSymbol(hasRight: boolean): string {
+    if (hasRight == false) {
+      return "nicht erlaubt";
+    } else return "erlaubt";
   }
 }
