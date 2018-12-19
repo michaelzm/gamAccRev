@@ -1,13 +1,34 @@
-<h3>Dashboard</h3>
-<mat-progress-bar mode="determinate" value="{{dashboardCounter}}">
-</mat-progress-bar>
+<div class="profile">
+  <h2>Profil</h2>
+
+  {{ dashboardUserName }} <P>Links Profilbild </P><P>Level: : 1</P>
+</div>
+
 <div class="daily">
-  <h2>Tägliche Aufgabe</h2>
-  <p>Überprüfe 100 Berechtigungen</p>
-  <p>{{ dashboardCounter }} / 100 erreicht.</p>
+  <h2>Aufgaben</h2>
+  <mat-list>
+    <mat-list-item>Überprüfe 10 Berechtigungen</mat-list-item>
+    <mat-list-item>{{ dashboardCounter }} / 100 erreicht</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Überprüfe 50 Berechtigungen</mat-list-item>
+    <mat-list-item>{{ dashboardCounter }} / 100 erreicht</mat-list-item>
+  </mat-list>
+  <mat-divider></mat-divider>
 </div>
 <div class="scoreboard">
+  <h2>Erfolge</h2>
+  <mat-list>
+    <mat-list-item>10 Angestellte überprüft</mat-list-item>
+    <mat-list-item>20 Angestellte überprüft</mat-list-item>
+    <mat-list-item>50 Angestellte überprüft</mat-list-item>
+    <mat-list-item>100 Angestellte überprüft</mat-list-item>
+  </mat-list>
+  <mat-divider></mat-divider>
+</div>
+<div class="rankings">
   <h2>Rangliste</h2>
-  <p>Hardgecodeder Name: 678</p>
-  <p>{{ dashboardUserName }}: {{ dashboardScore }}</p>
+  <mat-list>
+    <mat-list-item>HC NAme: 0000</mat-list-item>
+    <mat-list-item>{{ dashboardUserName }}: {{ dashboardScore }}</mat-list-item>
+  </mat-list>
 </div>
