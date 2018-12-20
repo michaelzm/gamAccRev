@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Employee } from "../employee/employee";
 import { AccessReviewComponent } from "../access-review/access-review.component";
-import { UserService } from "../user/user.service";
+import { GamificationTrackerService } from "../gamification-tracker.service";
 
 @Component({
   selector: "app-access-list",
@@ -19,7 +19,7 @@ export class AccessListComponent implements OnInit {
   ];
   constructor(
     private accessReviewComponent: AccessReviewComponent,
-    private userService: UserService
+    public gamificationTracker: GamificationTrackerService
   ) {}
   ngOnInit() {}
 
@@ -77,6 +77,7 @@ export class AccessListComponent implements OnInit {
       this.accessReviewComponent.permitRight(selectedOptions.length);
       this.employeeToAlterRights.beenChecked = true;
     }
+    this.gamificationTracker.checkForGamificationPopup();
   }
 
   wipeEmployeeRights() {

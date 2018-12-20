@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { MaterialModule } from "./material";
 
 @Component({
   selector: "app-root",

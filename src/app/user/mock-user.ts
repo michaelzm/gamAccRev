@@ -5,5 +5,6 @@ MOCKUSER.user_lastName = "MockedUserName";
 MOCKUSER.user_firstName = "MockedUserFirstName";
 MOCKUSER.user_counter = 0;
 MOCKUSER.score = 0;
+MOCKUSER.userLevel = 1;
 
 export { MOCKUSER };

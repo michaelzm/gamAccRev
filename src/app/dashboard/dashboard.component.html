@@ -1,14 +1,15 @@
 <div class="profile">
   <h2>Profil</h2>
 
-  {{ dashboardUserName }} <P>Links Profilbild </P><P>Level: : 1</P>
+  {{ dashboardUserName }} <P>Links Profilbild </P
+  ><P>Level: {{ dashboardUserLevel }}</P>
 </div>
 
 <div class="daily">
   <h2>Aufgaben</h2>
   <mat-list>
     <mat-list-item>Überprüfe 10 Berechtigungen</mat-list-item>
-    <mat-list-item>{{ dashboardCounter }} / 100 erreicht</mat-list-item>
+    <mat-list-item>{{ dashboardCounter }} / 10 erreicht</mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>Überprüfe 50 Berechtigungen</mat-list-item>
     <mat-list-item>{{ dashboardCounter }} / 100 erreicht</mat-list-item>

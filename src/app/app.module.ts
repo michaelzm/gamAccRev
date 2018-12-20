@@ -16,6 +16,8 @@ import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { FormularComponent } from "./formular/formular.component";
 import { AccessListComponent } from "./access-list/access-list.component";
 import { GreetingComponent } from "./greeting/greeting.component";
+import { GamificationTrackerService } from "./gamification-tracker.service";
+import { UserService } from "./user/user.service";
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { GreetingComponent } from "./greeting/greeting.component";
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AccessReviewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
