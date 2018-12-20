@@ -41,7 +41,7 @@ export class TableComponent implements OnInit {
   }
   convertToSymbol(hasRight: boolean): string {
     if (hasRight == false) {
-      return "nicht erlaubt";
-    } else return "erlaubt";
+      return "nein";
+    } else return "ja";
   }
 }

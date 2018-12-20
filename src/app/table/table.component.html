@@ -17,28 +17,56 @@
 
     <ng-container matColumnDef="ERP">
       <th mat-header-cell *matHeaderCellDef>ERP-Zugriff</th>
-      <td mat-cell *matCellDef="let employees">
+      <td
+        mat-cell
+        *matCellDef="let employees"
+        [ngClass]="{
+          positive: employees.accessRights.hasErp == false,
+          negative: employees.accessRights.hasErp == true
+        }"
+      >
         {{ convertToSymbol(employees.accessRights.hasErp) }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="Kalender">
       <th mat-header-cell *matHeaderCellDef>Kalender-Zugriff</th>
-      <td mat-cell *matCellDef="let employees">
+      <td
+        mat-cell
+        *matCellDef="let employees"
+        [ngClass]="{
+          positive: employees.accessRights.hasCal == false,
+          negative: employees.accessRights.hasCal == true
+        }"
+      >
         {{ convertToSymbol(employees.accessRights.hasCal) }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="Code">
       <th mat-header-cell *matHeaderCellDef>Quellcode-Zugriff</th>
-      <td mat-cell *matCellDef="let employees">
+      <td
+        mat-cell
+        *matCellDef="let employees"
+        [ngClass]="{
+          positive: employees.accessRights.hasCode == false,
+          negative: employees.accessRights.hasCode == true
+        }"
+      >
         {{ convertToSymbol(employees.accessRights.hasCode) }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="Excel">
       <th mat-header-cell *matHeaderCellDef>Excel-Zugriff</th>
-      <td mat-cell *matCellDef="let employees">
+      <td
+        mat-cell
+        *matCellDef="let employees"
+        [ngClass]="{
+          positive: employees.accessRights.hasExcel == false,
+          negative: employees.accessRights.hasExcel == true
+        }"
+      >
         {{ convertToSymbol(employees.accessRights.hasExcel) }}
       </td>
     </ng-container>
