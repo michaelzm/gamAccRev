@@ -4,7 +4,6 @@ import { EmployeeService } from "../employee/employee.service";
 import { UserService } from "../user/user.service";
 import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
-import { EmployeeDetailComponent } from "../employee-detail/employee-detail.component";
 
 @Component({
   selector: "app-access-review",
@@ -54,5 +53,8 @@ export class AccessReviewComponent implements OnInit {
     this.userService.increaseCounter();
     this.userService.increaseUserScoreByValue(value);
     this.getUserCounter();
+  }
+  checkForGamification() {
+    this.checkForGamification;
   }
 }
