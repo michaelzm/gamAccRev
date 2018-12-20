@@ -12,12 +12,14 @@ export class DashboardComponent implements OnInit {
   dashboardCounter: number;
   dashboardUserName: string;
   dashboardUserFirstName: string;
+  dashboardUserLevel: number;
   constructor(private userService: UserService) {}
   getInformations() {
     this.dashboardScore = this.userService.getUserScore();
     this.dashboardCounter = this.userService.getUserCounter();
     this.dashboardUserName = this.userService.getUserLName();
     this.dashboardUserFirstName = this.userService.getUserFName();
+    this.dashboardUserLevel = this.userService.getUserLevel();
   }
   getScore() {
     this.dashboardScore = this.userService.getUserScore();
@@ -36,9 +38,9 @@ export class DashboardComponent implements OnInit {
   calculateLevel(): string {
     if (this.dashboardScore < 10) {
       return "Level 1";
-    } else if (this.dashboardScore > 10 && this.dashboardScore < 20) {
+    } else if (this.dashboardScore > 10 && this.dashboardScore < 30) {
       return "Level 2";
-    } else if (this.dashboardScore > 20 && this.dashboardScore < 50) {
+    } else if (this.dashboardScore > 30 && this.dashboardScore < 70) {
       return "Level 3";
     }
   }
