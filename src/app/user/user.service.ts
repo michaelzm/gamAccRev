@@ -37,8 +37,13 @@ export class UserService {
       MOCKUSER.score--;
     }
   }
-
+  getUserLevel(): number {
+    return MOCKUSER.userLevel;
+  }
   increaseCounter() {
     MOCKUSER.user_counter++;
+  }
+  increaseLevel() {
+    MOCKUSER.userLevel++;
   }
 }
