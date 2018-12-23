@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
-var CONTACTS_COLLECTION = "contacts";
+var FORMULARS_COLLECTION = "formulars";
 
 var app = express();
 app.use(bodyParser.json());
@@ -32,60 +32,43 @@ mongodb.MongoClient.connect(
   }
 );
 
-// CONTACTS API ROUTES BELOW
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
   res.status(code || 500).json({ error: message });
 }
 
-/*  "/api/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
- */
-
-app.get("/api/contacts", function(req, res) {
-  db.collection(CONTACTS_COLLECTION)
+app.get("/api/formulars", function(req, res) {
+  db.collection(FORMULARS_COLLECTION)
     .find({})
     .toArray(function(err, docs) {
       if (err) {
-        handleError(res, err.message, "Failed to get contacts.");
+        handleError(res, err.message, "Failed to get formulars.");
       } else {
         res.status(200).json(docs);
       }
     });
 });
 
-app.post("/api/contacts", function(req, res) {
-  var newContact = req.body;
-  newContact.createDate = new Date();
+app.post("/api/formulars", function(req, res) {
+  var newFormular = req.body;
+  newFormular.createDate = new Date();
 
   if (!req.body.name) {
     handleError(res, "Invalid user input", "Must provide a name.", 400);
   } else {
-    db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(
+    db.collection(FORMULARS_COLLECTION).insertOne(newFormular, function(
       err,
       doc
     ) {
       if (err) {
-        handleError(res, err.message, "Failed to create new contact.");
+        handleError(res, err.message, "Failed to create new formular.");
       } else {
         res.status(201).json(doc.ops[0]);
       }
     });
   }
 });
-/*  "/api/contacts/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
- */
-
-app.get("/api/contacts/:id", function(req, res) {});
-
-app.put("/api/contacts/:id", function(req, res) {});
-
-app.delete("/api/contacts/:id", function(req, res) {});
 
 // Serve static files
 app.use(express.static(__dirname + "/dist/angular-access-review"));
