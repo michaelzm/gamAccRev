@@ -18,8 +18,6 @@ import { AccessListComponent } from "./access-list/access-list.component";
 import { GreetingComponent } from "./greeting/greeting.component";
 import { GamificationTrackerService } from "./gamification-tracker.service";
 import { UserService } from "./user/user.service";
-import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -39,9 +37,7 @@ import { HttpModule } from "@angular/http";
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpModule
+    BrowserAnimationsModule
   ],
   providers: [AccessReviewComponent],
   bootstrap: [AppComponent]
