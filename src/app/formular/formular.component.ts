@@ -5,17 +5,27 @@ import { Formular } from "./formular";
 @Component({
   selector: "app-formular",
   templateUrl: "./formular.component.html",
-  styleUrls: ["./formular.component.css"]
+  styleUrls: ["./formular.component.css"],
+  providers: [FormularService]
 })
 export class FormularComponent implements OnInit {
+  formulars: Formular[] = [];
   constructor(private formularService: FormularService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.formularService.getFormular().subscribe(formulars => {
+      this.formulars = formulars;
+    });
+  }
 
-  createFormular(fName: string) {
+  onCreateFormular(fName: string) {
     var newFormular = new Formular();
     newFormular.name = fName;
-    newFormular.email = "testemail";
-    this.formularService.createFormular(newFormular);
+    this.formularService.createFormular(newFormular).subscribe(newFormular => {
+      this.formulars = this.formulars.concat(newFormular);
+    });
+  }
+  getFormulars() {
+    return this.formularService.getFormular();
   }
 }

@@ -1,12 +1,22 @@
 import { Injectable } from "@angular/core";
 import { Formular } from "./formular";
-import { Http, Response } from "@angular/http";
+import { ApiService } from "../api.service";
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class FormularService {
-  private formularsUrl = "/api/formulars";
+  constructor(private api: ApiService) {}
 
-  constructor(private http: Http) {}
+  createFormular(formular: Formular) {
+    return this.api.createFormular(formular);
+  }
+  getFormular() {
+    return this.api.getAllFormulars();
+  }
+}
+/*
+  without rx
+
   getFormulars(): Promise<void | Formular[]> {
     return this.http
       .get(this.formularsUrl)
@@ -30,4 +40,4 @@ export class FormularService {
       : "Server error";
     console.error(errMsg); // log to console instead
   }
-}
+  */
