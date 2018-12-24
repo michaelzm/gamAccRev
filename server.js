@@ -53,7 +53,7 @@ app.get("/api/formulars", function(req, res) {
 app.post("/api/formulars", function(req, res) {
   var newFormular = req.body;
   newFormular.createDate = new Date();
-
+  console.log(newFormular);
   if (!req.body.name) {
     handleError(res, "Invalid user input", "Must provide a name.", 400);
   } else {
