@@ -18,9 +18,9 @@ export class FormularComponent implements OnInit {
     });
   }
 
-  onCreateFormular(fName: string) {
+  onCreateFormular() {
     var newFormular = new Formular();
-    newFormular.name = fName;
+    newFormular.name = "Name";
     this.formularService.createFormular(newFormular).subscribe(newFormular => {
       this.formulars = this.formulars.concat(newFormular);
     });

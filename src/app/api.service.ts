@@ -18,7 +18,7 @@ export class ApiService {
   public getAllFormulars(): Observable<Formular[]> {
     return this.http.get(API_URL + "/get/formulars").map(response => {
       const formulars = response.json();
-      return formulars.map(formular => new Formular(formular));
+      return formulars.map(formular => new Formular());
     });
   }
 
@@ -26,7 +26,7 @@ export class ApiService {
     return this.http
       .post(API_URL + "/post/formulars", formular)
       .map(response => {
-        return new Formular(response.json);
+        return new Formular();
       });
   }
 

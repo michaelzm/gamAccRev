@@ -38,7 +38,7 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({ error: message });
 }
 
-app.get("/get/formulars", function(req, res) {
+app.get("/api/formulars", function(req, res) {
   db.collection(FORMULARS_COLLECTION)
     .find({})
     .toArray(function(err, docs) {
@@ -50,7 +50,7 @@ app.get("/get/formulars", function(req, res) {
     });
 });
 
-app.post("/post/formulars", function(req, res) {
+app.post("/api/formulars", function(req, res) {
   var newFormular = req.body;
   newFormular.createDate = new Date();
   console.log(newFormular);
