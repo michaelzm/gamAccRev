@@ -1,5 +1,7 @@
-<p>Name: {{ employeeToDisplay.firstName }} {{ employeeToDisplay.lastName }}</p>
-
-<p>{{ employeeToDisplay.position }}</p>
-
-<h4>Zu vergebende Berechtigungen:</h4>
+<mat-list>
+  <mat-list-item>
+    Name: {{ employeeToDisplay.firstName }} {{ employeeToDisplay.lastName }}
+  </mat-list-item>
+  <mat-list-item> {{ employeeToDisplay.position }} </mat-list-item>
+  <mat-list-item> <h4>Zu vergebende Berechtigungen:</h4> </mat-list-item>
+</mat-list>
