@@ -31,6 +31,8 @@ export class AccessReviewComponent implements OnInit {
     this.employeeService
       .getEmployees()
       .subscribe(employeeList => (this.employeeList = employeeList));
+
+    console.log(this.employeeList.length);
   }
   getUser(): void {
     this.currentUser = this.userService.getUser();
