@@ -5,19 +5,27 @@
     value="{{ progressBarCounter * 10 }}"
   ></mat-progress-bar>
 </div>
-<cdk-virtual-scroll-viewport
-  itemSize="50"
-  minBufferPx="1000"
-  maxBufferPx="2000"
->
-  <mat-list *cdkVirtualFor="let employee of employeeList">
-    <app-employee-detail [employeeToDisplay]="employee"> </app-employee-detail>
-    <app-access-list [employeeToAlterRights]="employee"></app-access-list>
-    <mat-divider></mat-divider>
-  </mat-list>
-</cdk-virtual-scroll-viewport>
+<div class="reviewlist">
+  <cdk-virtual-scroll-viewport
+    itemSize="50"
+    minBufferPx="800"
+    maxBufferPx="1500"
+  >
+    <mat-list *cdkVirtualFor="let employee of employeeList">
+      <app-employee-detail [employeeToDisplay]="employee">
+      </app-employee-detail>
+      <app-access-list [employeeToAlterRights]="employee"></app-access-list>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </cdk-virtual-scroll-viewport>
+</div>
 <p></p>
-<button mat-raised-button color="primary" routerLink="/formular">
+<button
+  mat-button
+  class="goToForm"
+  routerLink="/formular"
+  style="float: right;"
+>
   Weiter zur Evaluation
 </button>
 

@@ -32,7 +32,6 @@ export class AccessReviewComponent implements OnInit {
     });
   }
   scrollToNext() {
-    this.viewport.scrollToIndex(this.scrollIndex, "smooth");
     this.scrollIndex += 8;
   }
   getEmployeeList(): void {
