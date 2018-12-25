@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Employee } from "../employee/employee";
 import { EmployeeService } from "../employee/employee.service";
 import { UserService } from "../user/user.service";
 import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
+import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 
 @Component({
   selector: "app-access-review",
@@ -11,9 +12,13 @@ import { MatSnackBar } from "@angular/material";
   styleUrls: ["./access-review.component.css"]
 })
 export class AccessReviewComponent implements OnInit {
+  @ViewChild(CdkVirtualScrollViewport)
+  viewport: CdkVirtualScrollViewport;
+  scrollIndex = 8;
   employeeList: Employee[];
   currentUser: User;
   progressBarCounter: number;
+  triggerAnimation() {}
 
   constructor(
     private employeeService: EmployeeService,
@@ -26,7 +31,10 @@ export class AccessReviewComponent implements OnInit {
       duration: 3000
     });
   }
-
+  scrollToNext() {
+    this.viewport.scrollToIndex(this.scrollIndex, "smooth");
+    this.scrollIndex += 8;
+  }
   getEmployeeList(): void {
     this.employeeService
       .getEmployees()

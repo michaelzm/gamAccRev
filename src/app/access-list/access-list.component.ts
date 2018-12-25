@@ -78,6 +78,7 @@ export class AccessListComponent implements OnInit {
       this.employeeToAlterRights.beenChecked = true;
     }
     this.gamificationTracker.checkForGamificationPopup();
+    this.accessReviewComponent.scrollToNext();
   }
 
   wipeEmployeeRights() {
