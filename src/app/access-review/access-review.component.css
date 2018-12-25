@@ -1,6 +1,12 @@
+.cdk-virtual-scroll-viewport {
+  height: 800px;
+}
+
+/*
 .top {
   position: relative;
   background: white;
   height: 10%;
   z-index: 5;
 }
+*/
