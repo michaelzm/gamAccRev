@@ -76,8 +76,9 @@ export class AccessListComponent implements OnInit {
     if (this.employeeToAlterRights.beenChecked == false) {
       this.accessReviewComponent.permitRight(selectedOptions.length);
       this.employeeToAlterRights.beenChecked = true;
+      this.gamificationTracker.checkForGamificationPopup();
     }
-    this.gamificationTracker.checkForGamificationPopup();
+
     this.accessReviewComponent.scrollToNext();
   }
 
