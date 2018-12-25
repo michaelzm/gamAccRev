@@ -6,7 +6,11 @@
     value="{{ progressBarCounter * 10 }}"
   ></mat-progress-bar>
 </div>
-<cdk-virtual-scroll-viewport itemSize="100" minBufferPx="200" maxBufferPx="600">
+<cdk-virtual-scroll-viewport
+  itemSize="50"
+  minBufferPx="1000"
+  maxBufferPx="2000"
+>
   <mat-list *cdkVirtualFor="let employee of employeeList">
     <app-employee-detail [employeeToDisplay]="employee"> </app-employee-detail>
     <app-access-list [employeeToAlterRights]="employee"></app-access-list>
