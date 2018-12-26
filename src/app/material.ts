@@ -15,6 +15,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatStepperModule } from "@angular/material/stepper";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSliderModule } from "@angular/material/slider";
+import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 
 import { NgModule } from "@angular/core";
 
@@ -34,7 +35,8 @@ import { NgModule } from "@angular/core";
     MatFormFieldModule,
     MatStepperModule,
     MatToolbarModule,
-    MatSliderModule
+    MatSliderModule,
+    MatBottomSheetModule
   ],
   exports: [
     MatButtonModule,
@@ -51,7 +53,8 @@ import { NgModule } from "@angular/core";
     MatFormFieldModule,
     MatStepperModule,
     MatToolbarModule,
-    MatSliderModule
+    MatSliderModule,
+    MatBottomSheetModule
   ]
 })
 export class MaterialModule {}

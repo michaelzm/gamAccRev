@@ -43,7 +43,7 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
     HttpClientModule,
     ScrollingModule
   ],
-  providers: [AccessReviewComponent],
+  providers: [AccessReviewComponent, ProgressBarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

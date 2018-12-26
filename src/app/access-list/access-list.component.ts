@@ -74,12 +74,10 @@ export class AccessListComponent implements OnInit {
     }
     console.log(selectedOptions.length);
     if (this.employeeToAlterRights.beenChecked == false) {
-      this.accessReviewComponent.permitRight(selectedOptions.length);
+      this.accessReviewComponent.permitRight();
       this.employeeToAlterRights.beenChecked = true;
       this.gamificationTracker.checkForGamificationPopup();
     }
-
-    this.accessReviewComponent.scrollToNext();
   }
 
   wipeEmployeeRights() {

@@ -1,8 +1,9 @@
 <div class="profile">
-  <h2>Profil</h2>
+  <mat-list>
+    <mat-list-item> {{ dashboardUserName }} </mat-list-item>
 
-  {{ dashboardUserName }} <P>Links Profilbild </P
-  ><P>Level: {{ dashboardUserLevel }}</P>
+    <mat-list-item> Level {{ dashboardUserLevel }} </mat-list-item>
+  </mat-list>
 </div>
 
 <div class="daily">
