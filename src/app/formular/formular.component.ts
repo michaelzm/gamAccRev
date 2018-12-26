@@ -3,6 +3,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { ConfigService } from "../config/config.service";
 import { Formular } from "./formular";
 import { endTimeRange } from "@angular/core/src/profile/wtf_impl";
+import { UserService } from "../user/user.service";
 @Component({
   selector: "app-formular",
   templateUrl: "./formular.component.html",
@@ -23,7 +24,7 @@ export class FormularComponent implements OnInit {
     console.log(value);
     this.rating1 = value;
   }
-  constructor(private config: ConfigService) {}
+  constructor(private config: ConfigService, private userSerice: UserService) {}
 
   onInputChange(event: any, slider: number) {
     console.log(event);
@@ -45,12 +46,12 @@ export class FormularComponent implements OnInit {
     if (this.hasbeenSubmitted == false) {
       console.log("starte submit");
       this.submitFormular = new Formular();
-      this.submitFormular.name = "Landodger";
+      this.submitFormular.name = this.userSerice.getUserLName();
+      this.submitFormular.reviewCount = this.userSerice.getUserCounter();
       this.submitFormular.rating1 = this.rating1;
       this.submitFormular.rating2 = this.rating2;
       this.submitFormular.rating3 = this.rating3;
       this.submitFormular.rating4 = this.rating4;
-      console.log(this.submitFormular);
       console.log(this.submitFormular);
       this.config.postConfig(this.submitFormular).subscribe();
       this.hasbeenSubmitted = true;
