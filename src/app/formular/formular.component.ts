@@ -9,6 +9,7 @@ import { endTimeRange } from "@angular/core/src/profile/wtf_impl";
   styleUrls: ["./formular.component.css"]
 })
 export class FormularComponent implements OnInit {
+  hasbeenSubmitted = false;
   submitFormular: Formular;
   rating1: number;
   rating2: number;
@@ -36,15 +37,18 @@ export class FormularComponent implements OnInit {
 
   ngOnInit() {}
   onSubmitEvaluation() {
-    console.log("starte submit");
-    this.submitFormular = new Formular();
-    this.submitFormular.name = "Landodger";
-    this.submitFormular.rating1 = this.rating1;
-    this.submitFormular.rating2 = this.rating2;
-    this.submitFormular.rating3 = this.rating2;
-    this.submitFormular.rating4 = this.rating2;
-    console.log(this.submitFormular);
-    console.log(this.submitFormular);
-    this.config.postConfig(this.submitFormular).subscribe();
+    if (this.hasbeenSubmitted == false) {
+      console.log("starte submit");
+      this.submitFormular = new Formular();
+      this.submitFormular.name = "Landodger";
+      this.submitFormular.rating1 = this.rating1;
+      this.submitFormular.rating2 = this.rating2;
+      this.submitFormular.rating3 = this.rating2;
+      this.submitFormular.rating4 = this.rating2;
+      console.log(this.submitFormular);
+      console.log(this.submitFormular);
+      this.config.postConfig(this.submitFormular).subscribe();
+      this.hasbeenSubmitted = true;
+    }
   }
 }
