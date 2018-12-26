@@ -6,11 +6,8 @@ import { AccessReviewComponent } from "./access-review/access-review.component";
   providedIn: "root"
 })
 export class GamificationTrackerService {
-  currentScore: number;
   currentReviewCount: number;
   currentLevel: number;
-  pointsForNextLevel = 20;
-  pointsForNextLevelIncrementer = 10;
 
   constructor(
     private userService: UserService,
@@ -22,6 +19,7 @@ export class GamificationTrackerService {
     this.checkForThreeReviews();
     this.checkForLevelUp();
     this.checkIfMissionCompleted();
+    this.checkIfXPBarFull();
     console.log(
       "current Score = " +
         this.userService.getUserScore() +
@@ -35,20 +33,11 @@ export class GamificationTrackerService {
     }
   }
   checkForLevelUp() {
-    console.log("Points needed for next Level: " + this.pointsForNextLevel);
-    if (this.userService.getUserScore() >= this.pointsForNextLevel) {
-      this.openGamificationBar("Level Up! Glückwunsch!");
-      this.pointsForNextLevel += this.pointsForNextLevelIncrementer;
-      this.pointsForNextLevelIncrementer =
-        this.pointsForNextLevelIncrementer + this.pointsForNextLevel / 2;
-      console.log("incrementer now: " + this.pointsForNextLevelIncrementer);
-    }
+    console.log("Points needed for next Level: implement me");
   }
   checkIfXPBarFull() {
-    if (this.userService.getUserScore() >= this.pointsForNextLevel) {
-      /*
-      xp bar has to be resettet to 0
-      */
+    if (this.userService.getProgressBarCounter() == 10) {
+      this.userService.setProgressBarCounter(0);
     }
   }
   checkIfMissionCompleted() {
