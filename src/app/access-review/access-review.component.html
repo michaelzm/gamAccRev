@@ -8,8 +8,8 @@
 <div class="reviewlist">
   <cdk-virtual-scroll-viewport
     itemSize="50"
-    minBufferPx="800"
-    maxBufferPx="1500"
+    minBufferPx="1600"
+    maxBufferPx="3200"
   >
     <mat-list *cdkVirtualFor="let employee of employeeList">
       <app-employee-detail [employeeToDisplay]="employee">

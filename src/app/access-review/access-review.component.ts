@@ -61,6 +61,7 @@ export class AccessReviewComponent implements OnInit {
     this.userService.increaseProgress();
     this.progressBar.updateProgressBar();
     this.getProgressBarCounter();
+    this.viewport.scrollToIndex(3);
   }
   checkForGamification() {
     this.checkForGamification;

@@ -18,9 +18,15 @@ export class FormularComponent implements OnInit {
   /*
   atm not working as expected
   */
+
+  onInputChangeFirst(value: any, slider: string) {
+    console.log(value);
+    this.rating1 = value;
+  }
   constructor(private config: ConfigService) {}
+
   onInputChange(event: any, slider: number) {
-    console.log("slider b4 if" + slider);
+    console.log(event);
     if (slider == 1) {
       this.rating1 = event.value;
     } else if (slider == 2) {
@@ -32,7 +38,6 @@ export class FormularComponent implements OnInit {
     } else {
       console.log("error occured, slider not registered");
     }
-    console.log("sliderval" + event.value);
   }
 
   ngOnInit() {}
@@ -43,8 +48,8 @@ export class FormularComponent implements OnInit {
       this.submitFormular.name = "Landodger";
       this.submitFormular.rating1 = this.rating1;
       this.submitFormular.rating2 = this.rating2;
-      this.submitFormular.rating3 = this.rating2;
-      this.submitFormular.rating4 = this.rating2;
+      this.submitFormular.rating3 = this.rating3;
+      this.submitFormular.rating4 = this.rating4;
       console.log(this.submitFormular);
       console.log(this.submitFormular);
       this.config.postConfig(this.submitFormular).subscribe();
