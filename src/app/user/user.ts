@@ -4,4 +4,5 @@ export class User {
   public score: number;
   public user_counter: number;
   public userLevel: number;
+  public user_progress_counter: number;
 }
