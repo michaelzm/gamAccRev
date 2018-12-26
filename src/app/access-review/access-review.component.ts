@@ -5,7 +5,7 @@ import { UserService } from "../user/user.service";
 import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
-
+import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
 @Component({
   selector: "app-access-review",
   templateUrl: "./access-review.component.html",
@@ -14,13 +14,15 @@ import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 export class AccessReviewComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport)
   viewport: CdkVirtualScrollViewport;
-  scrollIndex = 8;
+
+  scrollOffset = 215;
   employeeList: Employee[];
   currentUser: User;
   progressBarCounter: number;
   triggerAnimation() {}
 
   constructor(
+    private progressBar: ProgressBarComponent,
     private employeeService: EmployeeService,
     private userService: UserService,
     public gamificationBar: MatSnackBar
@@ -30,9 +32,6 @@ export class AccessReviewComponent implements OnInit {
     this.gamificationBar.open(message, "Ok", {
       duration: 3000
     });
-  }
-  scrollToNext() {
-    this.scrollIndex += 8;
   }
   getEmployeeList(): void {
     this.employeeService
@@ -47,21 +46,21 @@ export class AccessReviewComponent implements OnInit {
   /*
   implement as rxjs observer
   */
-
-  getUserCounter(): void {
-    this.progressBarCounter = this.userService.getUserCounter();
+  getProgressBarCounter(): void {
+    this.progressBarCounter = this.userService.getProgressBarCounter();
   }
 
   ngOnInit() {
     this.getEmployeeList();
     this.getUser();
-    this.getUserCounter();
+    this.getProgressBarCounter();
   }
 
-  permitRight(value: number): void {
+  permitRight(): void {
     this.userService.increaseCounter();
-    this.userService.increaseUserScoreByValue(value);
-    this.getUserCounter();
+    this.userService.increaseProgress();
+    this.progressBar.updateProgressBar();
+    this.getProgressBarCounter();
   }
   checkForGamification() {
     this.checkForGamification;
