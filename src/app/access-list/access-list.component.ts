@@ -79,6 +79,10 @@ export class AccessListComponent implements OnInit {
       this.gamificationTracker.checkForGamificationPopup();
     }
   }
+  /*
+  todo
+  schoenere Alternative zu Wipen finden
+  */
 
   wipeEmployeeRights() {
     this.employeeToAlterRights.accessRights.hasCal = false;
