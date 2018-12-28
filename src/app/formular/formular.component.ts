@@ -4,12 +4,17 @@ import { ConfigService } from "../config/config.service";
 import { Formular } from "./formular";
 import { endTimeRange } from "@angular/core/src/profile/wtf_impl";
 import { UserService } from "../user/user.service";
+import { firstpart, secondpart } from "./parts";
 @Component({
   selector: "app-formular",
   templateUrl: "./formular.component.html",
   styleUrls: ["./formular.component.css"]
 })
 export class FormularComponent implements OnInit {
+  //Beschreibungen der Studie
+  firstPart = firstpart;
+  secondPart = secondpart;
+
   hasbeenSubmitted = false;
   submitFormular: Formular;
   rating1: number;

@@ -1,3 +1,7 @@
+<div class="firstpart">
+  <h2>Praktischer Teil der Evaluation</h2>
+  <p>{{ firstPart }}</p>
+</div>
 <mat-list>
   <mat-list-item> Geschlecht </mat-list-item>
   <mat-list-item> Einfluss von Faktor X </mat-list-item>
@@ -44,9 +48,9 @@
     ></mat-slider>
   </mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item>
-    <button mat-raised-button color="primary" (click)="onSubmitEvaluation()">
-      Abschicken
-    </button>
-  </mat-list-item>
 </mat-list>
+<h2>Theoretischer Teil der Evaluation</h2>
+<p>{{ secondPart }}</p>
+<button mat-raised-button color="primary" (click)="onSubmitEvaluation()">
+  Abschicken
+</button>
