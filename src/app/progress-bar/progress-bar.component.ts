@@ -7,15 +7,19 @@ import { UserService } from "../user/user.service";
   styleUrls: ["./progress-bar.component.css"]
 })
 export class ProgressBarComponent implements OnInit {
-  progressCounter: number;
+  progressCounter = 0;
 
   constructor(private userService: UserService) {}
 
   getCounter() {
-    this.progressCounter = this.userService.getUserCounter();
+    this.progressCounter = this.userService.getProgressBarCounter();
   }
   logToConsole() {
     console.log(this.progressCounter);
+  }
+  updateProgressBar() {
+    console.log("you need to remove me (progressbarcomponent)");
+    this.getCounter();
   }
   ngOnInit() {
     this.getCounter();

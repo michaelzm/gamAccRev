@@ -18,6 +18,18 @@ export class UserService {
   getUserScore() {
     return MOCKUSER.score;
   }
+  setProgressBarCounter(setTo: number) {
+    MOCKUSER.user_progress_counter = setTo;
+  }
+  getProgressBarCounter() {
+    console.log(
+      "USERSERVICE PROGRESS COUNTER = " + MOCKUSER.user_progress_counter
+    );
+    return MOCKUSER.user_progress_counter;
+  }
+  increaseProgress() {
+    MOCKUSER.user_progress_counter++;
+  }
 
   getUserLName() {
     return MOCKUSER.user_lastName;

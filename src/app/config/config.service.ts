@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Formular } from "../formular/formular";
 import { HttpHeaders } from "@angular/common/http";
+import { environment } from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,7 +14,7 @@ const httpOptions = {
   providedIn: "root"
 })
 export class ConfigService {
-  configUrl = "https://urserver.herokuapp.com/tasks";
+  configUrl = "https://urserver.herokuapp.com/formular";
   constructor(private http: HttpClient) {}
 
   getConfig() {
