@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: "root"
 })
 export class ConfigService {
-  configUrl = "https://urserver.herokuapp.com/tasks";
+  configUrl = "https://urserver.herokuapp.com/formular";
   constructor(private http: HttpClient) {}
 
   getConfig() {
