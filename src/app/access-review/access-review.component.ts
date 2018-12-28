@@ -6,7 +6,7 @@ import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
-import { totalmem } from "os";
+
 @Component({
   selector: "app-access-review",
   templateUrl: "./access-review.component.html",
