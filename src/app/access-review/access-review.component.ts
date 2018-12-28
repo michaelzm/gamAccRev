@@ -6,6 +6,7 @@ import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
+import { totalmem } from "os";
 @Component({
   selector: "app-access-review",
   templateUrl: "./access-review.component.html",
@@ -61,8 +62,103 @@ export class AccessReviewComponent implements OnInit {
     this.userService.increaseProgress();
     this.progressBar.updateProgressBar();
     this.getProgressBarCounter();
+    this.checkIfRightsGrantedCorrect();
   }
   checkForGamification() {
     this.checkForGamification;
+  }
+  checkIfRightsGrantedCorrect() {
+    var correct = 0;
+    var incorrect = 0;
+    var i: Number;
+    console.log("$$$$$$$$$$$$$$ TESTING ALL EMPLOYEES UNTIL NOW $$$$$$$$$");
+    for (let employee of this.employeeList) {
+      if (employee.beenChecked == true) {
+        console.log(employee);
+        switch (employee.position) {
+          case "Werkstudent": {
+            if (
+              employee.accessRights.hasCal &&
+              employee.accessRights.hasExcel &&
+              !employee.accessRights.hasErp &&
+              !employee.accessRights.hasCode
+            ) {
+              correct++;
+              console.log(i + "was correct");
+              break;
+            } else {
+              incorrect++;
+              console.log(i + "was incorrect");
+              break;
+            }
+          }
+          case "Praktikant": {
+            if (
+              employee.accessRights.hasCal &&
+              !employee.accessRights.hasErp &&
+              !employee.accessRights.hasCode &&
+              !employee.accessRights.hasExcel
+            ) {
+              correct++;
+              console.log(i + "was correct");
+              break;
+            } else {
+              incorrect++;
+              console.log(i + "was incorrect");
+              break;
+            }
+          }
+          case "Festangestellt Entwicklung": {
+            if (
+              employee.accessRights.hasCal &&
+              !employee.accessRights.hasErp &&
+              employee.accessRights.hasCode &&
+              employee.accessRights.hasExcel
+            ) {
+              correct++;
+              console.log(i + "was correct");
+              break;
+            } else {
+              incorrect++;
+              console.log(i + "was incorrect");
+              break;
+            }
+          }
+          case "Festangestellt Materialwirtschaft": {
+            if (
+              employee.accessRights.hasCal &&
+              employee.accessRights.hasErp &&
+              !employee.accessRights.hasCode &&
+              employee.accessRights.hasExcel
+            ) {
+              correct++;
+              console.log(i + "was correct");
+              break;
+            } else {
+              incorrect++;
+              console.log(i + "was incorrect");
+              break;
+            }
+          }
+          default: {
+            console.log(i + " was none of above");
+            break;
+          }
+        }
+        console.log(
+          " The user had " +
+            correct +
+            " correct and " +
+            incorrect +
+            " incorrect: So in total the user had " +
+            correct +
+            " out of " +
+            (correct + incorrect) +
+            " correct, which translates to " +
+            (correct / (correct + incorrect)) * 100 +
+            " Percent."
+        );
+      }
+    }
   }
 }
