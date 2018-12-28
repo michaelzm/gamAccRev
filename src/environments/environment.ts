@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  configUrl: "https://urserver.herokuapp.com/tasks"
+  configUrl: "https://urserver.herokuapp.com/formular"
 };
 
 /*
