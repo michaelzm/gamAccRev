@@ -7,5 +7,6 @@ MOCKUSER.user_counter = 0;
 MOCKUSER.score = 0;
 MOCKUSER.userLevel = 1;
 MOCKUSER.user_progress_counter = 0;
+MOCKUSER.achievements = [];
 
 export { MOCKUSER };

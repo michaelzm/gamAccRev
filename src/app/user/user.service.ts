@@ -58,4 +58,11 @@ export class UserService {
   increaseLevel() {
     MOCKUSER.userLevel++;
   }
+  addAchievement(achievementName: string) {
+    const d: Date = new Date();
+    MOCKUSER.achievements.push(achievementName + " am: " + d);
+  }
+  getAchievements() {
+    return MOCKUSER.achievements;
+  }
 }

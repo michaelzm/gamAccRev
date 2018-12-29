@@ -8,6 +8,7 @@ import { UserService } from "../user/user.service";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
+  achievementList: string[];
   dashboardScore: number;
   dashboardCounter: number;
   dashboardUserName: string;
@@ -15,11 +16,13 @@ export class DashboardComponent implements OnInit {
   dashboardUserLevel: number;
   constructor(private userService: UserService) {}
   getInformations() {
-    this.dashboardScore = this.userService.getUserScore();
-    this.dashboardCounter = this.userService.getUserCounter();
-    this.dashboardUserName = this.userService.getUserLName();
+    this.getScore();
+    this.getCounter();
+    this.getUserName();
     this.dashboardUserFirstName = this.userService.getUserFName();
-    this.dashboardUserLevel = this.userService.getUserLevel();
+    this.getUserLevel();
+    this.getAchievements();
+    console.log("console achievement" + this.achievementList);
   }
   getScore() {
     this.dashboardScore = this.userService.getUserScore();
@@ -31,10 +34,17 @@ export class DashboardComponent implements OnInit {
   getUserName() {
     this.dashboardUserName = this.userService.getUserLName();
   }
+  getUserLevel() {
+    this.dashboardUserLevel = this.userService.getUserLevel();
+  }
 
   ngOnInit() {
     this.getInformations();
   }
+  getAchievements() {
+    this.achievementList = this.userService.getAchievements();
+  }
+
   calculateLevel(): string {
     if (this.dashboardScore < 10) {
       return "Level 1";

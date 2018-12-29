@@ -46,7 +46,7 @@ import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/ga
     ScrollingModule
   ],
   entryComponents: [GamificationBottomSheetComponent],
-  providers: [AccessReviewComponent, ProgressBarComponent],
+  providers: [AccessReviewComponent, ProgressBarComponent, DashboardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -11,26 +11,19 @@
   <mat-list>
     <mat-list-item>Überprüfe 10 Berechtigungen</mat-list-item>
     <mat-list-item>{{ dashboardCounter }} / 10 erreicht</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Überprüfe 50 Berechtigungen</mat-list-item>
-    <mat-list-item>{{ dashboardCounter }} / 100 erreicht</mat-list-item>
   </mat-list>
   <mat-divider></mat-divider>
 </div>
 <div class="scoreboard">
   <h2>Erfolge</h2>
-  <mat-list>
-    <mat-list-item>10 Angestellte überprüft</mat-list-item>
-    <mat-list-item>20 Angestellte überprüft</mat-list-item>
-    <mat-list-item>50 Angestellte überprüft</mat-list-item>
-    <mat-list-item>100 Angestellte überprüft</mat-list-item>
+  <mat-list *ngFor="let achievement of achievementList">
+    <mat-list-item>{{ achievement }}</mat-list-item>
   </mat-list>
   <mat-divider></mat-divider>
 </div>
 <div class="rankings">
   <h2>Rangliste</h2>
   <mat-list>
-    <mat-list-item>HC NAme: 0000</mat-list-item>
     <mat-list-item>{{ dashboardUserName }}: {{ dashboardScore }}</mat-list-item>
   </mat-list>
 </div>
