@@ -69,7 +69,7 @@ export class AccessReviewComponent implements OnInit {
     this.userService.increaseProgress();
     this.progressBar.updateProgressBar();
     this.getProgressBarCounter();
-    this.checkIfRightsGrantedCorrect();
+    //this.checkIfRightsGrantedCorrect();
   }
   checkForGamification() {
     this.checkForGamification;
