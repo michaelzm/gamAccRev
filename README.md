@@ -1,5 +1,4 @@
 # AngularAccessReview
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
 ## Development server
@@ -20,7 +19,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Gamification:
 
-add Bottom Sheet for level up
+add Bottom Sheet for level up (basic bottom sheet has been added)
 
 add Dialog for mission completed
 
@@ -61,3 +60,6 @@ add indicator whether user reached minimum amount of reviews to qualify for eval
 add landing page (external)
 
 addition: rename login to starting page with some extra informations
+
+upcoming idea: make mini game on bottom sheet when level up is reached, so user has the chance to win points by completing the little game (keeps motiviation higher to complete 10 missions)
+
