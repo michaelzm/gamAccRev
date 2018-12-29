@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { UserService } from "./user/user.service";
 import { AccessReviewComponent } from "./access-review/access-review.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 @Injectable({
   providedIn: "root"
@@ -10,6 +11,7 @@ export class GamificationTrackerService {
   currentLevel: number;
 
   constructor(
+    private dashboard: DashboardComponent,
     private userService: UserService,
     private accessReview: AccessReviewComponent
   ) {}
@@ -38,6 +40,7 @@ export class GamificationTrackerService {
   checkIfXPBarFull() {
     if (this.userService.getProgressBarCounter() == 10) {
       this.userService.setProgressBarCounter(0);
+      this.accessReview.openBottomSheet();
     }
   }
   checkIfMissionCompleted() {
@@ -45,6 +48,21 @@ export class GamificationTrackerService {
       this.openGamificationBar(
         "Mission erfolgreich abgeschlossen! Neue Mission verfügbar.."
       );
+      this.addAchievement("mission");
+    }
+  }
+  addAchievement(type: string) {
+    switch (type) {
+      case "mission": {
+        var counter = this.userService.getUserCounter();
+        var newAchievementText: string =
+          "Erfolgreich " + counter + " Berechtigungen geprüft";
+        this.userService.addAchievement(newAchievementText);
+        this.dashboard.getAchievements();
+      }
+      default: {
+        break;
+      }
     }
   }
 

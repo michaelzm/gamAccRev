@@ -5,4 +5,5 @@ export class User {
   public user_counter: number;
   public userLevel: number;
   public user_progress_counter: number;
+  public achievements: string[];
 }

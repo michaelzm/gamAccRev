@@ -47,7 +47,9 @@ export class AccessListComponent implements OnInit {
   printToConsole(toPrint) {
     console.log(toPrint);
   }
-
+  /*find better solution instead of wiping whole selections
+  actually its not that bad
+  */
   changeAccessRights(selectedOptions): void {
     console.log(selectedOptions);
     console.log(this.employeeToAlterRights.beenChecked);
