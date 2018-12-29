@@ -20,6 +20,7 @@ import { GamificationTrackerService } from "./gamification-tracker.service";
 import { UserService } from "./user/user.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ScrollingModule } from "@angular/cdk/scrolling";
+import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/gamification-bottom-sheet.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
     ProgressBarComponent,
     FormularComponent,
     AccessListComponent,
-    GreetingComponent
+    GreetingComponent,
+    GamificationBottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
     HttpClientModule,
     ScrollingModule
   ],
+  entryComponents: [GamificationBottomSheetComponent],
   providers: [AccessReviewComponent, ProgressBarComponent],
   bootstrap: [AppComponent]
 })

@@ -6,6 +6,8 @@ import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
+import { MatBottomSheet } from "@angular/material";
+import { GamificationBottomSheetComponent } from "../gamification-bottom-sheet/gamification-bottom-sheet.component";
 
 @Component({
   selector: "app-access-review",
@@ -23,6 +25,7 @@ export class AccessReviewComponent implements OnInit {
   triggerAnimation() {}
 
   constructor(
+    private bottomSheet: MatBottomSheet,
     private progressBar: ProgressBarComponent,
     private employeeService: EmployeeService,
     private userService: UserService,
@@ -33,6 +36,10 @@ export class AccessReviewComponent implements OnInit {
     this.gamificationBar.open(message, "Ok", {
       duration: 3000
     });
+  }
+  //later add  more than just one message var
+  openBottomSheet() {
+    this.bottomSheet.open(GamificationBottomSheetComponent);
   }
   getEmployeeList(): void {
     this.employeeService
