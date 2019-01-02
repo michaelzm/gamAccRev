@@ -1,4 +1,5 @@
 # AngularAccessReview
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
 ## Development server
@@ -19,40 +20,37 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Gamification:
 
-add Bottom Sheet for level up (basic bottom sheet has been added)
+add Bottom Sheet for level up [done]
 
 add Dialog for mission completed
 
 add achievements for completed missions:
 
-	first step add date and time
+    first step add date and time [done]
 
-	add more than reviewed 10, reviewed 20
+    add more than reviewed 10, reviewed 20
 
 add badge representing number of completed achievements
 
 add logic behind missions, example: user gets 10 points for completing daily mission
 
- 
-	
-update level property on level up
+update level property on level up [done]
 
 add generic profile picture
 
-fix scoreboard:	
+fix scoreboard:
 
-1	let scoreboard sort desc array of  points and names	
+1 let scoreboard sort desc array of points and names
 
-2	let scoreboard represent actual values from db (http)
+2 let scoreboard represent actual values from db (http)
 
-3	add submitted evaluations to the scoreboard 
+3 add submitted evaluations to the scoreboard
 
-4	profit	
+4 profit
 
 Table View:
 
 add onClick to employee for fast scroll to index
-	
 Formular:
 
 add indicator whether user reached minimum amount of reviews to qualify for evaluation
@@ -62,4 +60,3 @@ add landing page (external)
 addition: rename login to starting page with some extra informations
 
 upcoming idea: make mini game on bottom sheet when level up is reached, so user has the chance to win points by completing the little game (keeps motiviation higher to complete 10 missions)
-

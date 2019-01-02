@@ -44,14 +44,4 @@ export class DashboardComponent implements OnInit {
   getAchievements() {
     this.achievementList = this.userService.getAchievements();
   }
-
-  calculateLevel(): string {
-    if (this.dashboardScore < 10) {
-      return "Level 1";
-    } else if (this.dashboardScore > 10 && this.dashboardScore < 30) {
-      return "Level 2";
-    } else if (this.dashboardScore > 30 && this.dashboardScore < 70) {
-      return "Level 3";
-    }
-  }
 }
