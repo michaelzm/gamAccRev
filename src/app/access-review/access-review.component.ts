@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { Employee } from "../employee/employee";
 import { EmployeeService } from "../employee/employee.service";
 import { UserService } from "../user/user.service";
+
 import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
@@ -22,7 +23,6 @@ export class AccessReviewComponent implements OnInit {
   employeeList: Employee[];
   currentUser: User;
   progressBarCounter: number;
-  triggerAnimation() {}
 
   constructor(
     private bottomSheet: MatBottomSheet,
@@ -33,7 +33,7 @@ export class AccessReviewComponent implements OnInit {
   ) {}
 
   openGamificationBar(message: string) {
-    this.gamificationBar.open(message, "Ok", {
+    this.gamificationBar.open(message, "✕", {
       duration: 3000
     });
   }
@@ -67,17 +67,16 @@ export class AccessReviewComponent implements OnInit {
   permitRight(): void {
     this.userService.increaseCounter();
     this.userService.increaseProgress();
+    //update ProgressBar and refresh variable
     this.progressBar.updateProgressBar();
     this.getProgressBarCounter();
     //this.checkIfRightsGrantedCorrect();
   }
-  checkForGamification() {
-    this.checkForGamification;
-  }
+
   checkIfRightsGrantedCorrect() {
     var correct = 0;
     var incorrect = 0;
-    var i: Number;
+    var i: number;
     console.log("$$$$$$$$$$$$$$ TESTING ALL EMPLOYEES UNTIL NOW $$$$$$$$$");
     for (let employee of this.employeeList) {
       if (employee.beenChecked == true) {
