@@ -6,11 +6,7 @@
   ></mat-progress-bar>
 </div>
 <div class="reviewlist">
-  <cdk-virtual-scroll-viewport
-    itemSize="autosize"
-    minBufferPx="autosize"
-    maxBufferPx="autosize"
-  >
+  <cdk-virtual-scroll-viewport itemSize="autosize">
     <mat-list *cdkVirtualFor="let employee of employeeList">
       <app-employee-detail [employeeToDisplay]="employee">
       </app-employee-detail>
