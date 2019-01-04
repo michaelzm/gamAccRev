@@ -22,8 +22,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/gamification-bottom-sheet.component";
 import { DatePipe } from "@angular/common";
-import { RankingComponent } from './ranking/ranking/ranking.component';
-import { ChallengesComponent } from './challenges/challenges.component';
+import { RankingComponent } from "./ranking/ranking/ranking.component";
+import { ChallengesComponent } from "./challenges/challenges.component";
+import { CustomRouteReuseStrategy } from "./reuse-strategy";
+import { RouteReuseStrategy } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { ChallengesComponent } from './challenges/challenges.component';
     AccessReviewComponent,
     ProgressBarComponent,
     DashboardComponent,
-    DatePipe
+    DatePipe,
+    { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy }
   ],
   bootstrap: [AppComponent]
 })

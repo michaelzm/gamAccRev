@@ -9,7 +9,11 @@ import { RankingComponent } from "./ranking/ranking/ranking.component";
 import { ChallengesComponent } from "./challenges/challenges.component";
 
 const routes: Routes = [
-  { path: "accessreview", component: AccessReviewComponent },
+  {
+    path: "accessreview",
+    component: AccessReviewComponent,
+    data: { shouldReuse: true }
+  },
   { path: "dashboard", component: DashboardComponent },
   { path: "login", component: LoginComponent },
   { path: "table", component: TableComponent },
