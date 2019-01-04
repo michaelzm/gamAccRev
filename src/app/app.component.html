@@ -1,6 +1,6 @@
 <!---->
 <mat-toolbar color="primary" style="position: fixed;">
-  <button mat-button [matMenuTriggerFor]="menu">Access Manager</button>
+  <button mat-button [matMenuTriggerFor]="menu">Zugriffsrechtverwaltung</button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/accessreview">
       Berechtigungsprüfung
@@ -9,17 +9,19 @@
   </mat-menu>
   <button
     mat-button
-    routerLink="/dashboard"
+    [matMenuTriggerFor]="menu2"
     [matBadge]="badge"
     (click)="resetBadge()"
     matBadgePosition="after"
     matBadgeHidden="{{ isHidden }}"
     matBadgeColor="accent"
   >
-    Profil
+    Dashboard
   </button>
-  <button mat-button routerLink="/challenges">Herausforderungen</button>
-  <button mat-button routerLink="/ranking">Rangliste</button>
+  <mat-menu #menu2="matMenu">
+    <button mat-button routerLink="/dashboard">Mein Profil</button>
+    <button mat-button routerLink="/ranking">Rangliste</button>
+  </mat-menu>
 </mat-toolbar>
 
 <div class="bottom"><router-outlet></router-outlet></div>

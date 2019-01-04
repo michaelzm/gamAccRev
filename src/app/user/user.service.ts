@@ -61,7 +61,7 @@ export class UserService {
   }
   addAchievement(achievementName: string) {
     let d: Date = new Date();
-    let formatDate = this.datePipe.transform(d, "dd.mm.yyyy, H:mm");
+    let formatDate = this.datePipe.transform(d, "dd.MM.yyyy, H:mm");
     MOCKUSER.achievements.push(achievementName + " am: " + formatDate);
   }
   getAchievements() {
