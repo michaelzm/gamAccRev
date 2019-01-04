@@ -5,9 +5,13 @@
     value="{{ progressBarCounter * 10 }}"
   ></mat-progress-bar>
 </div>
-<button (click)="scrollToLast()">Gehe zum zuletzt bearbeiteten</button>
+<div class="gotolast">
+  <button mat-button (click)="scrollToLast()">
+    Gehe zum zuletzt bearbeiteten
+  </button>
+</div>
 <div class="reviewlist">
-  <cdk-virtual-scroll-viewport itemSize="autosize">
+  <cdk-virtual-scroll-viewport itemSize="380px">
     <mat-list *cdkVirtualFor="let employee of employeeList">
       <app-employee-detail [employeeToDisplay]="employee">
       </app-employee-detail>
