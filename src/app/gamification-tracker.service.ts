@@ -79,7 +79,7 @@ export class GamificationTrackerService {
       }
       case "level": {
         level = this.userService.getUserLevel();
-        newAchievementText = "Level " + level + " erreicht!";
+        newAchievementText = "Level " + level + " erreicht";
       }
       default: {
         break;
