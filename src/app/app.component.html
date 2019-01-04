@@ -7,7 +7,19 @@
     </button>
     <button mat-menu-item routerLink="/table">Tabellenübersicht</button>
   </mat-menu>
-  <button mat-button routerLink="/dashboard">Dashboard</button>
+  <button
+    mat-button
+    routerLink="/dashboard"
+    [matBadge]="badge"
+    (click)="resetBadge()"
+    matBadgePosition="after"
+    matBadgeHidden="{{ isHidden }}"
+    matBadgeColor="accent"
+  >
+    Profil
+  </button>
+  <button mat-button routerLink="/challenges">Herausforderungen</button>
+  <button mat-button routerLink="/ranking">Rangliste</button>
 </mat-toolbar>
 
 <div class="bottom"><router-outlet></router-outlet></div>
