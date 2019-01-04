@@ -11,8 +11,10 @@
   </button>
 </div>
 <div class="reviewlist">
-  <cdk-virtual-scroll-viewport itemSize="380px">
-    <mat-list *cdkVirtualFor="let employee of employeeList">
+  <cdk-virtual-scroll-viewport itemSize="380">
+    <mat-list
+      *cdkVirtualFor="let employee of employeeList; templateCacheSize: 0"
+    >
       <app-employee-detail [employeeToDisplay]="employee">
       </app-employee-detail>
 
