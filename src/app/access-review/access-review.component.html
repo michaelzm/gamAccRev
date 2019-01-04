@@ -5,6 +5,7 @@
     value="{{ progressBarCounter * 10 }}"
   ></mat-progress-bar>
 </div>
+<button (click)="scrollToLast()">Gehe zum zuletzt bearbeiteten</button>
 <div class="reviewlist">
   <cdk-virtual-scroll-viewport itemSize="autosize">
     <mat-list *cdkVirtualFor="let employee of employeeList">
@@ -27,32 +28,3 @@
 >
   Weiter zur Evaluation
 </button>
-
-<!--
-<div class="bigContainer">
-  <h2>Berechtigungsüberprüfung</h2>
-  <h3>aktive Aufgabe</h3>
-  <mat-progress-bar
-    mode="determinate"
-    value="{{ progressBarCounter * 10 }}"
-  ></mat-progress-bar>
-</div>
-<div class="bottom">
-  <mat-list class="employees">
-    <mat-list role="list" *ngFor="let employee of employeeList">
-      <span class="badge">
-        <div class="colored">
-          <app-employee-detail
-            [employeeToDisplay]="employee"
-          ></app-employee-detail>
-        </div>
-      </span>
-      <app-access-list [employeeToAlterRights]="employee"> </app-access-list>
-      <mat-divider></mat-divider>
-    </mat-list>
-  </mat-list>
-  <button mat-raised-button color="primary" routerLink="/formular">
-    Weiter zur Evaluation
-  </button>
-</div>
--->

@@ -19,7 +19,7 @@ export class AccessReviewComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport)
   viewport: CdkVirtualScrollViewport;
 
-  scrollOffset = 215;
+  scrollOffset = 0;
   employeeList: Employee[];
   currentUser: User;
   progressBarCounter: number;
@@ -62,6 +62,10 @@ export class AccessReviewComponent implements OnInit {
     this.getEmployeeList();
     this.getUser();
     this.getProgressBarCounter();
+  }
+  scrollToLast() {
+    console.log("OFFSET IS : " + this.scrollOffset);
+    this.viewport.scrollToOffset(this.scrollOffset, "smooth");
   }
 
   permitRight(): void {
