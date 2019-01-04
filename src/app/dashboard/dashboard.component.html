@@ -1,20 +1,14 @@
 <div class="profile">
-  <div id="picture"><img src="{{ imagePath }}" width="100" height="100" /></div>
+  <div class="picture">
+    <img src="{{ imagePath }}" width="200" height="80" />
+  </div>
+  <div class="list">
+    <mat-list>
+      <mat-list-item> {{ dashboardUserName }} </mat-list-item>
 
-  <mat-list>
-    <mat-list-item> {{ dashboardUserName }} </mat-list-item>
-
-    <mat-list-item> Level {{ dashboardUserLevel }} </mat-list-item>
-  </mat-list>
-</div>
-
-<div class="daily">
-  <h2>Aufgaben</h2>
-  <mat-list>
-    <mat-list-item>Überprüfe 10 Berechtigungen</mat-list-item>
-    <mat-list-item>{{ dashboardCounter }} / 10 erreicht</mat-list-item>
-  </mat-list>
-  <mat-divider></mat-divider>
+      <mat-list-item> Level {{ dashboardUserLevel }} </mat-list-item>
+    </mat-list>
+  </div>
 </div>
 <div class="scoreboard">
   <h2>Erfolge</h2>
@@ -22,18 +16,4 @@
     <mat-list-item>{{ achievement }}</mat-list-item>
   </mat-list>
   <mat-divider></mat-divider>
-</div>
-<div class="rankings">
-  <h2>Rangliste</h2>
-  <mat-list>
-    <mat-list-item
-      >{{ dashboardUserName }}: {{ dashboardCounter }}</mat-list-item
-    >
-  </mat-list>
-</div>
-<div class="unlocks">
-  <h2>
-    Hier werden Unlocks implementiert, die man ab einem bestimmten Level
-    benutzen kann. eigener Avatar
-  </h2>
 </div>
