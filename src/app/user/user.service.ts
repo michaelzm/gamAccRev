@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { User } from "./user";
 import { MOCKUSER } from "./mock-user";
+import { DatePipe } from "@angular/common";
 
 @Injectable({
   providedIn: "root"
 })
 export class UserService {
-  constructor() {}
+  constructor(private datePipe: DatePipe) {}
 
   setUserLastName(lastName: string) {
     MOCKUSER.user_lastName = lastName;
@@ -59,8 +60,9 @@ export class UserService {
     MOCKUSER.userLevel++;
   }
   addAchievement(achievementName: string) {
-    const d: Date = new Date();
-    MOCKUSER.achievements.push(achievementName + " am: " + d);
+    let d: Date = new Date();
+    let formatDate = this.datePipe.transform(d, "dd.mm.yyyy, H:mm");
+    MOCKUSER.achievements.push(achievementName + " am: " + formatDate);
   }
   getAchievements() {
     return MOCKUSER.achievements;
