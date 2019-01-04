@@ -8,6 +8,7 @@ import { UserService } from "../user/user.service";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
+  imagePath = "assets/smile.png";
   achievementList: string[];
   dashboardScore: number;
   dashboardCounter: number;
