@@ -62,6 +62,7 @@ export class AccessReviewComponent implements OnInit {
     this.getEmployeeList();
     this.getUser();
     this.getProgressBarCounter();
+    this.getOffset();
   }
   scrollToLast() {
     console.log("OFFSET IS : " + this.scrollOffset);
@@ -75,6 +76,12 @@ export class AccessReviewComponent implements OnInit {
     this.progressBar.updateProgressBar();
     this.getProgressBarCounter();
     //this.checkIfRightsGrantedCorrect();
+  }
+  setOffset(offset: number) {
+    this.userService.setScrollOffset(offset);
+  }
+  getOffset() {
+    this.scrollOffset = this.userService.getScrollOffset();
   }
 
   checkIfRightsGrantedCorrect() {

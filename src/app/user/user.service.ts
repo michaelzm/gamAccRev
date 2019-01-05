@@ -67,4 +67,10 @@ export class UserService {
   getAchievements() {
     return MOCKUSER.achievements;
   }
+  getScrollOffset() {
+    return MOCKUSER.scrollOffset;
+  }
+  setScrollOffset(offset: number) {
+    MOCKUSER.scrollOffset = offset;
+  }
 }

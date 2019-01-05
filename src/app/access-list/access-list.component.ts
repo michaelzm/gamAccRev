@@ -80,7 +80,9 @@ export class AccessListComponent implements OnInit {
       console.log(
         "OFFSET: " + this.accessReviewComponent.viewport.measureScrollOffset()
       );
-      this.accessReviewComponent.scrollOffset = this.accessReviewComponent.viewport.measureScrollOffset();
+      this.accessReviewComponent.setOffset(
+        this.accessReviewComponent.viewport.measureScrollOffset()
+      );
       this.employeeToAlterRights.beenChecked = true;
       this.gamificationTracker.checkForGamificationPopup();
     }
