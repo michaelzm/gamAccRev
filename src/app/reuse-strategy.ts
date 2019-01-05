@@ -1,3 +1,4 @@
+/*
 import {
   RouteReuseStrategy,
   ActivatedRouteSnapshot,
@@ -33,3 +34,4 @@ export class CustomRouteReuseStrategy implements RouteReuseStrategy {
     return future.data.shouldReuse || false;
   }
 }
+*/

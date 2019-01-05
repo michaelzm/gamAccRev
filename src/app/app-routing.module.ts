@@ -11,8 +11,7 @@ import { ChallengesComponent } from "./challenges/challenges.component";
 const routes: Routes = [
   {
     path: "accessreview",
-    component: AccessReviewComponent,
-    data: { shouldReuse: true }
+    component: AccessReviewComponent
   },
   { path: "dashboard", component: DashboardComponent },
   { path: "login", component: LoginComponent },

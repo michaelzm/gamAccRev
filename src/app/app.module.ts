@@ -16,16 +16,12 @@ import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { FormularComponent } from "./formular/formular.component";
 import { AccessListComponent } from "./access-list/access-list.component";
 import { GreetingComponent } from "./greeting/greeting.component";
-import { GamificationTrackerService } from "./gamification-tracker.service";
-import { UserService } from "./user/user.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/gamification-bottom-sheet.component";
 import { DatePipe } from "@angular/common";
 import { RankingComponent } from "./ranking/ranking/ranking.component";
 import { ChallengesComponent } from "./challenges/challenges.component";
-import { CustomRouteReuseStrategy } from "./reuse-strategy";
-import { RouteReuseStrategy } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -57,8 +53,7 @@ import { RouteReuseStrategy } from "@angular/router";
     AccessReviewComponent,
     ProgressBarComponent,
     DashboardComponent,
-    DatePipe,
-    { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy }
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
