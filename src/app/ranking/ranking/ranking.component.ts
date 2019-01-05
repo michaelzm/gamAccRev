@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ranking.component.css']
 })
 export class RankingComponent implements OnInit {
-
+    
+  competitors = []
   constructor() { }
 
   ngOnInit() {
   }
 
 }
+
