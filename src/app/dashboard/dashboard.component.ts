@@ -7,7 +7,7 @@ import { UserService } from "../user/user.service";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  imagePath = "assets/rankimages/0.png";
+  imagePath = "assets/rankimages/";
   imagePathRaw = "assets/rankimages/";
   achievementList: string[];
   dashboardScore: number;
@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
     this.dashboardUserFirstName = this.userService.getUserFName();
     this.getUserLevel();
     this.getAchievements();
-    this.updatePicture();
     console.log("console achievement" + this.achievementList);
   }
   getScore() {

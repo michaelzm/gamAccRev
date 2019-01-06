@@ -1,9 +1,10 @@
 <mat-list>
   <mat-list-item *ngFor="let competitor of sortedRankings()">
-    <h3 matLine>Level: {{ competitor.userLevel }}</h3>
+    <h3 matLine>
+      Name: {{ competitor.user_lastName }}, Level: {{ competitor.userLevel }}
+    </h3>
     <p matLine>
-      <span> Counter: {{ competitor.userCounter }} </span>
-      <span class="demo-2"> Lastname: {{ competitor.user_lastName }} </span>
+      <span> Counter: {{ competitor.user_counter }} </span>
     </p>
   </mat-list-item>
 </mat-list>
