@@ -18,27 +18,27 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Next stepts of implementation:
 
-Gamification:
+### Gamification:
 
 - [x] add Bottom Sheet for level up
 
-- [] add Dialog for mission completed
+- [ ] add Dialog for mission completed
 
-add achievements for completed missions:
+### add achievements for completed missions:
 
 - [x] first step add date and time [done]
 
-- [] add more than reviewed 10, reviewed 20
+- [ ] add more than reviewed 10, reviewed 20
 
-- [] add badge representing number of completed achievements
+- [ ] add badge representing number of completed achievements
 
-- [] add logic behind missions, example: user gets 10 points for completing daily mission
+- [ ] add logic behind missions, example: user gets 10 points for completing daily mission
 
 - [x] update level property on level up
 
-- [] add generic profile picture
+- [ ] add generic profile picture
 
-fix scoreboard:
+### fix scoreboard:
 
 - [x] let scoreboard sort desc array of points and name
 
@@ -46,18 +46,19 @@ fix scoreboard:
 
 - [x] add submitted evaluations to the scoreboard
 
+### achievements
 
-ReviewComponent:
+- [ ] add interesting list of achievements
+- [ ] implement reward function
+
+### ReviewComponent:
 
 [x] add onClick to employee for fast scroll to index
 
-Formular:
+### Formular:
 
-- [] add indicator whether user reached minimum amount of reviews to qualify for evaluation
+- [ ] add indicator whether user reached minimum amount of reviews to qualify for evaluation
 
-- [] ~~ add landing page (external)~~
+- [ ] addition: rename login to starting page with some extra informations
 
-- [] addition: rename login to starting page with some extra informations
-
-
-upcoming idea: make mini game on bottom sheet when level up is reached, so user has the chance to win points by completing the little game (keeps motiviation higher to complete 10 missions)
+- [ ] upcoming idea: make mini game on bottom sheet when level up is reached, so user has the chance to win points by completing the little game (keeps motiviation higher to complete 10 missions)
