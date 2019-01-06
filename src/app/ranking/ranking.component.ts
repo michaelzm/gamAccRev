@@ -11,8 +11,8 @@ import { Config } from "protractor";
   styleUrls: ["./ranking.component.css"]
 })
 export class RankingComponent implements OnInit {
-  rankings: Competitor[];
-  fetchedRankings;
+  rankings: Competitor[] = [];
+  rankingWithUser: Competitor[] = [];
 
   createMutlipleCompetitors() {
     for (var i = 0; i < 10; i++) {
@@ -26,18 +26,32 @@ export class RankingComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(" 0 " + this.rankings);
+    this.addUserToRanking();
     this.getRanking();
+
+    console.log(" 1 " + this.rankings);
+    console.log(this.rankings);
+    console.log(" an stelle 1: " + this.rankings);
+    console.log(this.rankingWithUser);
   }
   constructor(
     private userService: UserService,
     private configService: ConfigService
   ) {}
 
+  addUserToRanking() {
+    console.log("adding user to rankinglist");
+    var userAsCompetitor = new Competitor();
+    userAsCompetitor.userLevel = this.userService.getUserLevel();
+    userAsCompetitor.user_lastName = this.userService.getUserLName();
+    userAsCompetitor.user_counter = this.userService.getUserCounter();
+    console.log(userAsCompetitor);
+    this.rankingWithUser.push(userAsCompetitor);
+  }
+
   getRanking() {
-    this.configService
-      .getRanking()
-      // clone the data object, using its known Config shape
-      .subscribe(data => (this.rankings = data));
+    this.configService.getRanking().subscribe(data => (this.rankings = data));
 
     /*
         for (var i = 0; i < this.fetchedRankings.length; i++) {
@@ -49,11 +63,15 @@ export class RankingComponent implements OnInit {
           console.log("current database items: " + this.fetchedRankings.length);
         }
         */
-    console.log("fetched database items: ");
+    console.log("fetched database items");
   }
-}
+  mergeRankings() {
+    return [...this.rankings, ...this.rankingWithUser].sort((a, b) =>
+      a.userLevel > b.userLevel ? -1 : a.userLevel < b.userLevel ? 1 : 0
+    );
+  }
 
-/*
+  /*
   getRanking() {
     var newCompetitor = new Competitor();
     this.configService.getConfig().subscribe(data: Response => {
@@ -75,14 +93,13 @@ export class RankingComponent implements OnInit {
     userAsCompetitor.user_counter = this.userService.getUserCounter();
     this.rankings.push(userAsCompetitor);
   }
-  
+  */
   sortedRankings(): Competitor[] {
     return this.rankings.sort((a, b) =>
       a.userLevel > b.userLevel ? -1 : a.userLevel < b.userLevel ? 1 : 0
     );
   }
 }
-*/
 
 /*
 const EMPLOYEES: Employee[] = [];

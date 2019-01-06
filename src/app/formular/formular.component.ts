@@ -22,6 +22,8 @@ export class FormularComponent implements OnInit {
 
   hasbeenSubmitted = false;
   submitFormular: Formular;
+  rankingFormular: Competitor;
+
   rating1: number;
   rating2: number;
   rating3: number;
@@ -51,12 +53,11 @@ export class FormularComponent implements OnInit {
     }
   }
   submitRanking() {
-    var newC = new Competitor();
-    newC.user_lastName = this.userName = this.userSerice.getUserLName();
-    newC.userLevel = this.userLevel = this.userSerice.getUserLevel();
-    newC.user_counter = this.userCoutner = this.userSerice.getUserCounter();
-    this.config.postRanking(newC);
-    console.log(newC);
+    this.rankingFormular = new Competitor();
+    this.rankingFormular.user_lastName = this.userName = this.userSerice.getUserLName();
+    this.rankingFormular.userLevel = this.userLevel = this.userSerice.getUserLevel();
+    this.rankingFormular.user_counter = this.userCoutner = this.userSerice.getUserCounter();
+    this.config.postRanking(this.rankingFormular).subscribe();
   }
 
   ngOnInit() {}
@@ -72,7 +73,6 @@ export class FormularComponent implements OnInit {
       this.submitFormular.rating4 = this.rating4 || 0;
       console.log(this.submitFormular);
       this.config.postConfig(this.submitFormular).subscribe();
-      this.submitRanking();
       this.hasbeenSubmitted = true;
     }
   }

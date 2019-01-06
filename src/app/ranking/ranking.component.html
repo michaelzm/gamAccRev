@@ -1,10 +1,10 @@
 <mat-list>
-  <mat-list-item *ngFor="let competitor of rankings">
+  <mat-list-item *ngFor="let competitor of mergeRankings()">
     <h3 matLine>
       Name: {{ competitor.user_lastName }}, Level: {{ competitor.userLevel }}
     </h3>
     <p matLine>
-      <span> Counter: {{ competitor.user_counter }} </span>
+      <span> durchgeführte Reviews: {{ competitor.user_counter }} </span>
     </p>
   </mat-list-item>
 </mat-list>
