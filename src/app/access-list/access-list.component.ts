@@ -47,13 +47,13 @@ export class AccessListComponent implements OnInit {
   printToConsole(toPrint) {
     console.log(toPrint);
   }
-  /*find better solution instead of wiping whole selections
-  actually its not that bad
+  /*
+  wipeEmployeeRights() sets all rights of the given employee to false, so if ones about to change the rights twice, it will start from the scratch
   */
   changeAccessRights(selectedOptions): void {
+    this.wipeEmployeeRights();
     console.log(selectedOptions);
     console.log(this.employeeToAlterRights.beenChecked);
-    this.wipeEmployeeRights();
     for (var _i = 0; _i < selectedOptions.length; _i++) {
       switch (selectedOptions[_i].value) {
         case "ERP-System": {
@@ -77,14 +77,16 @@ export class AccessListComponent implements OnInit {
     console.log(selectedOptions.length);
     if (this.employeeToAlterRights.beenChecked == false) {
       this.accessReviewComponent.permitRight();
+      console.log(
+        "OFFSET: " + this.accessReviewComponent.viewport.measureScrollOffset()
+      );
+      this.accessReviewComponent.setOffset(
+        this.accessReviewComponent.viewport.measureScrollOffset()
+      );
       this.employeeToAlterRights.beenChecked = true;
       this.gamificationTracker.checkForGamificationPopup();
     }
   }
-  /*
-  todo
-  schoenere Alternative zu Wipen finden
-  */
 
   wipeEmployeeRights() {
     this.employeeToAlterRights.accessRights.hasCal = false;

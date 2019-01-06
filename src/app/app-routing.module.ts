@@ -5,14 +5,21 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
 import { TableComponent } from "./table/table.component";
 import { FormularComponent } from "./formular/formular.component";
+import { RankingComponent } from "./ranking/ranking.component";
+import { ChallengesComponent } from "./challenges/challenges.component";
 
 const routes: Routes = [
-  { path: "accessreview", component: AccessReviewComponent },
+  {
+    path: "accessreview",
+    component: AccessReviewComponent
+  },
   { path: "dashboard", component: DashboardComponent },
-  { path: "login", component: LoginComponent },
+  { path: "start", component: LoginComponent },
   { path: "table", component: TableComponent },
   { path: "formular", component: FormularComponent },
-  { path: "", redirectTo: "/login", pathMatch: "full" }
+  { path: "ranking", component: RankingComponent },
+  { path: "challenges", component: ChallengesComponent },
+  { path: "", redirectTo: "/start", pathMatch: "full" }
 ];
 
 @NgModule({

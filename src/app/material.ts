@@ -16,6 +16,7 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
+import { MatBadgeModule } from "@angular/material/badge";
 
 import { NgModule } from "@angular/core";
 
@@ -36,7 +37,8 @@ import { NgModule } from "@angular/core";
     MatStepperModule,
     MatToolbarModule,
     MatSliderModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatBadgeModule
   ],
   exports: [
     MatButtonModule,
@@ -54,7 +56,8 @@ import { NgModule } from "@angular/core";
     MatStepperModule,
     MatToolbarModule,
     MatSliderModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule {}

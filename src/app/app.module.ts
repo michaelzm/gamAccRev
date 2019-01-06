@@ -16,11 +16,12 @@ import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { FormularComponent } from "./formular/formular.component";
 import { AccessListComponent } from "./access-list/access-list.component";
 import { GreetingComponent } from "./greeting/greeting.component";
-import { GamificationTrackerService } from "./gamification-tracker.service";
-import { UserService } from "./user/user.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/gamification-bottom-sheet.component";
+import { DatePipe } from "@angular/common";
+import { RankingComponent } from "./ranking/ranking.component";
+import { ChallengesComponent } from "./challenges/challenges.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/ga
     FormularComponent,
     AccessListComponent,
     GreetingComponent,
-    GamificationBottomSheetComponent
+    GamificationBottomSheetComponent,
+    RankingComponent,
+    ChallengesComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,12 @@ import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/ga
     ScrollingModule
   ],
   entryComponents: [GamificationBottomSheetComponent],
-  providers: [AccessReviewComponent, ProgressBarComponent, DashboardComponent],
+  providers: [
+    AccessReviewComponent,
+    ProgressBarComponent,
+    DashboardComponent,
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

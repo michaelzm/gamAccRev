@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { AccessReviewComponent } from "../access-review/access-review.component";
 import { UserService } from "../user/user.service";
 
 @Component({
@@ -8,6 +7,8 @@ import { UserService } from "../user/user.service";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
+  imagePath = "assets/rankimages/";
+  imagePathRaw = "assets/rankimages/";
   achievementList: string[];
   dashboardScore: number;
   dashboardCounter: number;
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit {
   dashboardUserFirstName: string;
   dashboardUserLevel: number;
   constructor(private userService: UserService) {}
+
   getInformations() {
     this.getScore();
     this.getCounter();
@@ -37,21 +39,61 @@ export class DashboardComponent implements OnInit {
   getUserLevel() {
     this.dashboardUserLevel = this.userService.getUserLevel();
   }
+  updatePicture(): string {
+    console.log("updatePicture Called");
+    let lvl = this.dashboardUserLevel;
+    switch (lvl) {
+      case 1: {
+        this.imagePath = this.imagePathRaw + "/1.png";
+        return this.imagePath;
+      }
+      case 2: {
+        this.imagePath = this.imagePathRaw + "/2.png";
+        return this.imagePath;
+      }
+      case 3: {
+        this.imagePath = this.imagePathRaw + "/3.png";
+        return this.imagePath;
+      }
+      case 4: {
+        this.imagePath = this.imagePathRaw + "/4.png";
+        return this.imagePath;
+      }
+      case 5: {
+        this.imagePath = this.imagePathRaw + "/5.png";
+        return this.imagePath;
+      }
+      case 6: {
+        this.imagePath = this.imagePathRaw + "/6.png";
+        return this.imagePath;
+      }
+      case 7: {
+        this.imagePath = this.imagePathRaw + "/7.png";
+        return this.imagePath;
+      }
+      case 8: {
+        this.imagePath = this.imagePathRaw + "/8.png";
+        return this.imagePath;
+      }
+      case 9: {
+        this.imagePath = this.imagePathRaw + "/9.png";
+        return this.imagePath;
+      }
+      case 10: {
+        this.imagePath = this.imagePathRaw + "/11.png";
+        return this.imagePath;
+      }
+      default: {
+        this.imagePath = this.imagePathRaw + "/12.png";
+        return this.imagePath;
+      }
+    }
+  }
 
   ngOnInit() {
     this.getInformations();
   }
   getAchievements() {
     this.achievementList = this.userService.getAchievements();
-  }
-
-  calculateLevel(): string {
-    if (this.dashboardScore < 10) {
-      return "Level 1";
-    } else if (this.dashboardScore > 10 && this.dashboardScore < 30) {
-      return "Level 2";
-    } else if (this.dashboardScore > 30 && this.dashboardScore < 70) {
-      return "Level 3";
-    }
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { Employee } from "../employee/employee";
 import { EmployeeService } from "../employee/employee.service";
 import { UserService } from "../user/user.service";
+
 import { User } from "../user/user";
 import { MatSnackBar } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
@@ -18,11 +19,10 @@ export class AccessReviewComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport)
   viewport: CdkVirtualScrollViewport;
 
-  scrollOffset = 215;
+  scrollOffset = 0;
   employeeList: Employee[];
   currentUser: User;
   progressBarCounter: number;
-  triggerAnimation() {}
 
   constructor(
     private bottomSheet: MatBottomSheet,
@@ -33,7 +33,7 @@ export class AccessReviewComponent implements OnInit {
   ) {}
 
   openGamificationBar(message: string) {
-    this.gamificationBar.open(message, "Ok", {
+    this.gamificationBar.open(message, "✕", {
       duration: 3000
     });
   }
@@ -62,22 +62,32 @@ export class AccessReviewComponent implements OnInit {
     this.getEmployeeList();
     this.getUser();
     this.getProgressBarCounter();
+    this.getOffset();
+  }
+  scrollToLast() {
+    console.log("OFFSET IS : " + this.scrollOffset);
+    this.viewport.scrollToOffset(this.scrollOffset, "smooth");
   }
 
   permitRight(): void {
     this.userService.increaseCounter();
     this.userService.increaseProgress();
+    //update ProgressBar and refresh variable
     this.progressBar.updateProgressBar();
     this.getProgressBarCounter();
     //this.checkIfRightsGrantedCorrect();
   }
-  checkForGamification() {
-    this.checkForGamification;
+  setOffset(offset: number) {
+    this.userService.setScrollOffset(offset);
   }
+  getOffset() {
+    this.scrollOffset = this.userService.getScrollOffset();
+  }
+
   checkIfRightsGrantedCorrect() {
     var correct = 0;
     var incorrect = 0;
-    var i: Number;
+    var i: number;
     console.log("$$$$$$$$$$$$$$ TESTING ALL EMPLOYEES UNTIL NOW $$$$$$$$$");
     for (let employee of this.employeeList) {
       if (employee.beenChecked == true) {

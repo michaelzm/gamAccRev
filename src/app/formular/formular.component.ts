@@ -5,6 +5,7 @@ import { Formular } from "./formular";
 import { endTimeRange } from "@angular/core/src/profile/wtf_impl";
 import { UserService } from "../user/user.service";
 import { firstpart, secondpart } from "./parts";
+import { Competitor } from "../ranking/competitor";
 @Component({
   selector: "app-formular",
   templateUrl: "./formular.component.html",
@@ -15,8 +16,14 @@ export class FormularComponent implements OnInit {
   firstPart = firstpart;
   secondPart = secondpart;
 
+  userName: string;
+  userLevel: number;
+  userCoutner: number;
+
   hasbeenSubmitted = false;
   submitFormular: Formular;
+  rankingFormular: Competitor;
+
   rating1: number;
   rating2: number;
   rating3: number;
@@ -45,6 +52,13 @@ export class FormularComponent implements OnInit {
       console.log("error occured, slider not registered");
     }
   }
+  submitRanking() {
+    this.rankingFormular = new Competitor();
+    this.rankingFormular.user_lastName = this.userName = this.userSerice.getUserLName();
+    this.rankingFormular.userLevel = this.userLevel = this.userSerice.getUserLevel();
+    this.rankingFormular.user_counter = this.userCoutner = this.userSerice.getUserCounter();
+    this.config.postRanking(this.rankingFormular).subscribe();
+  }
 
   ngOnInit() {}
   onSubmitEvaluation() {
@@ -53,10 +67,10 @@ export class FormularComponent implements OnInit {
       this.submitFormular = new Formular();
       this.submitFormular.name = this.userSerice.getUserLName();
       this.submitFormular.reviewCount = this.userSerice.getUserCounter();
-      this.submitFormular.rating1 = this.rating1;
-      this.submitFormular.rating2 = this.rating2;
-      this.submitFormular.rating3 = this.rating3;
-      this.submitFormular.rating4 = this.rating4;
+      this.submitFormular.rating1 = this.rating1 || 0;
+      this.submitFormular.rating2 = this.rating2 || 0;
+      this.submitFormular.rating3 = this.rating3 || 0;
+      this.submitFormular.rating4 = this.rating4 || 0;
       console.log(this.submitFormular);
       this.config.postConfig(this.submitFormular).subscribe();
       this.hasbeenSubmitted = true;

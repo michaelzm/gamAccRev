@@ -2,7 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Formular } from "../formular/formular";
 import { HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
 import { environment } from "../../environments/environment";
+import { catchError, map, tap } from "rxjs/operators";
+import { Competitor } from "../ranking/competitor";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,12 +18,32 @@ const httpOptions = {
 })
 export class ConfigService {
   configUrl = "https://urserver.herokuapp.com/formular";
+  rankingUrl = "https://urserver.herokuapp.com/ranking";
+
   constructor(private http: HttpClient) {}
 
+  private extractData(res: Response) {
+    let body = res.json();
+    return body;
+  }
+  private handleErrorObservable(error: Response | any) {
+    console.error(error.message || error);
+    return Observable.throw(error.message || error);
+  }
   getConfig() {
     return this.http.get(this.configUrl);
   }
-
+  //fetch renkings from the server
+  getRanking(): Observable<Competitor[]> {
+    return this.http
+      .get<Competitor[]>(this.rankingUrl)
+      .pipe(tap(_ => console.log("fetched rankings")));
+  }
+  postRanking(data: Competitor) {
+    console.log("posting ...");
+    console.log(data);
+    return this.http.post(this.rankingUrl, data, httpOptions);
+  }
   postConfig(data: Formular) {
     return this.http.post(this.configUrl, data, httpOptions);
   }

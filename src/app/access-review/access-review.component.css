@@ -4,6 +4,12 @@
 .goToForm {
   float: right;
 }
+.reviewlist {
+  background-color: #f2f7ff;
+}
+.gotolast {
+  text-align: right;
+}
 
 /*
 .top {
