@@ -20,43 +20,44 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Gamification:
 
-add Bottom Sheet for level up [done]
+- [x] add Bottom Sheet for level up
 
-add Dialog for mission completed
+- [] add Dialog for mission completed
 
 add achievements for completed missions:
 
-    first step add date and time [done]
+- [x] first step add date and time [done]
 
-    add more than reviewed 10, reviewed 20
+- [] add more than reviewed 10, reviewed 20
 
-add badge representing number of completed achievements
+- [] add badge representing number of completed achievements
 
-add logic behind missions, example: user gets 10 points for completing daily mission
+- [] add logic behind missions, example: user gets 10 points for completing daily mission
 
-update level property on level up [done]
+- [x] update level property on level up
 
-add generic profile picture
+- [] add generic profile picture
 
 fix scoreboard:
 
-1 let scoreboard sort desc array of points and names
+- [x] let scoreboard sort desc array of points and name
 
-2 let scoreboard represent actual values from db (http)
+- [x] let scoreboard represent actual values from db (http)
 
-3 add submitted evaluations to the scoreboard
+- [x] add submitted evaluations to the scoreboard
 
-4 profit
 
-Table View:
+ReviewComponent:
 
-add onClick to employee for fast scroll to index
+[x] add onClick to employee for fast scroll to index
+
 Formular:
 
-add indicator whether user reached minimum amount of reviews to qualify for evaluation
+- [] add indicator whether user reached minimum amount of reviews to qualify for evaluation
 
-add landing page (external)
+- [] ~~ add landing page (external)~~
 
-addition: rename login to starting page with some extra informations
+- [] addition: rename login to starting page with some extra informations
+
 
 upcoming idea: make mini game on bottom sheet when level up is reached, so user has the chance to win points by completing the little game (keeps motiviation higher to complete 10 missions)
