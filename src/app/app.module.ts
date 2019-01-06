@@ -20,7 +20,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/gamification-bottom-sheet.component";
 import { DatePipe } from "@angular/common";
-import { RankingComponent } from "./ranking/ranking/ranking.component";
+import { RankingComponent } from "./ranking/ranking.component";
 import { ChallengesComponent } from "./challenges/challenges.component";
 
 @NgModule({
