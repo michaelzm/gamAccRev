@@ -34,12 +34,16 @@ export class ConfigService {
     return this.http.get(this.configUrl);
   }
   //fetch renkings from the server
-  getRanking() {
+  getRanking(): Observable<Competitor[]> {
     return this.http
-      .get(this.rankingUrl)
+      .get<Competitor[]>(this.rankingUrl)
       .pipe(tap(_ => console.log("fetched rankings")));
   }
-
+  postRanking(data: Competitor) {
+    console.log("posting ...");
+    console.log(data);
+    return this.http.post(this.rankingUrl, data, httpOptions);
+  }
   postConfig(data: Formular) {
     return this.http.post(this.configUrl, data, httpOptions);
   }

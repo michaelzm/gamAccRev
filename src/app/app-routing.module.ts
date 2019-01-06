@@ -14,12 +14,12 @@ const routes: Routes = [
     component: AccessReviewComponent
   },
   { path: "dashboard", component: DashboardComponent },
-  { path: "login", component: LoginComponent },
+  { path: "start", component: LoginComponent },
   { path: "table", component: TableComponent },
   { path: "formular", component: FormularComponent },
   { path: "ranking", component: RankingComponent },
   { path: "challenges", component: ChallengesComponent },
-  { path: "", redirectTo: "/login", pathMatch: "full" }
+  { path: "", redirectTo: "/start", pathMatch: "full" }
 ];
 
 @NgModule({
