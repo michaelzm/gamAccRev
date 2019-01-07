@@ -72,7 +72,11 @@ export class RankingComponent implements OnInit {
       "length of array: " + [...this.rankings, ...this.rankingWithUser].length
     );
     var newArray = [...this.rankings, ...this.rankingWithUser].sort((a, b) =>
-      a.userLevel > b.userLevel ? -1 : a.userLevel < b.userLevel ? 1 : 0
+      a.user_counter > b.user_counter
+        ? -1
+        : a.user_counter < b.user_counter
+        ? 1
+        : 0
     );
     console.log(" current position: " + newArray.indexOf(this.newCompetitor));
 
