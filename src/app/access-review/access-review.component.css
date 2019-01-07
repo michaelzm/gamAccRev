@@ -1,16 +1,10 @@
 .cdk-virtual-scroll-viewport {
   height: 800px;
 }
-.goToForm {
+.gotoform {
+  text-align: left;
   float: right;
 }
-.reviewlist {
-  background-color: #f2f7ff;
-}
-.gotolast {
-  text-align: right;
-}
-
 /*
 .top {
   position: relative;

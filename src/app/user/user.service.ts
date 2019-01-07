@@ -50,6 +50,12 @@ export class UserService {
       MOCKUSER.score--;
     }
   }
+  setAccuracy(accuracy: number) {
+    MOCKUSER.accuracy = accuracy;
+  }
+  getAccuracy() {
+    return MOCKUSER.accuracy;
+  }
   getUserLevel(): number {
     return MOCKUSER.userLevel;
   }

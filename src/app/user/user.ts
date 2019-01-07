@@ -7,4 +7,5 @@ export class User {
   public user_progress_counter: number;
   public achievements: string[];
   public scrollOffset: number;
+  public accuracy: number;
 }

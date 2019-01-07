@@ -5,11 +5,19 @@
     value="{{ progressBarCounter * 10 }}"
   ></mat-progress-bar>
 </div>
+<p></p>
 <div class="gotolast">
-  <button mat-button (click)="scrollToLast()">
-    Gehe zum zuletzt bearbeiteten
+  <button mat-button (click)="scrollToLast()">↓ zuletzt bearbeitet</button>
+  <button
+    mat-button
+    (click)="calculateAccuracy()"
+    routerLink="/formular"
+    style="float:right"
+  >
+    → zur Evaluation
   </button>
 </div>
+<mat-divider></mat-divider>
 <div class="reviewlist">
   <cdk-virtual-scroll-viewport itemSize="380">
     <mat-list
@@ -24,13 +32,3 @@
     </mat-list>
   </cdk-virtual-scroll-viewport>
 </div>
-<p></p>
-<button
-  mat-raised-button
-  color="primary"
-  class="goToForm"
-  routerLink="/formular"
-  style="float: right;"
->
-  Weiter zur Evaluation
-</button>
