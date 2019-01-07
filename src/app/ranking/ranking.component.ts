@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, SystemJsNgModuleLoader } from "@angular/core";
 import { Competitor } from "./competitor";
 import { UserService } from "../user/user.service";
 import { ConfigService } from "../config/config.service";
@@ -11,16 +11,17 @@ import { Config } from "protractor";
   styleUrls: ["./ranking.component.css"]
 })
 export class RankingComponent implements OnInit {
-  rankings: Competitor[] = [];
-  rankingWithUser: Competitor[] = [];
+  rankings = [];
+  rankingWithUser = [];
+  newCompetitor: Competitor;
 
   createMutlipleCompetitors() {
     for (var i = 0; i < 10; i++) {
-      var newCompetitor = new Competitor();
-      newCompetitor.userLevel = i;
-      newCompetitor.user_counter = i * 10;
-      newCompetitor.user_lastName = "" + i;
-      this.rankings.push(newCompetitor);
+      this.newCompetitor = new Competitor();
+      this.newCompetitor.userLevel = i;
+      this.newCompetitor.user_counter = i * 10;
+      this.newCompetitor.user_lastName = "" + i;
+      this.rankings.push(this.newCompetitor);
     }
     console.log(this.rankings);
   }
@@ -34,6 +35,7 @@ export class RankingComponent implements OnInit {
     console.log(this.rankings);
     console.log(" an stelle 1: " + this.rankings);
     console.log(this.rankingWithUser);
+    this.findInsideArray();
   }
   constructor(
     private userService: UserService,
@@ -66,9 +68,27 @@ export class RankingComponent implements OnInit {
     console.log("fetched database items");
   }
   mergeRankings() {
-    return [...this.rankings, ...this.rankingWithUser].sort((a, b) =>
+    console.log(
+      "length of array: " + [...this.rankings, ...this.rankingWithUser].length
+    );
+    var newArray = [...this.rankings, ...this.rankingWithUser].sort((a, b) =>
       a.userLevel > b.userLevel ? -1 : a.userLevel < b.userLevel ? 1 : 0
     );
+    console.log(" current position: " + newArray.indexOf(this.newCompetitor));
+
+    console.log(newArray);
+    return newArray;
+  }
+  findInsideArray() {
+    console.log("looking for current user");
+    var lookingInArray = this.mergeRankings();
+    for (var i = 0; i < lookingInArray.length; i++) {
+      if (!lookingInArray[i]._id) {
+        console.log(" found at pos: " + i);
+        console.log("user was not on pos " + i);
+        console.log("user was not on pos " + i);
+      }
+    }
   }
 
   /*
@@ -93,12 +113,13 @@ export class RankingComponent implements OnInit {
     userAsCompetitor.user_counter = this.userService.getUserCounter();
     this.rankings.push(userAsCompetitor);
   }
-  */
+ 
   sortedRankings(): Competitor[] {
     return this.rankings.sort((a, b) =>
       a.userLevel > b.userLevel ? -1 : a.userLevel < b.userLevel ? 1 : 0
     );
   }
+   */
 }
 
 /*
