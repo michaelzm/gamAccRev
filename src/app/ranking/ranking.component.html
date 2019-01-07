@@ -1,10 +1,18 @@
 <mat-list>
-  <mat-list-item *ngFor="let competitor of mergeRankings()">
-    <h3 matLine>
-      Name: {{ competitor.user_lastName }}, Level: {{ competitor.userLevel }}
-    </h3>
+  <mat-list-item> </mat-list-item>
+  <mat-list-item *ngFor="let competitor of mergeRankings(); let i = index">
+    <h3 matLine>Platz {{ i + 1 }}</h3>
+    <p matLine>Name: {{ competitor.user_lastName }}</p>
+
+    <p matLine>Level: {{ competitor.userLevel }}</p>
+
     <p matLine>
       <span> durchgeführte Reviews: {{ competitor.user_counter }} </span>
     </p>
+    <p matLine></p>
+    <img *ngIf="i == 0" img src="assets/medal1.png" />
+    <img *ngIf="i == 1" img src="assets/medal2.png" />
+    <img *ngIf="i == 2" img src="assets/medal3.png" />
+    <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>
