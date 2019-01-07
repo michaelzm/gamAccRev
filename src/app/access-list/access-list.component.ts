@@ -11,7 +11,9 @@ import { GamificationTrackerService } from "../gamification-tracker.service";
 })
 export class AccessListComponent implements OnInit {
   @Input() employeeToAlterRights: Employee;
-  typesOfRights: string[] = [
+  typesOfRights: string[] = [];
+
+  typesOfRightsOld: string[] = [
     "ERP-System",
     "Kalender",
     "Quellcode Softwareprojekte",
@@ -21,7 +23,26 @@ export class AccessListComponent implements OnInit {
     private accessReviewComponent: AccessReviewComponent,
     public gamificationTracker: GamificationTrackerService
   ) {}
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.shuffleArray();
+  }
+
+  //fisher yates shuffle
+  shuffleArray() {
+    this.typesOfRightsOld;
+    for (let i = 0; i < this.typesOfRightsOld.length; i++) {
+      const randomIndex = Math.floor(
+        Math.random() * this.typesOfRightsOld.length
+      );
+      [this.typesOfRightsOld[i], this.typesOfRightsOld[randomIndex]] = [
+        this.typesOfRightsOld[randomIndex],
+        this.typesOfRightsOld[i]
+      ];
+    }
+    console.log(" SHUFFELING" + this.typesOfRightsOld);
+    this.typesOfRights = this.typesOfRightsOld;
+  }
 
   checkIfSelected(hasToGetChecked) {
     switch (hasToGetChecked) {
