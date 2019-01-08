@@ -79,6 +79,7 @@ export class AccessReviewComponent implements OnInit {
   }
   setOffset(offset: number) {
     this.userService.setScrollOffset(offset);
+    this.scrollOffset = offset;
   }
   getOffset() {
     this.scrollOffset = this.userService.getScrollOffset();
@@ -96,8 +97,8 @@ export class AccessReviewComponent implements OnInit {
           case "Werkstudent": {
             if (
               employee.accessRights.hasCal &&
-              employee.accessRights.hasExcel &&
-              !employee.accessRights.hasErp &&
+              employee.accessRights.hasErp &&
+              !employee.accessRights.hasExcel &&
               !employee.accessRights.hasCode
             ) {
               i++;
@@ -132,9 +133,9 @@ export class AccessReviewComponent implements OnInit {
           case "Festangestellt Entwicklung": {
             if (
               employee.accessRights.hasCal &&
-              !employee.accessRights.hasErp &&
+              employee.accessRights.hasErp &&
               employee.accessRights.hasCode &&
-              employee.accessRights.hasExcel
+              !employee.accessRights.hasExcel
             ) {
               i++;
               correct++;
