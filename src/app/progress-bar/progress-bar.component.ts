@@ -18,7 +18,7 @@ export class ProgressBarComponent implements OnInit {
     console.log(this.progressCounter);
   }
   updateProgressBar() {
-    console.log("you need to remove me (progressbarcomponent)");
+    console.log("updated the progressbar");
     this.getCounter();
   }
   ngOnInit() {

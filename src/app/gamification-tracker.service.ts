@@ -33,12 +33,14 @@ export class GamificationTrackerService {
     console.log("Check for Gamification");
     this.checkForThreeReviews();
     this.checkIfXPBarFull();
+    /*
     console.log(
       "current Score = " +
         this.userService.getUserScore() +
         " and current reviewCounter = " +
         this.userService.getUserCounter()
     );
+    */
   }
   //shows popup if fulfilled
   checkForThreeReviews() {

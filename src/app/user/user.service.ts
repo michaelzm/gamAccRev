@@ -23,9 +23,6 @@ export class UserService {
     MOCKUSER.user_progress_counter = setTo;
   }
   getProgressBarCounter() {
-    console.log(
-      "USERSERVICE PROGRESS COUNTER = " + MOCKUSER.user_progress_counter
-    );
     return MOCKUSER.user_progress_counter;
   }
   increaseProgress() {
@@ -84,5 +81,13 @@ export class UserService {
   }
   getUserAuthorized() {
     return MOCKUSER.evaluationDisabled;
+  }
+  setRanking(newRank: number) {
+    console.log("called setRanking on user.Service with value: " + newRank);
+    MOCKUSER.ranking = newRank;
+  }
+  getRanking() {
+    console.log("called getRanking on user.Service value: " + MOCKUSER.ranking);
+    return MOCKUSER.ranking;
   }
 }

@@ -40,7 +40,7 @@ export class AccessListComponent implements OnInit {
         this.typesOfRightsOld[i]
       ];
     }
-    console.log(" SHUFFELING" + this.typesOfRightsOld);
+    console.log("shuffeling the currently displayed access rights");
     this.typesOfRights = this.typesOfRightsOld;
   }
 
@@ -73,8 +73,8 @@ export class AccessListComponent implements OnInit {
   */
   changeAccessRights(selectedOptions): void {
     this.wipeEmployeeRights();
-    console.log(selectedOptions);
-    console.log(this.employeeToAlterRights.beenChecked);
+    //console.log(selectedOptions);
+    //console.log(this.employeeToAlterRights.beenChecked);
     for (var _i = 0; _i < selectedOptions.length; _i++) {
       switch (selectedOptions[_i].value) {
         case "ERP-System": {
@@ -95,11 +95,12 @@ export class AccessListComponent implements OnInit {
         }
       }
     }
-    console.log(selectedOptions.length);
+    //console.log(selectedOptions.length);
     if (this.employeeToAlterRights.beenChecked == false) {
       this.accessReviewComponent.permitRight();
       console.log(
-        "OFFSET: " + this.accessReviewComponent.viewport.measureScrollOffset()
+        "The Offset to scroll to is now: " +
+          this.accessReviewComponent.viewport.measureScrollOffset()
       );
       this.accessReviewComponent.setOffset(
         this.accessReviewComponent.viewport.measureScrollOffset()
@@ -111,8 +112,10 @@ export class AccessListComponent implements OnInit {
   }
   //has to get called in this component to take effect immediatly without refresh
   checkIfAuthorized() {
-    if (this.gamificationTracker.checkIfAuthorizedForEvaluation()) {
-      this.accessReviewComponent.buttonDisabled = false;
+    if (this.accessReviewComponent.buttonDisabled) {
+      if (this.gamificationTracker.checkIfAuthorizedForEvaluation()) {
+        this.accessReviewComponent.buttonDisabled = false;
+      }
     }
   }
 
