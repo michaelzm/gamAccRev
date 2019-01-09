@@ -3,7 +3,7 @@ import { MatBottomSheetRef } from "@angular/material";
 
 @Component({
   selector: "app-gamification-bottom-sheet",
-  templateUrl: "./gamification-bottom-sheet.component.html",
+  template: "<div class = 'levelup'> <h2>🎉Neues Level erreicht!🎉</h2></div>",
   styleUrls: ["./gamification-bottom-sheet.component.css"]
 })
 export class GamificationBottomSheetComponent implements OnInit {
