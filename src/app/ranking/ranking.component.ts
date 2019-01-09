@@ -1,9 +1,7 @@
-import { Component, OnInit, SystemJsNgModuleLoader } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Competitor } from "./competitor";
 import { UserService } from "../user/user.service";
 import { ConfigService } from "../config/config.service";
-import { Formular } from "../formular/formular";
-import { Config } from "protractor";
 
 @Component({
   selector: "app-ranking",
@@ -11,9 +9,12 @@ import { Config } from "protractor";
   styleUrls: ["./ranking.component.css"]
 })
 export class RankingComponent implements OnInit {
-  rankings = [];
+  rankings: Competitor[] = [];
   rankingWithUser = [];
   newCompetitor: Competitor;
+  currentRanking: number;
+  previousRanking: number;
+  showMessage: boolean;
 
   createMutlipleCompetitors() {
     for (var i = 0; i < 10; i++) {
@@ -27,15 +28,8 @@ export class RankingComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(" 0 " + this.rankings);
     this.addUserToRanking();
     this.getRanking();
-
-    console.log(" 1 " + this.rankings);
-    console.log(this.rankings);
-    console.log(" an stelle 1: " + this.rankings);
-    console.log(this.rankingWithUser);
-    this.findInsideArray();
   }
   constructor(
     private userService: UserService,
@@ -43,17 +37,30 @@ export class RankingComponent implements OnInit {
   ) {}
 
   addUserToRanking() {
-    console.log("adding user to rankinglist");
+    console.log("creating newCompetitor out of service data");
     var userAsCompetitor = new Competitor();
     userAsCompetitor.userLevel = this.userService.getUserLevel();
     userAsCompetitor.user_lastName = this.userService.getUserLName();
     userAsCompetitor.user_counter = this.userService.getUserCounter();
-    console.log(userAsCompetitor);
-    this.rankingWithUser.push(userAsCompetitor);
+    this.newCompetitor = userAsCompetitor;
   }
 
   getRanking() {
-    this.configService.getRanking().subscribe(data => (this.rankings = data));
+    this.configService
+      .getRanking()
+      .subscribe(
+        data => (
+          (this.rankings = data),
+          this.rankings.push(this.newCompetitor),
+          (this.rankings = this.sortArray(this.rankings)),
+          this.getCurrentUserPos(this.rankings)
+        )
+      );
+    console.log(
+      "fetched some more rankings in getRanking() method so now array looks like " +
+        this.rankings +
+        "....end"
+    );
 
     /*
         for (var i = 0; i < this.fetchedRankings.length; i++) {
@@ -65,33 +72,70 @@ export class RankingComponent implements OnInit {
           console.log("current database items: " + this.fetchedRankings.length);
         }
         */
-    console.log("fetched database items");
+    console.log("fetched database items done.");
   }
+  /*
   mergeRankings() {
     console.log(
       "length of array: " + [...this.rankings, ...this.rankingWithUser].length
     );
     var newArray = [...this.rankings, ...this.rankingWithUser].sort((a, b) =>
-      a.userLevel > b.userLevel ? -1 : a.userLevel < b.userLevel ? 1 : 0
+      a.user_counter > b.user_counter
+        ? -1
+        : a.user_counter < b.user_counter
+        ? 1
+        : 0
     );
     console.log(" current position: " + newArray.indexOf(this.newCompetitor));
 
     console.log(newArray);
     return newArray;
   }
-  findInsideArray() {
-    console.log("looking for current user");
-    var lookingInArray = this.mergeRankings();
-    for (var i = 0; i < lookingInArray.length; i++) {
-      if (!lookingInArray[i]._id) {
-        console.log(" found at pos: " + i);
-        console.log("user was not on pos " + i);
-        console.log("user was not on pos " + i);
+  */
+  sortArray(rankingArray: Competitor[]) {
+    return rankingArray.sort((a, b) =>
+      a.user_counter > b.user_counter
+        ? -1
+        : a.user_counter < b.user_counter
+        ? 1
+        : 0
+    );
+  }
+  getCurrentUserPos(rankingArray: Competitor[]) {
+    this.previousRanking = this.userService.getRanking();
+    for (var j = 0; j < rankingArray.length; j++) {
+      if (
+        rankingArray[j].user_lastName == this.userService.getUserLName() &&
+        rankingArray[j].user_counter == this.userService.getUserCounter()
+      ) {
+        console.log("the user is currently at position " + j);
+        this.currentRanking = j;
       }
     }
+    this.userService.setRanking(this.currentRanking);
+    this.displayRankUpdate();
   }
+  displayRankUpdate() {
+    console.log(
+      "current rank: " +
+        this.currentRanking +
+        " previous Rank: " +
+        this.previousRanking
+    );
+    if (
+      this.currentRanking != this.previousRanking &&
+      this.currentRanking < this.previousRanking
+    ) {
+      this.showMessage = true;
+      console.log("message should be displayed");
+    } else {
+      this.showMessage = false;
+      console.log("message should NOT be displayed");
+    }
+  }
+}
 
-  /*
+/*
   getRanking() {
     var newCompetitor = new Competitor();
     this.configService.getConfig().subscribe(data: Response => {
@@ -120,7 +164,6 @@ export class RankingComponent implements OnInit {
     );
   }
    */
-}
 
 /*
 const EMPLOYEES: Employee[] = [];

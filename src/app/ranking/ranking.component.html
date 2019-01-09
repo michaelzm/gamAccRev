@@ -1,7 +1,15 @@
 <mat-list>
-  <mat-list-item> </mat-list-item>
-  <mat-list-item *ngFor="let competitor of mergeRankings(); let i = index">
-    <h3 matLine>Platz {{ i + 1 }}</h3>
+  <mat-list-item> <h1>Rangliste</h1> </mat-list-item>
+  <mat-list-item>
+    Die Mitarbeiter mit den meisten durchgeführten Reviews erhalten zum Ende
+    jeden Monats einen Preis.
+  </mat-list-item>
+  <mat-list-item *ngIf="showMessage"
+    >Du hast dich von Rang {{ previousRanking + 1 }} auf
+    {{ currentRanking + 1 }} verbessert!</mat-list-item
+  >
+  <mat-list-item *ngFor="let competitor of rankings; let ind = index">
+    <h3 matLine>Platz {{ ind + 1 }}</h3>
     <p matLine>Name: {{ competitor.user_lastName }}</p>
 
     <p matLine>Level: {{ competitor.userLevel }}</p>
@@ -10,9 +18,9 @@
       <span> durchgeführte Reviews: {{ competitor.user_counter }} </span>
     </p>
     <p matLine></p>
-    <img *ngIf="i == 0" img src="assets/medal1.png" />
-    <img *ngIf="i == 1" img src="assets/medal2.png" />
-    <img *ngIf="i == 2" img src="assets/medal3.png" />
+    <img *ngIf="ind == 0" img src="assets/medal1.png" />
+    <img *ngIf="ind == 1" img src="assets/medal2.png" />
+    <img *ngIf="ind == 2" img src="assets/medal3.png" />
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>

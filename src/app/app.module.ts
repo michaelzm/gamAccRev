@@ -22,6 +22,7 @@ import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/ga
 import { DatePipe } from "@angular/common";
 import { RankingComponent } from "./ranking/ranking.component";
 import { ChallengesComponent } from "./challenges/challenges.component";
+import { FinishedBottomSheetComponent } from "./finished-bottom-sheet/finished-bottom-sheet.component";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ChallengesComponent } from "./challenges/challenges.component";
     GreetingComponent,
     GamificationBottomSheetComponent,
     RankingComponent,
-    ChallengesComponent
+    ChallengesComponent,
+    FinishedBottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,10 @@ import { ChallengesComponent } from "./challenges/challenges.component";
     HttpClientModule,
     ScrollingModule
   ],
-  entryComponents: [GamificationBottomSheetComponent],
+  entryComponents: [
+    GamificationBottomSheetComponent,
+    FinishedBottomSheetComponent
+  ],
   providers: [
     AccessReviewComponent,
     ProgressBarComponent,

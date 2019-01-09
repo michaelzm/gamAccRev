@@ -23,9 +23,6 @@ export class UserService {
     MOCKUSER.user_progress_counter = setTo;
   }
   getProgressBarCounter() {
-    console.log(
-      "USERSERVICE PROGRESS COUNTER = " + MOCKUSER.user_progress_counter
-    );
     return MOCKUSER.user_progress_counter;
   }
   increaseProgress() {
@@ -50,6 +47,12 @@ export class UserService {
       MOCKUSER.score--;
     }
   }
+  setAccuracy(accuracy: number) {
+    MOCKUSER.accuracy = accuracy;
+  }
+  getAccuracy() {
+    return MOCKUSER.accuracy;
+  }
   getUserLevel(): number {
     return MOCKUSER.userLevel;
   }
@@ -72,5 +75,19 @@ export class UserService {
   }
   setScrollOffset(offset: number) {
     MOCKUSER.scrollOffset = offset;
+  }
+  setUserAuthorized() {
+    MOCKUSER.evaluationDisabled = false;
+  }
+  getUserAuthorized() {
+    return MOCKUSER.evaluationDisabled;
+  }
+  setRanking(newRank: number) {
+    console.log("called setRanking on user.Service with value: " + newRank);
+    MOCKUSER.ranking = newRank;
+  }
+  getRanking() {
+    console.log("called getRanking on user.Service value: " + MOCKUSER.ranking);
+    return MOCKUSER.ranking;
   }
 }

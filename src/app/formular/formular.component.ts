@@ -73,6 +73,7 @@ export class FormularComponent implements OnInit {
       this.submitFormular.rating4 = this.rating4 || 0;
       console.log(this.submitFormular);
       this.config.postConfig(this.submitFormular).subscribe();
+      this.submitRanking();
       this.hasbeenSubmitted = true;
     }
   }

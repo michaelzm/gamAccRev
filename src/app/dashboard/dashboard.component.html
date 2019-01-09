@@ -1,19 +1,24 @@
-<div class="profile">
-  <div class="picture">
-    <img src="{{ imagePath }}" width="200" height="80" />
-  </div>
-  <div class="list">
-    <mat-list>
-      <mat-list-item> {{ dashboardUserName }} </mat-list-item>
+<div class="dashboard">
+  <div class="profile">
+    <div class="picture">
+      <img src="{{ imagePath }}" width="200" height="80" />
+    </div>
+    <div class="list">
+      <mat-list>
+        <mat-list-item> {{ dashboardUserName }} </mat-list-item>
 
-      <mat-list-item> Level {{ dashboardUserLevel }} </mat-list-item>
-    </mat-list>
+        <mat-list-item> Level {{ dashboardUserLevel }} </mat-list-item>
+        <mat-list-item>
+          Anzahl durchgeführter Reviews: {{ dashboardCounter }}
+        </mat-list-item>
+      </mat-list>
+    </div>
   </div>
-</div>
-<div class="scoreboard">
-  <h2>Erfolge</h2>
-  <mat-list *ngFor="let achievement of achievementList">
-    <mat-list-item>{{ achievement }}</mat-list-item>
-  </mat-list>
-  <mat-divider></mat-divider>
+  <div class="scoreboard">
+    <h2>Erfolge</h2>
+    <mat-list *ngFor="let achievement of achievementList">
+      <mat-list-item>{{ achievement }}</mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+  </div>
 </div>

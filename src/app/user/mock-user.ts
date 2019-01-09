@@ -9,5 +9,7 @@ MOCKUSER.userLevel = 1;
 MOCKUSER.user_progress_counter = 0;
 MOCKUSER.achievements = [];
 MOCKUSER.scrollOffset = 0;
-
+MOCKUSER.accuracy = -1;
+MOCKUSER.evaluationDisabled = true;
+MOCKUSER.ranking = 0;
 export { MOCKUSER };
