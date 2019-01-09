@@ -8,4 +8,5 @@ export class User {
   public achievements: string[];
   public scrollOffset: number;
   public accuracy: number;
+  public evaluationDisabled: boolean;
 }

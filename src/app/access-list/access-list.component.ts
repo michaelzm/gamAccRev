@@ -104,8 +104,15 @@ export class AccessListComponent implements OnInit {
       this.accessReviewComponent.setOffset(
         this.accessReviewComponent.viewport.measureScrollOffset()
       );
-      this.employeeToAlterRights.beenChecked = true;
+      //this.accessReviewComponent.buttonDisabled = false;
       this.gamificationTracker.checkForGamificationPopup();
+      this.checkIfAuthorized();
+    }
+  }
+  //has to get called in this component to take effect immediatly without refresh
+  checkIfAuthorized() {
+    if (this.gamificationTracker.checkIfAuthorizedForEvaluation()) {
+      this.accessReviewComponent.buttonDisabled = false;
     }
   }
 

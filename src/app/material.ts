@@ -17,6 +17,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { MatBadgeModule } from "@angular/material/badge";
+import { MatDialogModule } from "@angular/material/dialog";
 
 import { NgModule } from "@angular/core";
 
@@ -38,7 +39,8 @@ import { NgModule } from "@angular/core";
     MatToolbarModule,
     MatSliderModule,
     MatBottomSheetModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -57,7 +59,8 @@ import { NgModule } from "@angular/core";
     MatToolbarModule,
     MatSliderModule,
     MatBottomSheetModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {}

@@ -79,4 +79,10 @@ export class UserService {
   setScrollOffset(offset: number) {
     MOCKUSER.scrollOffset = offset;
   }
+  setUserAuthorized() {
+    MOCKUSER.evaluationDisabled = false;
+  }
+  getUserAuthorized() {
+    return MOCKUSER.evaluationDisabled;
+  }
 }

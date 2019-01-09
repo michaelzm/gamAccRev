@@ -9,7 +9,7 @@ import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
 import { MatBottomSheet } from "@angular/material";
 import { GamificationBottomSheetComponent } from "../gamification-bottom-sheet/gamification-bottom-sheet.component";
-
+import { FinishedBottomSheetComponent } from "../finished-bottom-sheet/finished-bottom-sheet.component";
 @Component({
   selector: "app-access-review",
   templateUrl: "./access-review.component.html",
@@ -23,7 +23,7 @@ export class AccessReviewComponent implements OnInit {
   employeeList: Employee[];
   currentUser: User;
   progressBarCounter: number;
-
+  buttonDisabled = this.userService.getUserAuthorized();
   constructor(
     private bottomSheet: MatBottomSheet,
     private progressBar: ProgressBarComponent,
@@ -41,12 +41,22 @@ export class AccessReviewComponent implements OnInit {
   openBottomSheet() {
     this.bottomSheet.open(GamificationBottomSheetComponent);
   }
+  openBottomSheetAuthorized() {
+    this.buttonDisabled = false;
+    this.bottomSheet.open(FinishedBottomSheetComponent);
+  }
   getEmployeeList(): void {
     this.employeeService
       .getEmployees()
       .subscribe(employeeList => (this.employeeList = employeeList));
 
     console.log(this.employeeList.length);
+  }
+
+  isButtonDisabled() {
+    console.log("isButtonDisabled CALLED");
+    return this.buttonDisabled;
+    //this.userService.getUserAuthorized();
   }
   getUser(): void {
     this.currentUser = this.userService.getUser();
@@ -59,6 +69,7 @@ export class AccessReviewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isButtonDisabled();
     this.getEmployeeList();
     this.getUser();
     this.getProgressBarCounter();

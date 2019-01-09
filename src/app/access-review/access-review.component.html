@@ -6,17 +6,17 @@
   ></mat-progress-bar>
 </div>
 <p></p>
-<div class="gotolast">
-  <button mat-button (click)="scrollToLast()">↓ zuletzt bearbeitet</button>
-  <button
-    mat-button
-    (click)="calculateAccuracy()"
-    routerLink="/formular"
-    style="float:right"
-  >
-    → zur Evaluation
-  </button>
-</div>
+<div class="gotolast"></div>
+<button mat-button (click)="scrollToLast()">↓ zuletzt bearbeitet</button>
+<button
+  mat-button
+  [disabled]="buttonDisabled"
+  (click)="calculateAccuracy()"
+  routerLink="/formular"
+  style="float:right"
+>
+  → zur Evaluation
+</button>
 <mat-divider></mat-divider>
 <div class="reviewlist">
   <cdk-virtual-scroll-viewport itemSize="380">
@@ -32,3 +32,5 @@
     </mat-list>
   </cdk-virtual-scroll-viewport>
 </div>
+
+Í

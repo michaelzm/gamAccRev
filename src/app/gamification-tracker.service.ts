@@ -28,7 +28,7 @@ export class GamificationTrackerService {
     private userService: UserService,
     private accessReview: AccessReviewComponent
   ) {}
-
+  // "main"method which includes checking every possible popup
   checkForGamificationPopup() {
     console.log("Check for Gamification");
     this.checkForThreeReviews();
@@ -40,6 +40,7 @@ export class GamificationTrackerService {
         this.userService.getUserCounter()
     );
   }
+  //shows popup if fulfilled
   checkForThreeReviews() {
     var arrayPos = Math.floor(Math.random() * this.emojiArray.length);
     var emojiSymbol = this.emojiArray[arrayPos];
@@ -48,6 +49,17 @@ export class GamificationTrackerService {
         emojiSymbol + " Erfolgreich 3 Berechtigungen geprüft"
       );
     }
+  }
+  //sets button to enabled to be clickable by user
+  checkIfAuthorizedForEvaluation() {
+    console.log("check if authorized");
+    if (this.userService.getUserCounter() == 2) {
+      this.accessReview.buttonDisabled = false;
+      this.accessReview.openBottomSheetAuthorized();
+      this.userService.setUserAuthorized();
+      return true;
+    }
+    return false;
   }
 
   //xpbar full means level up
@@ -59,6 +71,7 @@ export class GamificationTrackerService {
       this.addAchievement("level");
     }
   }
+  //not in use atm
   checkIfMissionCompleted() {
     if (this.userService.getUserCounter() == 10) {
       this.openGamificationBar(
@@ -67,6 +80,7 @@ export class GamificationTrackerService {
       this.addAchievement("mission");
     }
   }
+  //adds achievement to user profile
   addAchievement(type: string) {
     var newAchievementText: string;
     var counter: number;
