@@ -9,4 +9,5 @@ export class User {
   public scrollOffset: number;
   public accuracy: number;
   public evaluationDisabled: boolean;
+  public ranking: number;
 }

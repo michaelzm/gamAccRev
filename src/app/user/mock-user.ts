@@ -11,5 +11,5 @@ MOCKUSER.achievements = [];
 MOCKUSER.scrollOffset = 0;
 MOCKUSER.accuracy = -1;
 MOCKUSER.evaluationDisabled = true;
-
+MOCKUSER.ranking = 0;
 export { MOCKUSER };
