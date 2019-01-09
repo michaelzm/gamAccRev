@@ -58,7 +58,7 @@ function pushNameToList() {
   for (var _i = 0; _i < 100; _i++) {
     var lnIndex = Math.floor(Math.random() * 19);
     var fnIndex = Math.floor(Math.random() * 14);
-    var posIndex = Math.floor(Math.random() * 3);
+    var posIndex = Math.floor(Math.random() * 4);
     const newEmployee = new Employee();
     newEmployee.lastName = lastName[lnIndex];
     newEmployee.firstName = firstName[fnIndex];
