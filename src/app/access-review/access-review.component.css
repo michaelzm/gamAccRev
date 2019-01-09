@@ -5,6 +5,9 @@
   text-align: left;
   float: right;
 }
+.reviewlist {
+  margin-left: 20px;
+}
 /*
 .top {
   position: relative;

@@ -4,5 +4,9 @@
 .greetingText {
   margin-left: 20px;
   text-align: justify;
-  max-width: 500px;
+  max-width: 750px;
+  margin-right: 20px;
+}
+.mat-form-field {
+  margin-left: 20px;
 }
