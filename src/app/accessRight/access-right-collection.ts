@@ -1,5 +1,3 @@
-import { AccessRight } from "./access-right";
-
 export class AccessRightCollection {
   erp: string;
   excel: string;
