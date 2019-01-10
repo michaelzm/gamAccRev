@@ -23,6 +23,7 @@ import { DatePipe } from "@angular/common";
 import { RankingComponent } from "./ranking/ranking.component";
 import { ChallengesComponent } from "./challenges/challenges.component";
 import { FinishedBottomSheetComponent } from "./finished-bottom-sheet/finished-bottom-sheet.component";
+import { MatSelectModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FinishedBottomSheetComponent } from "./finished-bottom-sheet/finished-b
     FinishedBottomSheetComponent
   ],
   imports: [
+    MatSelectModule,
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
