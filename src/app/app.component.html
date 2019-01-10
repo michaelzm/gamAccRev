@@ -9,19 +9,25 @@
   </mat-menu>
   <button
     mat-button
-    [matMenuTriggerFor]="menu2"
     [matBadge]="badge"
     (click)="resetBadge()"
     matBadgePosition="after"
     matBadgeHidden="{{ isHidden }}"
     matBadgeColor="accent"
+    routerLink="/dashboard"
   >
-    Dashboard
+    Profil
   </button>
-  <mat-menu #menu2="matMenu">
-    <button mat-button routerLink="/dashboard">Mein Profil</button>
-    <button mat-button routerLink="/ranking">Rangliste</button>
-  </mat-menu>
+  <button
+    mat-button
+    [matBadge]="badge2"
+    (click)="resetBadge2()"
+    matBadgePosition="after"
+    matBadgeHidden="{{ isHidden2 }}"
+    matBadgeColor="accent"
+    routerLink="/ranking"
+  >
+    Rangliste
+  </button>
 </mat-toolbar>
-
 <div class="bottom"><router-outlet></router-outlet></div>
