@@ -18,6 +18,7 @@ import { MatSliderModule } from "@angular/material/slider";
 import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatRadioModule } from "@angular/material/radio";
 
 import { NgModule } from "@angular/core";
 
@@ -40,7 +41,8 @@ import { NgModule } from "@angular/core";
     MatSliderModule,
     MatBottomSheetModule,
     MatBadgeModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule
   ],
   exports: [
     MatButtonModule,
@@ -60,7 +62,8 @@ import { NgModule } from "@angular/core";
     MatSliderModule,
     MatBottomSheetModule,
     MatBadgeModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule {}

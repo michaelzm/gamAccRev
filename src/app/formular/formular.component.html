@@ -1,10 +1,31 @@
 <div class="formular">
+  <div class="demographicData"><h2>Daten zur Person</h2></div>
+  <p>
+    Bitte wähle hier dein Alter und Geschlecht, damit wir die Studie besser
+    auswerten können.
+  </p>
+  <mat-form-field>
+    <mat-select placeholder="Alter">
+      <mat-option value="18-24">18-24</mat-option>
+      <mat-option value="25-34">25-34</mat-option>
+      <mat-option value="35-44">35-44</mat-option>
+      <mat-option value="45-54">45-54</mat-option>
+      <mat-option value="55">55 und älter</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p></p>
+  <mat-radio-group>
+    <mat-radio-button value="1">mänlich</mat-radio-button>
+    <p></p>
+    <mat-radio-button value="2">weiblich</mat-radio-button>
+  </mat-radio-group>
   <div class="firstpart">
     <h2>Praktischer Teil der Evaluation</h2>
     <p>{{ firstPart }}</p>
   </div>
   <mat-list>
     <mat-list-item> Geschlecht </mat-list-item>
+
     <mat-list-item> Einfluss von Faktor X </mat-list-item>
     <mat-list-item>
       <mat-slider

@@ -1,5 +1,6 @@
 <mat-list>
-  <mat-list-item> <h1>Rangliste</h1> </mat-list-item>
+  <mat-list-item> <h1>Monatliche Rangliste</h1> </mat-list-item>
+  <br />
   <mat-list-item>
     Die Mitarbeiter mit den meisten durchgeführten Reviews erhalten zum Ende
     jeden Monats einen Preis.
@@ -15,7 +16,7 @@
     <p matLine>Level: {{ competitor.userLevel }}</p>
 
     <p matLine>
-      <span> durchgeführte Reviews: {{ competitor.user_counter }} </span>
+      <span> Reviews: {{ competitor.user_counter }} </span>
     </p>
     <p matLine></p>
     <img *ngIf="ind == 0" img src="assets/medal1.png" />

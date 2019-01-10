@@ -1,24 +1,43 @@
 <div class="dashboard">
   <div class="profile">
     <div class="picture">
-      <img src="{{ imagePath }}" width="200" height="80" />
+      <img src="{{ imagePath }}" width="150" height="150" />
     </div>
     <div class="list">
       <mat-list>
-        <mat-list-item> {{ dashboardUserName }} </mat-list-item>
-
         <mat-list-item> Level {{ dashboardUserLevel }} </mat-list-item>
+        <mat-list-item> {{ dashboardUserName }} </mat-list-item>
         <mat-list-item>
-          Anzahl durchgeführter Reviews: {{ dashboardCounter }}
+          heute durchgeführte Reviews: {{ dashboardCounter }}
         </mat-list-item>
       </mat-list>
     </div>
-  </div>
-  <div class="scoreboard">
-    <h2>Erfolge</h2>
-    <mat-list *ngFor="let achievement of achievementList">
-      <mat-list-item>{{ achievement }}</mat-list-item>
-    </mat-list>
-    <mat-divider></mat-divider>
+    <br />
+    <div class="missions">
+      <h2>Herausforderungen</h2>
+      <mat-list>
+        <mat-list-item> <h3>tägliche Herausforderungen</h3></mat-list-item>
+        <mat-list-item
+          >Führe 30 Ūberprüfungen durch
+          <button>Belohnung abholen</button></mat-list-item
+        >
+        <mat-list-item>Belohnung: Gutschein fūr die Cafete</mat-list-item>
+      </mat-list>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item> <h3>wöchentliche Herausforderungen</h3></mat-list-item>
+        <mat-list-item
+          >Führe 100 Ūberprüfungen durch
+          <button>Belohnung abholen</button></mat-list-item
+        >
+      </mat-list>
+    </div>
+    <div class="achievement">
+      <h2>Erfolge</h2>
+      <mat-list *ngFor="let achievement of achievementList">
+        <mat-list-item>{{ achievement }}</mat-list-item>
+      </mat-list>
+      <mat-divider></mat-divider>
+    </div>
   </div>
 </div>

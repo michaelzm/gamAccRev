@@ -7,8 +7,8 @@ import { UserService } from "../user/user.service";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  imagePath = "assets/rankimages/";
-  imagePathRaw = "assets/rankimages/";
+  imagePath = "assets/ranks";
+  imagePathRaw = "assets/ranks";
   achievementList: string[];
   dashboardScore: number;
   dashboardCounter: number;
@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
     this.dashboardUserFirstName = this.userService.getUserFName();
     this.getUserLevel();
     this.getAchievements();
+    this.updatePicture();
     console.log("console achievement" + this.achievementList);
   }
   getScore() {
@@ -44,47 +45,31 @@ export class DashboardComponent implements OnInit {
     let lvl = this.dashboardUserLevel;
     switch (lvl) {
       case 1: {
-        this.imagePath = this.imagePathRaw + "/1.png";
+        this.imagePath = this.imagePathRaw + "/0.svg";
         return this.imagePath;
       }
       case 2: {
-        this.imagePath = this.imagePathRaw + "/2.png";
+        this.imagePath = this.imagePathRaw + "/2.svg";
         return this.imagePath;
       }
       case 3: {
-        this.imagePath = this.imagePathRaw + "/3.png";
+        this.imagePath = this.imagePathRaw + "/3.svg";
         return this.imagePath;
       }
       case 4: {
-        this.imagePath = this.imagePathRaw + "/4.png";
+        this.imagePath = this.imagePathRaw + "/4.svg";
         return this.imagePath;
       }
       case 5: {
-        this.imagePath = this.imagePathRaw + "/5.png";
+        this.imagePath = this.imagePathRaw + "/5.svg";
         return this.imagePath;
       }
       case 6: {
-        this.imagePath = this.imagePathRaw + "/6.png";
-        return this.imagePath;
-      }
-      case 7: {
-        this.imagePath = this.imagePathRaw + "/7.png";
-        return this.imagePath;
-      }
-      case 8: {
-        this.imagePath = this.imagePathRaw + "/8.png";
-        return this.imagePath;
-      }
-      case 9: {
-        this.imagePath = this.imagePathRaw + "/9.png";
-        return this.imagePath;
-      }
-      case 10: {
-        this.imagePath = this.imagePathRaw + "/11.png";
+        this.imagePath = this.imagePathRaw + "/6.svg";
         return this.imagePath;
       }
       default: {
-        this.imagePath = this.imagePathRaw + "/12.png";
+        this.imagePath = this.imagePathRaw + "/max.svg";
         return this.imagePath;
       }
     }
