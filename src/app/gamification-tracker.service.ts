@@ -48,14 +48,14 @@ export class GamificationTrackerService {
     var emojiSymbol = this.emojiArray[arrayPos];
     if (this.userService.getUserCounter() % 3 == 0) {
       this.openGamificationBar(
-        emojiSymbol + " Erfolgreich 3 Berechtigungen geprüft"
+        emojiSymbol + " Erfolgreich 3 Berechtigungen geprüft " + emojiSymbol
       );
     }
   }
   //sets button to enabled to be clickable by user
   checkIfAuthorizedForEvaluation() {
     console.log("check if authorized");
-    if (this.userService.getUserCounter() == 2) {
+    if (this.userService.getUserCounter() == 15) {
       this.accessReview.buttonDisabled = false;
       this.accessReview.openBottomSheetAuthorized();
       this.userService.setUserAuthorized();
