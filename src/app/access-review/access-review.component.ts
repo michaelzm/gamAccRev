@@ -4,11 +4,10 @@ import { EmployeeService } from "../employee/employee.service";
 import { UserService } from "../user/user.service";
 
 import { User } from "../user/user";
-import { MatSnackBar } from "@angular/material";
+import { MatSnackBar, MatSnackBarConfig } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
-import { MatBottomSheet } from "@angular/material";
-import { MatBottomSheetConfig } from "@Angular/material";
+import { MatBottomSheet, MatBottomSheetConfig } from "@angular/material";
 import { GamificationBottomSheetComponent } from "../gamification-bottom-sheet/gamification-bottom-sheet.component";
 import { FinishedBottomSheetComponent } from "../finished-bottom-sheet/finished-bottom-sheet.component";
 @Component({
@@ -34,21 +33,24 @@ export class AccessReviewComponent implements OnInit {
   ) {}
 
   openGamificationBar(message: string) {
-    this.gamificationBar.open(message, "✕", {
-      duration: 3000
-    });
+    let configSnackbar = new MatSnackBarConfig();
+    configSnackbar.panelClass = ["center-snackbar"];
+    configSnackbar.duration = 2000;
+    this.gamificationBar.open(message, "ok", configSnackbar);
   }
   //later add  more than just one message var
   openBottomSheet() {
     const config: MatBottomSheetConfig = {
-      hasBackdrop: false
+      hasBackdrop: true,
+      restoreFocus: false
     };
 
     this.bottomSheet.open(GamificationBottomSheetComponent, config);
   }
   openBottomSheetAuthorized() {
     const config: MatBottomSheetConfig = {
-      hasBackdrop: false
+      hasBackdrop: true,
+      restoreFocus: false
     };
     this.buttonDisabled = false;
     this.bottomSheet.open(FinishedBottomSheetComponent, config);

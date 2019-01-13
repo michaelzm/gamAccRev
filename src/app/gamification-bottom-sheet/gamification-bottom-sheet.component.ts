@@ -17,6 +17,9 @@ export class GamificationBottomSheetComponent implements OnInit {
   ngOnInit() {
     this.getNewLevel();
   }
+  basicClick() {
+    this.ref.dismiss();
+  }
 
   getNewLevel() {
     this.level = this.userService.getUserLevel();

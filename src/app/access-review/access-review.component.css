@@ -5,6 +5,9 @@
   text-align: left;
   float: right;
 }
+.center-snackbar .mat-simple-snackbar {
+  justify-content: center;
+}
 /*
 .top {
   position: relative;
