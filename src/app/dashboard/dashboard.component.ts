@@ -9,6 +9,7 @@ import { UserService } from "../user/user.service";
 export class DashboardComponent implements OnInit {
   imagePath = "assets/ranks";
   imagePathRaw = "assets/ranks";
+  badges = [];
   achievementList: string[];
   dashboardScore: number;
   dashboardCounter: number;
@@ -25,6 +26,7 @@ export class DashboardComponent implements OnInit {
     this.getUserLevel();
     this.getAchievements();
     this.updatePicture();
+    this.updateBadges();
     console.log("console achievement" + this.achievementList);
   }
   getScore() {
@@ -40,12 +42,18 @@ export class DashboardComponent implements OnInit {
   getUserLevel() {
     this.dashboardUserLevel = this.userService.getUserLevel();
   }
+  updateBadges() {
+    for (var i = 0; i < this.dashboardUserLevel; i++) {
+      this.badges.push(i);
+    }
+    console.log("badges are now :" + this.badges);
+  }
   updatePicture(): string {
     console.log("updatePicture Called");
     let lvl = this.dashboardUserLevel;
     switch (lvl) {
       case 1: {
-        this.imagePath = this.imagePathRaw + "/0.svg";
+        this.imagePath = this.imagePathRaw + "/1.svg";
         return this.imagePath;
       }
       case 2: {
@@ -68,8 +76,20 @@ export class DashboardComponent implements OnInit {
         this.imagePath = this.imagePathRaw + "/6.svg";
         return this.imagePath;
       }
+      case 7: {
+        this.imagePath = this.imagePathRaw + "/7.svg";
+        return this.imagePath;
+      }
+      case 8: {
+        this.imagePath = this.imagePathRaw + "/8.svg";
+        return this.imagePath;
+      }
+      case 9: {
+        this.imagePath = this.imagePathRaw + "/9.svg";
+        return this.imagePath;
+      }
       default: {
-        this.imagePath = this.imagePathRaw + "/max.svg";
+        this.imagePath = this.imagePathRaw + "/10.svg";
         return this.imagePath;
       }
     }
