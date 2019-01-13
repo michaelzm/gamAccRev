@@ -106,6 +106,7 @@ export class AccessListComponent implements OnInit {
       this.accessReviewComponent.setOffset(
         this.accessReviewComponent.viewport.measureScrollOffset()
       );
+      this.accessReviewComponent.scrollToNext();
       //this.accessReviewComponent.buttonDisabled = false;
       this.gamificationTracker.checkForGamificationPopup();
       this.checkIfAuthorized();

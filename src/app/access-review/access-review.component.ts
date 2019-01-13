@@ -8,6 +8,7 @@ import { MatSnackBar } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
 import { MatBottomSheet } from "@angular/material";
+import { MatBottomSheetConfig } from "@Angular/material";
 import { GamificationBottomSheetComponent } from "../gamification-bottom-sheet/gamification-bottom-sheet.component";
 import { FinishedBottomSheetComponent } from "../finished-bottom-sheet/finished-bottom-sheet.component";
 @Component({
@@ -39,11 +40,18 @@ export class AccessReviewComponent implements OnInit {
   }
   //later add  more than just one message var
   openBottomSheet() {
-    this.bottomSheet.open(GamificationBottomSheetComponent);
+    const config: MatBottomSheetConfig = {
+      hasBackdrop: false
+    };
+
+    this.bottomSheet.open(GamificationBottomSheetComponent, config);
   }
   openBottomSheetAuthorized() {
+    const config: MatBottomSheetConfig = {
+      hasBackdrop: false
+    };
     this.buttonDisabled = false;
-    this.bottomSheet.open(FinishedBottomSheetComponent);
+    this.bottomSheet.open(FinishedBottomSheetComponent, config);
   }
   getEmployeeList(): void {
     this.employeeService
@@ -78,6 +86,12 @@ export class AccessReviewComponent implements OnInit {
   scrollToLast() {
     console.log("OFFSET IS : " + this.scrollOffset);
     this.viewport.scrollToOffset(this.scrollOffset, "smooth");
+  }
+  scrollToNext() {
+    this.viewport.scrollToOffset(
+      this.userService.getScrollOffset() + 380,
+      "smooth"
+    );
   }
 
   permitRight(): void {
