@@ -1,0 +1,50 @@
+<div class="missions">
+  <h2>Herausforderungen</h2>
+
+  <mat-card *ngIf="firstMissionUnsolved">
+    <mat-card-title>Erreiche Level 2</mat-card-title
+    ><mat-card-subtitle
+      >Belohnung: Ein einzigartiges Abzeichen</mat-card-subtitle
+    >
+    <mat-card-content *ngIf="2 > level"
+      >Fortschritt: {{ level }} von 2</mat-card-content
+    >
+    <mat-card-content *ngIf="level > 1"
+      >Herausforderung gemeistert</mat-card-content
+    >
+    <mat-card-actions
+      ><button
+        mat-flat-button
+        color="primary"
+        (click)="getFirstMissionReward()"
+      >
+        Herausforderung abschließen
+      </button></mat-card-actions
+    ></mat-card
+  >
+
+  <p></p>
+  <mat-card *ngIf="secondMissionUnsolved">
+    <mat-card-title>Erreiche Level 4</mat-card-title
+    ><mat-card-subtitle
+      >Belohnung: Ein einzigartiges Abzeichen</mat-card-subtitle
+    >
+    <mat-card-content *ngIf="4 > level"
+      >Fortschritt: {{ level }} von 4</mat-card-content
+    >
+    <mat-card-content *ngIf="level > 3"
+      >Herausforderung gemeistert</mat-card-content
+    >
+    <mat-card-actions
+      ><button
+        mat-flat-button
+        color="primary"
+        (click)="getSecondMissionReward()"
+      >
+        Herausforderung abschließen
+      </button></mat-card-actions
+    ></mat-card
+  >
+  <p></p>
+  <mat-card>Fülle den Fragebogen aus</mat-card>
+</div>

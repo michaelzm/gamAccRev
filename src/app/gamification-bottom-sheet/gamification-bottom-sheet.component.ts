@@ -1,18 +1,27 @@
 import { Component, OnInit } from "@angular/core";
 import { MatBottomSheetRef } from "@angular/material";
+import { UserService } from "../user/user.service";
 
 @Component({
   selector: "app-gamification-bottom-sheet",
-  template: "<div class = 'levelup'> <h2>🎉Neues Level erreicht!🎉</h2></div>",
+  templateUrl: "./gamification-bottom-sheet.component.html",
   styleUrls: ["./gamification-bottom-sheet.component.css"]
 })
 export class GamificationBottomSheetComponent implements OnInit {
+  level = 0;
   constructor(
+    private userService: UserService,
     private ref: MatBottomSheetRef<GamificationBottomSheetComponent>
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getNewLevel();
+  }
   basicClick() {
     this.ref.dismiss();
+  }
+
+  getNewLevel() {
+    this.level = this.userService.getUserLevel();
   }
 }

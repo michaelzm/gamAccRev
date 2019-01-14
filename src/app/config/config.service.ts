@@ -3,7 +3,6 @@ import { HttpClient } from "@angular/common/http";
 import { Formular } from "../formular/formular";
 import { HttpHeaders } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { environment } from "../../environments/environment";
 import { catchError, map, tap } from "rxjs/operators";
 import { Competitor } from "../ranking/competitor";
 

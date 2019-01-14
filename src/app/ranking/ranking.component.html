@@ -6,7 +6,7 @@
     jeden Monats einen Preis.
   </mat-list-item>
   <mat-list-item *ngIf="showMessage"
-    >Du hast dich von Rang {{ previousRanking + 1 }} auf
+    ><br />Du hast dich von Rang {{ previousRanking + 1 }} auf
     {{ currentRanking + 1 }} verbessert!</mat-list-item
   >
   <mat-list-item *ngFor="let competitor of rankings; let ind = index">

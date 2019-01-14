@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { UserService } from "./user/user.service";
 import { AccessReviewComponent } from "./access-review/access-review.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { RankingComponent } from "./ranking/ranking.component";
 
 @Injectable({
   providedIn: "root"
@@ -9,24 +10,13 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 export class GamificationTrackerService {
   currentReviewCount: number;
   currentLevel: number;
-  emojiArray = [
-    "✅",
-    "📣",
-    "✉️",
-    "📈",
-    "🚀",
-    "🥂",
-    "🔥",
-    "🌞",
-    "🐣",
-    "🎓",
-    "🤓"
-  ];
+  emojiArray = ["✅", "📈", "🚀", "🥂", "🔥", "🎓", "🤓"];
 
   constructor(
     private dashboard: DashboardComponent,
     private userService: UserService,
-    private accessReview: AccessReviewComponent
+    private accessReview: AccessReviewComponent,
+    private ranking: RankingComponent
   ) {}
   // "main"method which includes checking every possible popup
   checkForGamificationPopup() {
@@ -55,7 +45,7 @@ export class GamificationTrackerService {
   //sets button to enabled to be clickable by user
   checkIfAuthorizedForEvaluation() {
     console.log("check if authorized");
-    if (this.userService.getUserCounter() == 15) {
+    if (this.userService.getUserCounter() == 4) {
       this.accessReview.buttonDisabled = false;
       this.accessReview.openBottomSheetAuthorized();
       this.userService.setUserAuthorized();

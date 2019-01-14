@@ -24,50 +24,56 @@
     <p>{{ firstPart }}</p>
   </div>
   <mat-list>
-    <mat-list-item> Geschlecht </mat-list-item>
-
-    <mat-list-item> Einfluss von Faktor X </mat-list-item>
-    <mat-list-item>
+    <mat-list-item> <h4>Einfluss von Faktor Y</h4> </mat-list-item>
+    <mat-list-item
+      >sehr gering
       <mat-slider
         (input)="onInputChange($event, 1)"
         thumbLabel
         tickInterval="1"
         min="1"
-        max="10"
-      ></mat-slider>
+        max="5"
+      ></mat-slider
+      >sehr stark
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item> Einfluss von Faktor Y </mat-list-item>
-    <mat-list-item>
+    <mat-list-item> <h4>Einfluss von Faktor Y</h4></mat-list-item>
+    <mat-list-item
+      >sehr gering
       <mat-slider
         (input)="onInputChange($event, 2)"
         thumbLabel
         tickInterval="1"
         min="1"
-        max="10"
-      ></mat-slider>
+        max="5"
+      ></mat-slider
+      >sehr stark
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item> Einfluss von Faktor Z </mat-list-item>
-    <mat-list-item>
+    <mat-list-item> <h4>Einfluss von Faktor Y</h4> </mat-list-item>
+    <mat-list-item
+      >sehr gering
       <mat-slider
         (input)="onInputChange($event, 3)"
         thumbLabel
         tickInterval="1"
         min="1"
-        max="10"
-      ></mat-slider>
+        max="5"
+      ></mat-slider
+      >sehr stark
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item> Einfluss von Faktor 1 </mat-list-item>
+    <mat-list-item> <h4>Einfluss von Faktor Y</h4></mat-list-item>
     <mat-list-item>
+      sehr gering
       <mat-slider
         (input)="onInputChange($event, 4)"
         thumbLabel
         tickInterval="1"
         min="1"
-        max="10"
-      ></mat-slider>
+        max="5"
+      ></mat-slider
+      >sehr stark
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
@@ -75,8 +81,5 @@
   <p>{{ secondPart }}</p>
   <button mat-raised-button color="primary" (click)="onSubmitEvaluation()">
     Abschicken
-  </button>
-  <button mat-raised-button color="primary" (click)="submitRanking()">
-    Ranking eintragen
   </button>
 </div>

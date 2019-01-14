@@ -98,7 +98,7 @@ export class AccessListComponent implements OnInit {
     //console.log(selectedOptions.length);
     if (this.employeeToAlterRights.beenChecked == false) {
       this.accessReviewComponent.permitRight();
-      //this.employeeToAlterRights.beenChecked = true;
+      this.employeeToAlterRights.beenChecked = true;
       console.log(
         "The Offset to scroll to is now: " +
           this.accessReviewComponent.viewport.measureScrollOffset()
@@ -106,6 +106,7 @@ export class AccessListComponent implements OnInit {
       this.accessReviewComponent.setOffset(
         this.accessReviewComponent.viewport.measureScrollOffset()
       );
+      this.accessReviewComponent.scrollToNext();
       //this.accessReviewComponent.buttonDisabled = false;
       this.gamificationTracker.checkForGamificationPopup();
       this.checkIfAuthorized();

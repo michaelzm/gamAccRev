@@ -15,7 +15,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { FormularComponent } from "./formular/formular.component";
 import { AccessListComponent } from "./access-list/access-list.component";
-import { GreetingComponent } from "./greeting/greeting.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/gamification-bottom-sheet.component";
@@ -24,6 +23,7 @@ import { RankingComponent } from "./ranking/ranking.component";
 import { ChallengesComponent } from "./challenges/challenges.component";
 import { FinishedBottomSheetComponent } from "./finished-bottom-sheet/finished-bottom-sheet.component";
 import { MatSelectModule } from "@angular/material";
+import { MissionComponent } from './mission/mission.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +37,11 @@ import { MatSelectModule } from "@angular/material";
     ProgressBarComponent,
     FormularComponent,
     AccessListComponent,
-    GreetingComponent,
     GamificationBottomSheetComponent,
     RankingComponent,
     ChallengesComponent,
-    FinishedBottomSheetComponent
+    FinishedBottomSheetComponent,
+    MissionComponent
   ],
   imports: [
     MatSelectModule,
@@ -57,6 +57,7 @@ import { MatSelectModule } from "@angular/material";
     FinishedBottomSheetComponent
   ],
   providers: [
+    RankingComponent,
     AccessReviewComponent,
     ProgressBarComponent,
     DashboardComponent,

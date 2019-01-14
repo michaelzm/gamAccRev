@@ -1,10 +1,10 @@
 import {
   MatButtonModule,
   MatCheckboxModule,
-  MatMenuModule
+  MatMenuModule,
+  MatPaginatorModule
 } from "@angular/material";
 import { MatTableModule } from "@angular/material/table";
-import { MatPaginatorModule } from "@angular/material";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatInputModule } from "@angular/material/input";
@@ -19,6 +19,7 @@ import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatRadioModule } from "@angular/material/radio";
+import { MatCardModule } from "@angular/material/card";
 
 import { NgModule } from "@angular/core";
 
@@ -42,7 +43,8 @@ import { NgModule } from "@angular/core";
     MatBottomSheetModule,
     MatBadgeModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCardModule
   ],
   exports: [
     MatButtonModule,
@@ -63,7 +65,8 @@ import { NgModule } from "@angular/core";
     MatBottomSheetModule,
     MatBadgeModule,
     MatDialogModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCardModule
   ]
 })
 export class MaterialModule {}

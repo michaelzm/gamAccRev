@@ -4,10 +4,10 @@ import { EmployeeService } from "../employee/employee.service";
 import { UserService } from "../user/user.service";
 
 import { User } from "../user/user";
-import { MatSnackBar } from "@angular/material";
+import { MatSnackBar, MatSnackBarConfig } from "@angular/material";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
 import { ProgressBarComponent } from "../progress-bar/progress-bar.component";
-import { MatBottomSheet } from "@angular/material";
+import { MatBottomSheet, MatBottomSheetConfig } from "@angular/material";
 import { GamificationBottomSheetComponent } from "../gamification-bottom-sheet/gamification-bottom-sheet.component";
 import { FinishedBottomSheetComponent } from "../finished-bottom-sheet/finished-bottom-sheet.component";
 @Component({
@@ -33,17 +33,27 @@ export class AccessReviewComponent implements OnInit {
   ) {}
 
   openGamificationBar(message: string) {
-    this.gamificationBar.open(message, "✕", {
-      duration: 3000
-    });
+    let configSnackbar = new MatSnackBarConfig();
+    configSnackbar.panelClass = ["center-snackbar"];
+    configSnackbar.duration = 2000;
+    this.gamificationBar.open(message, "ok", configSnackbar);
   }
   //later add  more than just one message var
   openBottomSheet() {
-    this.bottomSheet.open(GamificationBottomSheetComponent);
+    const config: MatBottomSheetConfig = {
+      hasBackdrop: true,
+      restoreFocus: false
+    };
+
+    this.bottomSheet.open(GamificationBottomSheetComponent, config);
   }
   openBottomSheetAuthorized() {
+    const config: MatBottomSheetConfig = {
+      hasBackdrop: true,
+      restoreFocus: false
+    };
     this.buttonDisabled = false;
-    this.bottomSheet.open(FinishedBottomSheetComponent);
+    this.bottomSheet.open(FinishedBottomSheetComponent, config);
   }
   getEmployeeList(): void {
     this.employeeService
@@ -78,6 +88,12 @@ export class AccessReviewComponent implements OnInit {
   scrollToLast() {
     console.log("OFFSET IS : " + this.scrollOffset);
     this.viewport.scrollToOffset(this.scrollOffset, "smooth");
+  }
+  scrollToNext() {
+    this.viewport.scrollToOffset(
+      this.userService.getScrollOffset() + 380,
+      "smooth"
+    );
   }
 
   permitRight(): void {
