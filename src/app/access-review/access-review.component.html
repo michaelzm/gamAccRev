@@ -9,13 +9,14 @@
 <div class="gotolast"></div>
 <button mat-button (click)="scrollToLast()">↓ zuletzt bearbeitet</button>
 <button
-  mat-button
+  mat-flat-button
   [disabled]="buttonDisabled"
+  color="warn"
   (click)="calculateAccuracy()"
   routerLink="/formular"
   style="float:right"
 >
-  → zum Fragebogen
+  → Fallstudie abschließen
 </button>
 <mat-divider></mat-divider>
 <div class="reviewlist">
@@ -32,3 +33,4 @@
     </mat-list>
   </cdk-virtual-scroll-viewport>
 </div>
+<mat-divider></mat-divider>
