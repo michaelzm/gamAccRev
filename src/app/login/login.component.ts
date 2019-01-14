@@ -9,7 +9,9 @@ import { UserService } from "../user/user.service";
 export class LoginComponent implements OnInit {
   constructor(private userService: UserService) {}
   showFormField: boolean;
-  ngOnInit() {}
+  ngOnInit() {
+    this.checkIfShowFormField();
+  }
 
   login(name: HTMLInputElement) {
     this.userService.setUserLastName(name.value);

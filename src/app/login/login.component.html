@@ -1,9 +1,9 @@
-<form class="login-form">
-  <div class="greetingText">
+<div class="startingText">
+  <form class="login-form">
     <h3>Vielen Dank für deine Teilnahme</h3>
     <p>
       Lese dir bitte zunächst nachfolgenden Text genau durch, um die Studie zum
-      Thema „Berechtigungsvergabe von Mitarbeiterrechten [Access Reviews]“
+      Thema „Berechtigungsvergabe von Mitarbeiterrechten (Access Reviews)“
       korrekt durchführen zu können:
     </p>
 
@@ -15,10 +15,10 @@
       Sicherheitslücken durch unbefugten Zugriff auf diverse IT-Systeme zu
       minimieren, erhält jeder Mitarbeiter entsprechend seiner Position
       verschiedene Zugriffsrechte ("Access Rights"). Deine Aufgabe innerhalb
-      dieser Studie ist es nun, jedem dieser Mitarbeiter die seiner Position
+      dieser Fallstudie ist es nun, jedem dieser Mitarbeiter die seiner Position
       entsprechend richtigen Berechtigungen zuzuteilen ("Reviews"). Wichtig
-      dabei ist, dass du so viele Rechte wie nötig vergibst, aber gleichzeitig
-      so wenig wie möglich. Folgender kurzer Abschnitt soll dir bei deinen
+      dabei ist, dass du jeder Position nur genau die Rechte zuteilst, die für
+      ihn vorgesehen sind. Folgender kurzer Abschnitt soll dir bei deinen
       Entscheidungen der Rechtevergabe helfen:
     </p>
     <p>
@@ -50,37 +50,43 @@
       <b>mindestens 25 Reviews</b> durch. Die Studie wird mit einem Fragebogen,
       der von dir ausgefüllt wird, abgeschlossen. In diesem werden dir einige
       Fragen zu dem Bereich Access Reviews gestellt. Du bekommst eine
-      Benachrichtigung, wenn du die Mindestanzahl erreicht hast. Daraufhin
-      kannst du den Fragebogen entweder sofort ausfüllen und durch dessen
-      Abschicken die Studie beenden oder noch weitere Berechtigungen prüfen, um
-      so zum Beispiel in der Rangliste weiter aufzusteigen. Wichtig ist nur,
-      dass du den Fragebogen nicht vergisst und ihn am Ende ausfüllst und
-      abschickst.
+      Benachrichtigung, wenn du die Mindestanzahl an für den Fragebogen
+      benötigten Berechtigungsprüfungen erreicht hast. Daraufhin kannst du den
+      Fragebogen entweder sofort ausfüllen und durch dessen Abschicken die
+      Studie beenden oder noch weitere Berechtigungen prüfen, um so zum Beispiel
+      in der Rangliste weiter aufzusteigen. Wichtig ist nur, dass du den
+      Fragebogen nicht vergisst und ihn am Ende beantwortest und abschickst.
     </p>
-    <p>
-      <b
-        >Bitte beachte: Lade die Seite während der gesamten Studie bitte nicht
-        neu, da sonst dein Fortschritt verloren gehen würde.
-      </b>
-    </p>
-    <p>
-      Jetzt kann’s losgehen! Gib nachfolgend einen Namen für dein Profil ein
-      (zum Beispiel deinen Vornamen) und beginne anschließend die Studie mit dem
-      Button „Starten“. Vielen Dank, dass du mitmachst und viel Spaß mit den
-      Access Reviews! 😊
-    </p>
-  </div>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Vorname</mat-label>
-    <input matInput type="text" placeholder="Vorname" #usernameLogin />
-  </mat-form-field>
-  <button
-    mat-button
-    color="primary"
-    (click)="login(usernameLogin)"
-    routerLink="/dashboard"
-  >
-    Starten
-  </button>
-</form>
+    <div class="important">
+      <p>
+        <b
+          >Bitte beachte: Lade die Seite während der gesamten Studie bitte nicht
+          neu, da sonst dein Fortschritt verloren gehen würde und vergiss nicht,
+          am Ende die Fallstudie mit dem Fragebogen zu beenden.
+        </b>
+      </p>
+    </div>
+    <div class="formField" *ngIf="showFormField">
+      <p>
+        Jetzt kann’s losgehen! Gib nachfolgend einen Namen für dein Profil ein
+        (zum Beispiel deinen Vornamen) und beginne anschließend die Studie mit
+        dem Button „Starten“. Den Ablauf der Studie kannst du bei aufkommenden
+        Fragen erneut unter "Studienablauf" unter dem Punkt "Zugriffsverwaltung"
+        einsehen.Vielen Dank, dass du mitmachst und viel Spaß mit den Access
+        Reviews! 😊
+      </p>
+      <mat-form-field appearance="outline">
+        <mat-label>Vorname</mat-label>
+        <input matInput type="text" placeholder="Vorname" #usernameLogin />
+      </mat-form-field>
+      <button
+        mat-button
+        color="primary"
+        (click)="login(usernameLogin)"
+        routerLink="/dashboard"
+      >
+        Starten
+      </button>
+    </div>
+  </form>
+</div>
