@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../user/user.service";
+import { MissionComponent } from "../mission/mission.component";
 
 @Component({
   selector: "app-dashboard",
@@ -16,6 +17,8 @@ export class DashboardComponent implements OnInit {
   dashboardUserName: string;
   dashboardUserFirstName: string;
   dashboardUserLevel: number;
+  missionsCompleted: number;
+  missionText: string;
   constructor(private userService: UserService) {}
 
   getInformations() {
@@ -26,7 +29,7 @@ export class DashboardComponent implements OnInit {
     this.getUserLevel();
     this.getAchievements();
     this.updatePicture();
-    this.updateBadges();
+    this.updateLevelBadges();
     console.log("console achievement" + this.achievementList);
   }
   getScore() {
@@ -42,7 +45,7 @@ export class DashboardComponent implements OnInit {
   getUserLevel() {
     this.dashboardUserLevel = this.userService.getUserLevel();
   }
-  updateBadges() {
+  updateLevelBadges() {
     for (var i = 0; i < this.dashboardUserLevel; i++) {
       this.badges.push(i);
     }
@@ -92,6 +95,10 @@ export class DashboardComponent implements OnInit {
         this.imagePath = this.imagePathRaw + "/10.svg";
         return this.imagePath;
       }
+    }
+  }
+  createMission() {
+    if (this.missionsCompleted == 0) {
     }
   }
 

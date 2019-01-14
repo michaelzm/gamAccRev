@@ -23,6 +23,7 @@ import { RankingComponent } from "./ranking/ranking.component";
 import { ChallengesComponent } from "./challenges/challenges.component";
 import { FinishedBottomSheetComponent } from "./finished-bottom-sheet/finished-bottom-sheet.component";
 import { MatSelectModule } from "@angular/material";
+import { MissionComponent } from './mission/mission.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MatSelectModule } from "@angular/material";
     GamificationBottomSheetComponent,
     RankingComponent,
     ChallengesComponent,
-    FinishedBottomSheetComponent
+    FinishedBottomSheetComponent,
+    MissionComponent
   ],
   imports: [
     MatSelectModule,
