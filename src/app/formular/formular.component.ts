@@ -6,6 +6,7 @@ import { endTimeRange } from "@angular/core/src/profile/wtf_impl";
 import { UserService } from "../user/user.service";
 import { firstpart, secondpart } from "./parts";
 import { Competitor } from "../ranking/competitor";
+import { MissionService } from "../mission/mission.service";
 @Component({
   selector: "app-formular",
   templateUrl: "./formular.component.html",
@@ -36,7 +37,11 @@ export class FormularComponent implements OnInit {
     console.log(value);
     this.rating1 = value;
   }
-  constructor(private config: ConfigService, private userSerice: UserService) {}
+  constructor(
+    private config: ConfigService,
+    private userSerice: UserService,
+    private missionService: MissionService
+  ) {}
 
   onInputChange(event: any, slider: number) {
     console.log(event);
@@ -75,6 +80,7 @@ export class FormularComponent implements OnInit {
       this.config.postConfig(this.submitFormular).subscribe();
       this.submitRanking();
       this.hasbeenSubmitted = true;
+      this.missionService.setFormularDone();
     }
   }
 }
