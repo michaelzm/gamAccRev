@@ -9,24 +9,22 @@
       <mat-option value="18-24">18-24</mat-option>
       <mat-option value="25-34">25-34</mat-option>
       <mat-option value="35-44">35-44</mat-option>
-      <mat-option value="45-54">45-54</mat-option>
-      <mat-option value="55">55 und älter</mat-option>
+      <mat-option value="45-54">45 und älter</mat-option>
     </mat-select>
   </mat-form-field>
   <p></p>
   <mat-radio-group>
-    <mat-radio-button value="1">mänlich</mat-radio-button>
+    <mat-radio-button value="1">männlich</mat-radio-button>
     <p></p>
     <mat-radio-button value="2">weiblich</mat-radio-button>
   </mat-radio-group>
-  <div class="firstpart">
-    <h2>Praktischer Teil der Evaluation</h2>
-    <p>{{ firstPart }}</p>
-  </div>
+  <div class="firstpart"><h2>Teil A des Fragebogens</h2></div>
   <mat-list>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4> </mat-list-item>
+    <mat-list-item>
+      <h3>Bitte bewerte rückblickend deine Durchführung der Access Reviews:</h3>
+    </mat-list-item>
     <mat-list-item
-      >sehr gering
+      >langweilig
       <mat-slider
         (input)="onInputChange($event, 1)"
         thumbLabel
@@ -34,12 +32,10 @@
         min="1"
         max="5"
       ></mat-slider
-      >sehr stark
+      >kurzweilig
     </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4></mat-list-item>
     <mat-list-item
-      >sehr gering
+      >demotivierend
       <mat-slider
         (input)="onInputChange($event, 2)"
         thumbLabel
@@ -47,25 +43,54 @@
         min="1"
         max="5"
       ></mat-slider
-      >sehr stark
+      >motivierend
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4> </mat-list-item>
+    <p></p>
+    <mat-list-item>
+      <h3>
+        Bitte bewerte nun genauso wie oben jedes einzelne Element hinsichtlich
+        der zwei Faktoren:
+      </h3>
+    </mat-list-item>
+    <p></p>
+    <p></p>
+    <p></p>
+    <mat-list-item>
+      Wie hast du das Pop-up "3 Berechtigungen geprüft" bezogen auf die Access
+      Reviews empfunden?
+    </mat-list-item>
     <mat-list-item
-      >sehr gering
+      >langweilig
       <mat-slider
         (input)="onInputChange($event, 3)"
         thumbLabel
         tickInterval="1"
         min="1"
+        s
         max="5"
       ></mat-slider
-      >sehr stark
+      >kurzweilig
+    </mat-list-item>
+    <mat-list-item
+      >demotivierend
+      <mat-slider
+        (input)="onInputChange($event, 3)"
+        thumbLabel
+        tickInterval="1"
+        min="1"
+        s
+        max="5"
+      ></mat-slider
+      >motivierend
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4></mat-list-item>
     <mat-list-item>
-      sehr gering
+      Wie hat sich das Pop-up „Neues Level erreicht!“ auf deine Motivation
+      ausgewirkt?
+    </mat-list-item>
+    <mat-list-item>
+      sehr negativ
       <mat-slider
         (input)="onInputChange($event, 4)"
         thumbLabel
@@ -73,12 +98,70 @@
         min="1"
         max="5"
       ></mat-slider
-      >sehr stark
+      >sehr positiv
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      Wie hat sich der Level-Fortschrittsbalken auf deine Motivation ausgewirkt?
+    </mat-list-item>
+    <mat-list-item>
+      sehr negativ
+      <mat-slider
+        (input)="onInputChange($event, 4)"
+        thumbLabel
+        tickInterval="1"
+        min="1"
+        max="5"
+      ></mat-slider
+      >sehr positiv
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      Wie hat sich die Rangliste auf deine Motivation ausgewirkt?
+    </mat-list-item>
+    <mat-list-item>
+      sehr negativ
+      <mat-slider
+        (input)="onInputChange($event, 4)"
+        thumbLabel
+        tickInterval="1"
+        min="1"
+        max="5"
+      ></mat-slider
+      >sehr positiv
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      Wie haben sich die Herausforderungen auf deine Motivation ausgewirkt?
+    </mat-list-item>
+    <mat-list-item>
+      sehr negativ
+      <mat-slider
+        (input)="onInputChange($event, 4)"
+        thumbLabel
+        tickInterval="1"
+        min="1"
+        max="5"
+      ></mat-slider
+      >sehr positiv
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      Wie haben sich die sammelbaren Abzeichen auf deine Motivation ausgewirkt?
+    </mat-list-item>
+    <mat-list-item>
+      sehr negativ
+      <mat-slider
+        (input)="onInputChange($event, 4)"
+        thumbLabel
+        tickInterval="1"
+        min="1"
+        max="5"
+      ></mat-slider
+      >sehr positiv
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
-  <h2>Theoretischer Teil der Evaluation</h2>
-  <p>{{ secondPart }}</p>
   <button mat-raised-button color="primary" (click)="onSubmitEvaluation()">
     Abschicken
   </button>
