@@ -18,6 +18,7 @@ const httpOptions = {
 export class ConfigService {
   configUrl = "https://urserver.herokuapp.com/formular";
   rankingUrl = "https://urserver.herokuapp.com/ranking";
+  gamificationUrl = "https://urserver.herokuapp.com/gamification";
 
   constructor(private http: HttpClient) {}
 
@@ -28,6 +29,11 @@ export class ConfigService {
   private handleErrorObservable(error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);
+  }
+  postGamification(data: Formular) {
+    console.log("posting ...");
+    console.log(data);
+    return this.http.post(this.rankingUrl, data, httpOptions);
   }
   getConfig() {
     return this.http.get(this.configUrl);
