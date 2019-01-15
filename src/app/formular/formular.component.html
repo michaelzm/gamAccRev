@@ -19,149 +19,161 @@
     <mat-radio-button value="2">weiblich</mat-radio-button>
   </mat-radio-group>
   <div class="firstpart"><h2>Teil A des Fragebogens</h2></div>
-  <mat-list>
-    <mat-list-item>
-      <h3>Bitte bewerte rückblickend deine Durchführung der Access Reviews:</h3>
-    </mat-list-item>
-    <mat-list-item
-      >langweilig
-      <mat-slider
-        (input)="onInputChange($event, 1)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >kurzweilig
-    </mat-list-item>
-    <mat-list-item
-      >demotivierend
-      <mat-slider
-        (input)="onInputChange($event, 2)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >motivierend
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <p></p>
-    <mat-list-item>
-      <h3>
-        Bitte bewerte nun genauso wie oben jedes einzelne Element hinsichtlich
-        der zwei Faktoren:
-      </h3>
-    </mat-list-item>
-    <p></p>
-    <p></p>
-    <p></p>
-    <mat-list-item>
-      Wie hast du das Pop-up "3 Berechtigungen geprüft" bezogen auf die Access
-      Reviews empfunden?
-    </mat-list-item>
-    <mat-list-item
-      >langweilig
-      <mat-slider
-        (input)="onInputChange($event, 3)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        s
-        max="5"
-      ></mat-slider
-      >kurzweilig
-    </mat-list-item>
-    <mat-list-item
-      >demotivierend
-      <mat-slider
-        (input)="onInputChange($event, 3)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        s
-        max="5"
-      ></mat-slider
-      >motivierend
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      Wie hat sich das Pop-up „Neues Level erreicht!“ auf deine Motivation
-      ausgewirkt?
-    </mat-list-item>
-    <mat-list-item>
-      sehr negativ
-      <mat-slider
-        (input)="onInputChange($event, 4)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr positiv
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      Wie hat sich der Level-Fortschrittsbalken auf deine Motivation ausgewirkt?
-    </mat-list-item>
-    <mat-list-item>
-      sehr negativ
-      <mat-slider
-        (input)="onInputChange($event, 4)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr positiv
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      Wie hat sich die Rangliste auf deine Motivation ausgewirkt?
-    </mat-list-item>
-    <mat-list-item>
-      sehr negativ
-      <mat-slider
-        (input)="onInputChange($event, 4)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr positiv
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      Wie haben sich die Herausforderungen auf deine Motivation ausgewirkt?
-    </mat-list-item>
-    <mat-list-item>
-      sehr negativ
-      <mat-slider
-        (input)="onInputChange($event, 4)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr positiv
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      Wie haben sich die sammelbaren Abzeichen auf deine Motivation ausgewirkt?
-    </mat-list-item>
-    <mat-list-item>
-      sehr negativ
-      <mat-slider
-        (input)="onInputChange($event, 4)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr positiv
-    </mat-list-item>
-    <mat-divider></mat-divider>
-  </mat-list>
+
+  <h3>Bitte beantworte nachfolgende Fragen:</h3>
+
+  Die Durchführung der Access Reviews war für dich rückblickend:
+  <p></p>
+  langweilig
+  <mat-slider
+    (input)="onInputChange($event, 1)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+  abwechslungsreich
+
+  <mat-divider></mat-divider>
+  Die Access Reviews jede Woche durchzuführen wäre für dich auf lange Sicht:
+  <p></p>
+  demotivierend
+  <mat-slider
+    (input)="onInputChange($event, 2)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider
+  >motivierend
+
+  <mat-divider></mat-divider>
+  <p></p>
+
+  <h3>
+    Wir würden jetzt gerne genau erfahren, warum du rückblickend so für die
+    Tätigkeit der Access Reviews empfunden hast. Bitte gib für jedes Element an,
+    ob es einen positiven oder negativen Effekt auf die Motivation hatte. Zum
+    bessren Verständnis sollen dir folgende Beispielantworten dienen:
+  </h3>
+
+  <p>
+    Beispiel A: Du bewertest das Element „Level-Fortschrittsbalken“ mit „1“. Das
+    bedeutet, ohne dieses Element hättest du eine höhere Motivation gehabt, die
+    Access Reviews durchzuführen. Es hat dich sozusagen gestört.
+  </p>
+  <p>
+    Beispiel B: Du bewertest das Element „Level-Fortschrittsbalken 3“. Das
+    bedeutet, die Existenz dieses Elements war dir gleichgültig. Es hat dich
+    weder animiert noch davon abgebracht, Access Reviews durchzuführen. Es hatte
+    somit keinen Einfluss auf dein oben getroffenes Ergebnis.
+  </p>
+  <p>
+    Beispiel C: Du bewertest das Element „Level-Fortschrittsbalken“ mit „5“. Das
+    bedeutet, durch das Element wurde deine Motivation sehr gesteigert, die
+    Access Reviews durchzuführen. Es hat dich also besonders stark dazu
+    animiert, die Access Reviews durchzuführen.
+  </p>
+  <p></p>
+  <b
+    >Wie hat sich das Pop-up „Neues Level erreicht!“ auf deine Motivation
+    ausgewirkt?</b
+  >
+  <p></p>
+
+  <p></p>
+  sehr negativ
+  <mat-slider
+    (input)="onInputChange($event, 3)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    s
+    max="5"
+  ></mat-slider
+  >sehr positiv
+
+  <mat-divider></mat-divider>
+
+  <b
+    >Wie hat sich das Pop-up „Neues Level erreicht!“ auf deine Motivation
+    ausgewirkt?</b
+  >
+  <p></p>
+  sehr negativ
+  <mat-slider
+    (input)="onInputChange($event, 4)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider
+  >sehr positiv
+
+  <mat-divider></mat-divider>
+
+  <b
+    >Wie hat sich der Level-Fortschrittsbalken auf deine Motivation
+    ausgewirkt?</b
+  >
+  <p></p>
+  sehr negativ
+  <mat-slider
+    (input)="onInputChange($event, 5)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider
+  >sehr positiv
+
+  <mat-divider></mat-divider>
+
+  <b>Wie hat sich die Rangliste auf deine Motivation ausgewirkt?</b>
+  <p></p>
+  sehr negativ
+  <mat-slider
+    (input)="onInputChange($event, 6)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider
+  >sehr positiv
+
+  <mat-divider></mat-divider>
+
+  <b>Wie haben sich die Herausforderungen auf deine Motivation ausgewirkt?</b>
+  <p></p>
+  sehr negativ
+  <mat-slider
+    (input)="onInputChange($event, 7)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider
+  >sehr positiv
+
+  <mat-divider></mat-divider>
+
+  <b
+    >Wie haben sich die sammelbaren Abzeichen auf deine Motivation
+    ausgewirkt?</b
+  >
+  <p></p>
+  sehr negativ
+  <mat-slider
+    (input)="onInputChange($event, 8)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider
+  >sehr positiv
+
+  <mat-divider></mat-divider>
+
   <button mat-raised-button color="primary" (click)="onSubmitEvaluation()">
     Abschicken
   </button>
