@@ -1,5 +1,7 @@
 export class Formular {
   name: String;
+  age: String;
+  gender: String;
   reviewCount: number;
   userLevel: number;
   userRanking: number;
@@ -11,4 +13,5 @@ export class Formular {
   partB4: number;
   partB5: number;
   partB6: number;
+  accuracy: number;
 }

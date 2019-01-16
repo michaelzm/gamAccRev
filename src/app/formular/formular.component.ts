@@ -16,6 +16,7 @@ export class FormularComponent implements OnInit {
   //Beschreibungen der Studie
   firstPart = firstpart;
   secondPart = secondpart;
+  sent = false;
 
   userName: string;
   userLevel: number;
@@ -24,6 +25,9 @@ export class FormularComponent implements OnInit {
   hasbeenSubmitted = false;
   submitFormular: Formular;
   rankingFormular: Competitor;
+
+  gender: string;
+  age: string;
 
   parta1: number;
   parta2: number;
@@ -62,6 +66,10 @@ export class FormularComponent implements OnInit {
       this.partb5 = event.value;
     } else if (slider == 8) {
       this.partb6 = event.value;
+    } else if (slider == 9) {
+      this.age = event.value;
+    } else if (slider == 10) {
+      this.gender = event.value;
     } else {
       console.log("error occured, slider not registered");
     }
@@ -75,26 +83,28 @@ export class FormularComponent implements OnInit {
   }
 
   onSubmitEvaluation() {
-    if (this.hasbeenSubmitted == false) {
-      console.log("starte submit");
-      this.submitFormular = new Formular();
-      this.submitFormular.name = this.userSerice.getUserLName();
-      this.submitFormular.reviewCount = this.userSerice.getUserCounter();
-      this.submitFormular.userLevel = this.userSerice.getUserLevel();
-      this.submitFormular.userRanking = this.userSerice.getRanking();
-      this.submitFormular.partA1 = this.parta1 || 0;
-      this.submitFormular.partA2 = this.parta2 || 0;
-      this.submitFormular.partB1 = this.partb1 || 0;
-      this.submitFormular.partB2 = this.partb2 || 0;
-      this.submitFormular.partB3 = this.partb3 || 0;
-      this.submitFormular.partB4 = this.partb4 || 0;
-      this.submitFormular.partB5 = this.partb5 || 0;
-      this.submitFormular.partB6 = this.partb6 || 0;
-      console.log(this.submitFormular);
-      this.config.postGamification(this.submitFormular).subscribe();
-      this.submitRanking();
-      this.hasbeenSubmitted = true;
-      this.missionService.setFormularDone();
-    }
+    console.log("starte submit");
+    this.submitFormular = new Formular();
+    this.submitFormular.name = this.userSerice.getUserLName();
+    this.submitFormular.age = this.age || "na";
+    this.submitFormular.gender = this.gender || "na";
+    this.submitFormular.reviewCount = this.userSerice.getUserCounter();
+    this.submitFormular.userLevel = this.userSerice.getUserLevel();
+    this.submitFormular.userRanking = this.userSerice.getRanking();
+    this.submitFormular.partA1 = this.parta1 || 1;
+    this.submitFormular.partA2 = this.parta2 || 1;
+    this.submitFormular.partB1 = this.partb1 || 1;
+    this.submitFormular.partB2 = this.partb2 || 1;
+    this.submitFormular.partB3 = this.partb3 || 1;
+    this.submitFormular.partB4 = this.partb4 || 1;
+    this.submitFormular.partB5 = this.partb5 || 1;
+    this.submitFormular.partB6 = this.partb6 || 1;
+    this.submitFormular.accuracy = this.userSerice.getAccuracy() || 0;
+    console.log(this.submitFormular);
+    this.config.postGamification(this.submitFormular).subscribe();
+    this.submitRanking();
+    this.hasbeenSubmitted = true;
+    this.missionService.setFormularDone();
+    this.sent = true;
   }
 }
