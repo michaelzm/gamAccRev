@@ -1,4 +1,4 @@
-mat-slider {
+.mat-slider {
   display: block;
   margin-left: 50px;
   margin-right: 50px;
@@ -14,4 +14,7 @@ mat-slider {
 .right {
   float: right;
   margin-right: 50px;
+}
+.sent {
+  color: green;
 }
