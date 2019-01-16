@@ -37,6 +37,7 @@ export class FormularComponent implements OnInit {
   partb4: number;
   partb5: number;
   partb6: number;
+  partb7: number;
   /*
   atm not working as expected
   */
@@ -50,25 +51,27 @@ export class FormularComponent implements OnInit {
   //think about switch case maybe
   onInputChange(event: any, slider: number) {
     console.log(event);
-    if (slider == 1) {
+    if (slider == 2) {
       this.parta1 = event.value;
-    } else if (slider == 2) {
-      this.parta2 = event.value;
     } else if (slider == 3) {
-      this.partb1 = event.value;
+      this.parta2 = event.value;
     } else if (slider == 4) {
-      this.partb2 = event.value;
+      this.partb1 = event.value;
     } else if (slider == 5) {
-      this.partb3 = event.value;
+      this.partb2 = event.value;
     } else if (slider == 6) {
-      this.partb4 = event.value;
+      this.partb3 = event.value;
     } else if (slider == 7) {
-      this.partb5 = event.value;
+      this.partb4 = event.value;
     } else if (slider == 8) {
-      this.partb6 = event.value;
+      this.partb5 = event.value;
     } else if (slider == 9) {
-      this.age = event.value;
+      this.partb6 = event.value;
     } else if (slider == 10) {
+      this.partb7 = event.value;
+    } else if (slider == 0) {
+      this.age = event.value;
+    } else if (slider == 1) {
       this.gender = event.value;
     } else {
       console.log("error occured, slider not registered");
