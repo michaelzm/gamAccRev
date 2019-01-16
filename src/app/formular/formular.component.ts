@@ -1,10 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { Component, OnInit } from "@angular/core";
 import { ConfigService } from "../config/config.service";
 import { Formular } from "./formular";
-import { endTimeRange } from "@angular/core/src/profile/wtf_impl";
 import { UserService } from "../user/user.service";
-import { firstpart, secondpart } from "./parts";
 import { Competitor } from "../ranking/competitor";
 import { MissionService } from "../mission/mission.service";
 @Component({
@@ -14,8 +11,6 @@ import { MissionService } from "../mission/mission.service";
 })
 export class FormularComponent implements OnInit {
   //Beschreibungen der Studie
-  firstPart = firstpart;
-  secondPart = secondpart;
   sent = false;
 
   userName: string;
