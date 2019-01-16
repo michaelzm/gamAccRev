@@ -20,10 +20,10 @@ export class LoginComponent implements OnInit {
   }
   checkIfShowFormField() {
     if (this.userService.getUserLName() == "DefaultUsername") {
-      console.log("show the username field = true");
+      //console.log("show the username field = true");
       this.showFormField = true;
     } else {
-      console.log("show the username field = false");
+      //console.log("show the username field = false");
       this.showFormField = false;
     }
   }

@@ -38,7 +38,7 @@ export class RankingComponent implements OnInit {
   ) {}
 
   addUserToRanking() {
-    console.log("creating newCompetitor out of service data");
+    //console.log("creating newCompetitor out of service data");
     var userAsCompetitor = new Competitor();
     userAsCompetitor.userLevel = this.userService.getUserLevel();
     userAsCompetitor.user_lastName = this.userService.getUserLName();
@@ -101,10 +101,10 @@ export class RankingComponent implements OnInit {
       this.currentRanking < this.previousRanking
     ) {
       this.showMessage = true;
-      console.log("message should be displayed");
+      //console.log("message should be displayed");
     } else {
       this.showMessage = false;
-      console.log("message should NOT be displayed");
+      //console.log("message should NOT be displayed");
     }
   }
 }

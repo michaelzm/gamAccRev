@@ -15,10 +15,10 @@ export class ProgressBarComponent implements OnInit {
     this.progressCounter = this.userService.getProgressBarCounter();
   }
   logToConsole() {
-    console.log(this.progressCounter);
+    //console.log(this.progressCounter);
   }
   updateProgressBar() {
-    console.log("updated the progressbar");
+    //("updated the progressbar");
     this.getCounter();
   }
   ngOnInit() {

@@ -22,7 +22,7 @@ export class TableComponent implements OnInit {
     this.employeeService
       .getEmployees()
       .subscribe(employeeList => (this.employees = employeeList));
-    console.log("Employees fetched");
+    //console.log("Employees fetched");
   }
 
   ngOnInit() {

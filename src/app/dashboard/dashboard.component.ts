@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     this.getAchievements();
     this.updatePicture();
     this.updateLevelBadges();
-    console.log("console achievement" + this.achievementList);
+    //console.log("console achievement" + this.achievementList);
   }
   getScore() {
     this.dashboardScore = this.userService.getUserScore();
@@ -57,10 +57,10 @@ export class DashboardComponent implements OnInit {
     for (var j = 0; j < missionBadge.length; j++) {
       this.badges.push(missionBadge[j]);
     }
-    console.log("badges are now :" + this.badges);
+    //console.log("badges are now :" + this.badges);
   }
   updatePicture(): string {
-    console.log("updatePicture Called");
+    //console.log("updatePicture Called");
     let lvl = this.dashboardUserLevel;
     switch (lvl) {
       case 1: {

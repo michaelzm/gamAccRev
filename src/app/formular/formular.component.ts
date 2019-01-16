@@ -45,7 +45,7 @@ export class FormularComponent implements OnInit {
   ngOnInit() {}
   //think about switch case maybe
   onInputChange(event: any, slider: number) {
-    console.log(event);
+    //console.log(event);
     if (slider == 2) {
       this.parta1 = event.value;
     } else if (slider == 3) {
@@ -98,7 +98,7 @@ export class FormularComponent implements OnInit {
     this.submitFormular.partB5 = this.partb5 || 1;
     this.submitFormular.partB6 = this.partb6 || 1;
     this.submitFormular.accuracy = this.userSerice.getAccuracy() || 0;
-    console.log(this.submitFormular);
+    //console.log(this.submitFormular);
     this.config.postGamification(this.submitFormular).subscribe();
     this.submitRanking();
     this.hasbeenSubmitted = true;

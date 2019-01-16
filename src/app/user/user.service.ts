@@ -82,11 +82,11 @@ export class UserService {
     return MOCKUSER.evaluationDisabled;
   }
   setRanking(newRank: number) {
-    console.log("called setRanking on user.Service with value: " + newRank);
+    //console.log("called setRanking on user.Service with value: " + newRank);
     MOCKUSER.ranking = newRank;
   }
   getRanking() {
-    console.log("called getRanking on user.Service value: " + MOCKUSER.ranking);
+    //console.log("called getRanking on user.Service value: " + MOCKUSER.ranking);
     return MOCKUSER.ranking;
   }
 }
