@@ -6,7 +6,6 @@ import { LoginComponent } from "./login/login.component";
 import { TableComponent } from "./table/table.component";
 import { FormularComponent } from "./formular/formular.component";
 import { RankingComponent } from "./ranking/ranking.component";
-import { ChallengesComponent } from "./challenges/challenges.component";
 
 const routes: Routes = [
   {
@@ -18,7 +17,6 @@ const routes: Routes = [
   { path: "table", component: TableComponent },
   { path: "formular", component: FormularComponent },
   { path: "ranking", component: RankingComponent },
-  { path: "challenges", component: ChallengesComponent },
   { path: "", redirectTo: "/start", pathMatch: "full" }
 ];
 

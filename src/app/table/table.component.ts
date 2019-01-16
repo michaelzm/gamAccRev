@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { EmployeeService } from "../employee/employee.service";
 import { Employee } from "../employee/employee";
-import { Observable } from "rxjs";
 import { EMPLOYEES } from "../employee/mock-employees";
 import { MatPaginator, MatTableDataSource } from "@angular/material";
 
@@ -23,7 +22,7 @@ export class TableComponent implements OnInit {
     this.employeeService
       .getEmployees()
       .subscribe(employeeList => (this.employees = employeeList));
-    console.log("Employees fetched");
+    //console.log("Employees fetched");
   }
 
   ngOnInit() {

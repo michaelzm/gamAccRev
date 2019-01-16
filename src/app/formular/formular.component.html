@@ -5,7 +5,7 @@
     auswerten können.
   </p>
   <p><b>Alter:</b></p>
-  <mat-radio-group (change)="onInputChange($event, 9)">
+  <mat-radio-group (change)="onInputChange($event, 0)">
     <mat-radio-button value="18-24">18 Jahre - 24 Jahre</mat-radio-button>
     <p></p>
     <mat-radio-button value="25-34">25 Jahre - 34 Jahre</mat-radio-button>
@@ -16,7 +16,7 @@
   </mat-radio-group>
   <p></p>
   <p><b>Geschlecht:</b></p>
-  <mat-radio-group (change)="onInputChange($event, 10)">
+  <mat-radio-group (change)="onInputChange($event, 1)">
     <mat-radio-button value="male">männlich</mat-radio-button>
     <p></p>
     <mat-radio-button value="female">weiblich</mat-radio-button>
@@ -31,21 +31,20 @@
   <span class="left"> langweilig</span>
   <span class="right"> abwechslungsreich</span>
   <mat-slider
-    (input)="onInputChange($event, 1)"
+    (input)="onInputChange($event, 2)"
     thumbLabel
     tickInterval="1"
     min="1"
     max="5"
   ></mat-slider>
 
-  <mat-divider></mat-divider>
   Die Access Reviews jede Woche durchzuführen wäre für dich auf lange Sicht:
   <p></p>
   <span class="left"> demotivierend</span>
   <span class="right"> motivierend</span>
 
   <mat-slider
-    (input)="onInputChange($event, 2)"
+    (input)="onInputChange($event, 3)"
     thumbLabel
     tickInterval="1"
     min="1"
@@ -58,10 +57,10 @@
   <p></p>
 
   <h3>
-    Wir würden jetzt gerne genau erfahren, warum du rückblickend so für die
-    Tätigkeit der Access Reviews empfunden hast. Bitte gib für jedes Element an,
-    ob es einen positiven oder negativen Effekt auf die Motivation hatte. Zum
-    bessren Verständnis sollen dir folgende Beispielantworten dienen:
+    Wir würden jetzt gerne genauer erfahren, warum du so für die Tätigkeit der
+    Access Reviews empfindest. Bitte gib für jedes Element an, ob es einen
+    positiven oder negativen Effekt auf deine Motivation hat. Zum bessren
+    Verständnis sollen dir folgende Beispielantworten dienen:
   </h3>
 
   <p>
@@ -81,6 +80,7 @@
     Access Reviews durchzuführen. Es hat dich also besonders stark dazu
     animiert, die Access Reviews durchzuführen.
   </p>
+  <mat-divider></mat-divider>
   <p></p>
   <b
     >Wie hat sich das Pop-up „3 Berechtigungen geprüft“ auf deine Motivation
@@ -91,7 +91,7 @@
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
-    (input)="onInputChange($event, 3)"
+    (input)="onInputChange($event, 4)"
     thumbLabel
     tickInterval="1"
     min="1"
@@ -103,29 +103,49 @@
   <mat-divider></mat-divider>
   <p></p>
   <b
-    >Wie hat sich das Pop-up „Neues Level erreicht!“ auf deine Motivation
-    ausgewirkt?</b
+    >Wie haben sich die Level, in denen du aufsteigen kannst, auf deine
+    Motivation ausgewirkt?</b
+  >
+  <p></p>
+
+  <p></p>
+  <span class="left">negativ</span> <span class="right">positiv</span>
+  <mat-slider
+    (input)="onInputChange($event, 5)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    s
+    max="5"
+  ></mat-slider>
+  <p></p>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <b
+    >Wie hat sich das Pop-up „Neues Level erreicht!“, das dir visuelles Feedback
+    zum einem Levelaufstieg gibt, auf deine Motivation ausgewirkt?</b
   >
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
-    (input)="onInputChange($event, 4)"
+    (input)="onInputChange($event, 6)"
     thumbLabel
     tickInterval="1"
     min="1"
     max="5"
   ></mat-slider>
-
   <mat-divider></mat-divider>
   <p></p>
+
   <b
-    >Wie hat sich der Level-Fortschrittsbalken und das damit verbundene
-    Aufsteigen im Level auf deine Motivation ausgewirkt?</b
+    >Wie hat sich der Level-Fortschrittsbalken, der sich mit jedem Review füllt,
+    auf deine Motivation ausgewirkt?</b
   >
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
-    (input)="onInputChange($event, 5)"
+    (input)="onInputChange($event, 7)"
     thumbLabel
     tickInterval="1"
     min="1"
@@ -138,7 +158,7 @@
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
-    (input)="onInputChange($event, 6)"
+    (input)="onInputChange($event, 8)"
     thumbLabel
     tickInterval="1"
     min="1"
@@ -151,7 +171,7 @@
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
-    (input)="onInputChange($event, 7)"
+    (input)="onInputChange($event, 9)"
     thumbLabel
     tickInterval="1"
     min="1"
@@ -168,7 +188,7 @@
   <span class="left">negativ</span> <span class="right">positiv</span>
 
   <mat-slider
-    (input)="onInputChange($event, 8)"
+    (input)="onInputChange($event, 10)"
     thumbLabel
     tickInterval="1"
     min="1"

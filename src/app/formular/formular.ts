@@ -13,5 +13,6 @@ export class Formular {
   partB4: number;
   partB5: number;
   partB6: number;
+  partB7: number;
   accuracy: number;
 }

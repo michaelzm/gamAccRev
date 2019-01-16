@@ -32,7 +32,7 @@ export class ConfigService {
   }
   postGamification(data: Formular) {
     console.log("posting ...");
-    console.log(data);
+    //console.log(data);
     return this.http.post(this.gamificationUrl, data, httpOptions);
   }
   getConfig() {
@@ -46,8 +46,8 @@ export class ConfigService {
   }
   //submits ranking
   postRanking(data: Competitor) {
-    console.log("posting ...");
-    console.log(data);
+    //console.log("posting ...");
+    //console.log(data);
     return this.http.post(this.rankingUrl, data, httpOptions);
   }
   //no more needed

@@ -38,7 +38,7 @@ export class RankingComponent implements OnInit {
   ) {}
 
   addUserToRanking() {
-    console.log("creating newCompetitor out of service data");
+    //console.log("creating newCompetitor out of service data");
     var userAsCompetitor = new Competitor();
     userAsCompetitor.userLevel = this.userService.getUserLevel();
     userAsCompetitor.user_lastName = this.userService.getUserLName();
@@ -63,36 +63,9 @@ export class RankingComponent implements OnInit {
         "....end"
     );
 
-    /*
-        for (var i = 0; i < this.fetchedRankings.length; i++) {
-          var newCompetitor = new Competitor();
-          newCompetitor.userLevel = this.fetchedRankings[i].level;
-          newCompetitor.user_counter = this.fetchedRankings[i].reviewCount;
-          newCompetitor.user_lastName = this.fetchedRankings[i].name;
-          this.rankings.push(newCompetitor);
-          console.log("current database items: " + this.fetchedRankings.length);
-        }
-        */
     console.log("fetched database items done.");
   }
-  /*
-  mergeRankings() {
-    console.log(
-      "length of array: " + [...this.rankings, ...this.rankingWithUser].length
-    );
-    var newArray = [...this.rankings, ...this.rankingWithUser].sort((a, b) =>
-      a.user_counter > b.user_counter
-        ? -1
-        : a.user_counter < b.user_counter
-        ? 1
-        : 0
-    );
-    console.log(" current position: " + newArray.indexOf(this.newCompetitor));
 
-    console.log(newArray);
-    return newArray;
-  }
-  */
   sortArray(rankingArray: Competitor[]) {
     return rankingArray.sort((a, b) =>
       a.user_counter > b.user_counter
@@ -128,58 +101,10 @@ export class RankingComponent implements OnInit {
       this.currentRanking < this.previousRanking
     ) {
       this.showMessage = true;
-      console.log("message should be displayed");
+      //console.log("message should be displayed");
     } else {
       this.showMessage = false;
-      console.log("message should NOT be displayed");
+      //console.log("message should NOT be displayed");
     }
   }
 }
-
-/*
-  getRanking() {
-    var newCompetitor = new Competitor();
-    this.configService.getConfig().subscribe(data: Response => {
-      data = new Formular()
-      this.
-      console.log(data);
-    });
-  }
-
-
-   userLevel: data['level'],
-        user_counter: data['reviewCount'],
-        user_lastName: data['name']
-
-  addUserToRanking() {
-    var userAsCompetitor = new Competitor();
-    userAsCompetitor.userLevel = this.userService.getUserLevel();
-    userAsCompetitor.user_lastName = this.userService.getUserLName();
-    userAsCompetitor.user_counter = this.userService.getUserCounter();
-    this.rankings.push(userAsCompetitor);
-  }
- 
-  sortedRankings(): Competitor[] {
-    return this.rankings.sort((a, b) =>
-      a.userLevel > b.userLevel ? -1 : a.userLevel < b.userLevel ? 1 : 0
-    );
-  }
-   */
-
-/*
-const EMPLOYEES: Employee[] = [];
-function pushNameToList() {
-  for (var _i = 0; _i < 100; _i++) {
-    var lnIndex = Math.floor(Math.random() * 19);
-    var fnIndex = Math.floor(Math.random() * 14);
-    var posIndex = Math.floor(Math.random() * 3);
-    const newEmployee = new Employee();
-    newEmployee.lastName = lastName[lnIndex];
-    newEmployee.firstName = firstName[fnIndex];
-    newEmployee.position = pos[posIndex];
-    newEmployee.accessRights = new AccessRightCollection();
-    newEmployee.beenChecked = false;
-    EMPLOYEES.push(newEmployee);
-  }
-}
-*/

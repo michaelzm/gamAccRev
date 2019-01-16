@@ -1,6 +1,5 @@
 import { Employee } from "./employee";
 import { AccessRightCollection } from "../accessRight/access-right-collection";
-import { AccessRight } from "../accessRight/access-right";
 
 var firstName: string[];
 firstName = [

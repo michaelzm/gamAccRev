@@ -1,10 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { Component, OnInit } from "@angular/core";
 import { ConfigService } from "../config/config.service";
 import { Formular } from "./formular";
-import { endTimeRange } from "@angular/core/src/profile/wtf_impl";
 import { UserService } from "../user/user.service";
-import { firstpart, secondpart } from "./parts";
 import { Competitor } from "../ranking/competitor";
 import { MissionService } from "../mission/mission.service";
 @Component({
@@ -14,8 +11,6 @@ import { MissionService } from "../mission/mission.service";
 })
 export class FormularComponent implements OnInit {
   //Beschreibungen der Studie
-  firstPart = firstpart;
-  secondPart = secondpart;
   sent = false;
 
   userName: string;
@@ -37,6 +32,7 @@ export class FormularComponent implements OnInit {
   partb4: number;
   partb5: number;
   partb6: number;
+  partb7: number;
   /*
   atm not working as expected
   */
@@ -49,26 +45,28 @@ export class FormularComponent implements OnInit {
   ngOnInit() {}
   //think about switch case maybe
   onInputChange(event: any, slider: number) {
-    console.log(event);
-    if (slider == 1) {
+    //console.log(event);
+    if (slider == 2) {
       this.parta1 = event.value;
-    } else if (slider == 2) {
-      this.parta2 = event.value;
     } else if (slider == 3) {
-      this.partb1 = event.value;
+      this.parta2 = event.value;
     } else if (slider == 4) {
-      this.partb2 = event.value;
+      this.partb1 = event.value;
     } else if (slider == 5) {
-      this.partb3 = event.value;
+      this.partb2 = event.value;
     } else if (slider == 6) {
-      this.partb4 = event.value;
+      this.partb3 = event.value;
     } else if (slider == 7) {
-      this.partb5 = event.value;
+      this.partb4 = event.value;
     } else if (slider == 8) {
-      this.partb6 = event.value;
+      this.partb5 = event.value;
     } else if (slider == 9) {
-      this.age = event.value;
+      this.partb6 = event.value;
     } else if (slider == 10) {
+      this.partb7 = event.value;
+    } else if (slider == 0) {
+      this.age = event.value;
+    } else if (slider == 1) {
       this.gender = event.value;
     } else {
       console.log("error occured, slider not registered");
@@ -100,7 +98,7 @@ export class FormularComponent implements OnInit {
     this.submitFormular.partB5 = this.partb5 || 1;
     this.submitFormular.partB6 = this.partb6 || 1;
     this.submitFormular.accuracy = this.userSerice.getAccuracy() || 0;
-    console.log(this.submitFormular);
+    //console.log(this.submitFormular);
     this.config.postGamification(this.submitFormular).subscribe();
     this.submitRanking();
     this.hasbeenSubmitted = true;

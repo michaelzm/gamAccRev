@@ -40,7 +40,7 @@ export class AccessListComponent implements OnInit {
         this.typesOfRightsOld[i]
       ];
     }
-    console.log("shuffeling the currently displayed access rights");
+    //console.log("shuffeling the currently displayed access rights");
     this.typesOfRights = this.typesOfRightsOld;
   }
 
@@ -66,7 +66,7 @@ export class AccessListComponent implements OnInit {
   }
 
   printToConsole(toPrint) {
-    console.log(toPrint);
+    //console.log(toPrint);
   }
   /*
   wipeEmployeeRights() sets all rights of the given employee to false, so if ones about to change the rights twice, it will start from the scratch
