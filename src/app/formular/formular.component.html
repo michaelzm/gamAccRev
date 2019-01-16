@@ -4,81 +4,194 @@
     Bitte wähle hier dein Alter und Geschlecht, damit wir die Studie besser
     auswerten können.
   </p>
-  <mat-form-field>
-    <mat-select placeholder="Alter">
-      <mat-option value="18-24">18-24</mat-option>
-      <mat-option value="25-34">25-34</mat-option>
-      <mat-option value="35-44">35-44</mat-option>
-      <mat-option value="45-54">45-54</mat-option>
-      <mat-option value="55">55 und älter</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <p></p>
-  <mat-radio-group>
-    <mat-radio-button value="1">mänlich</mat-radio-button>
+  <p><b>Alter:</b></p>
+  <mat-radio-group (change)="onInputChange($event, 9)">
+    <mat-radio-button value="18-24">18 Jahre - 24 Jahre</mat-radio-button>
     <p></p>
-    <mat-radio-button value="2">weiblich</mat-radio-button>
+    <mat-radio-button value="25-34">25 Jahre - 34 Jahre</mat-radio-button>
+    <p></p>
+    <mat-radio-button value="35-44">35 Jahre - 44 Jahre</mat-radio-button>
+    <p></p>
+    <mat-radio-button value="45nabove">45 Jahre und älter</mat-radio-button>
   </mat-radio-group>
-  <div class="firstpart">
-    <h2>Praktischer Teil der Evaluation</h2>
-    <p>{{ firstPart }}</p>
-  </div>
-  <mat-list>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4> </mat-list-item>
-    <mat-list-item
-      >sehr gering
-      <mat-slider
-        (input)="onInputChange($event, 1)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr stark
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4></mat-list-item>
-    <mat-list-item
-      >sehr gering
-      <mat-slider
-        (input)="onInputChange($event, 2)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr stark
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4> </mat-list-item>
-    <mat-list-item
-      >sehr gering
-      <mat-slider
-        (input)="onInputChange($event, 3)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr stark
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item> <h4>Einfluss von Faktor Y</h4></mat-list-item>
-    <mat-list-item>
-      sehr gering
-      <mat-slider
-        (input)="onInputChange($event, 4)"
-        thumbLabel
-        tickInterval="1"
-        min="1"
-        max="5"
-      ></mat-slider
-      >sehr stark
-    </mat-list-item>
-    <mat-divider></mat-divider>
-  </mat-list>
-  <h2>Theoretischer Teil der Evaluation</h2>
-  <p>{{ secondPart }}</p>
+  <p></p>
+  <p><b>Geschlecht:</b></p>
+  <mat-radio-group (change)="onInputChange($event, 10)">
+    <mat-radio-button value="male">männlich</mat-radio-button>
+    <p></p>
+    <mat-radio-button value="female">weiblich</mat-radio-button>
+  </mat-radio-group>
+  <div class="firstpart"><h2>Teil A des Fragebogens</h2></div>
+
+  <h3>Bitte beantworte nachfolgende Fragen:</h3>
+
+  Die Durchführung der Access Reviews war für dich rückblickend:
+  <p></p>
+
+  <span class="left"> langweilig</span>
+  <span class="right"> abwechslungsreich</span>
+  <mat-slider
+    (input)="onInputChange($event, 1)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+
+  <mat-divider></mat-divider>
+  Die Access Reviews jede Woche durchzuführen wäre für dich auf lange Sicht:
+  <p></p>
+  <span class="left"> demotivierend</span>
+  <span class="right"> motivierend</span>
+
+  <mat-slider
+    (input)="onInputChange($event, 2)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <h2>Teil B des Fragebogens</h2>
+  <p></p>
+
+  <h3>
+    Wir würden jetzt gerne genau erfahren, warum du rückblickend so für die
+    Tätigkeit der Access Reviews empfunden hast. Bitte gib für jedes Element an,
+    ob es einen positiven oder negativen Effekt auf die Motivation hatte. Zum
+    bessren Verständnis sollen dir folgende Beispielantworten dienen:
+  </h3>
+
+  <p>
+    Beispiel A: Du bewertest das Element „Level-Fortschrittsbalken“ mit „1“. Das
+    bedeutet, ohne dieses Element hättest du eine höhere Motivation gehabt, die
+    Access Reviews durchzuführen. Es hat dich sozusagen gestört.
+  </p>
+  <p>
+    Beispiel B: Du bewertest das Element „Level-Fortschrittsbalken" mit "3". Das
+    bedeutet, die Existenz dieses Elements war dir gleichgültig. Es hat dich
+    weder animiert noch davon abgebracht, Access Reviews durchzuführen. Es hatte
+    somit keinen Einfluss auf dein oben getroffenes Ergebnis.
+  </p>
+  <p>
+    Beispiel C: Du bewertest das Element „Level-Fortschrittsbalken“ mit „5“. Das
+    bedeutet, durch das Element wurde deine Motivation sehr gesteigert, die
+    Access Reviews durchzuführen. Es hat dich also besonders stark dazu
+    animiert, die Access Reviews durchzuführen.
+  </p>
+  <p></p>
+  <b
+    >Wie hat sich das Pop-up „3 Berechtigungen geprüft“ auf deine Motivation
+    ausgewirkt?</b
+  >
+  <p></p>
+
+  <p></p>
+  <span class="left">negativ</span> <span class="right">positiv</span>
+  <mat-slider
+    (input)="onInputChange($event, 3)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    s
+    max="5"
+  ></mat-slider>
+  <p></p>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <b
+    >Wie hat sich das Pop-up „Neues Level erreicht!“ auf deine Motivation
+    ausgewirkt?</b
+  >
+  <p></p>
+  <span class="left">negativ</span> <span class="right">positiv</span>
+  <mat-slider
+    (input)="onInputChange($event, 4)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <b
+    >Wie hat sich der Level-Fortschrittsbalken und das damit verbundene
+    Aufsteigen im Level auf deine Motivation ausgewirkt?</b
+  >
+  <p></p>
+  <span class="left">negativ</span> <span class="right">positiv</span>
+  <mat-slider
+    (input)="onInputChange($event, 5)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <b>Wie hat sich die Rangliste auf deine Motivation ausgewirkt?</b>
+  <p></p>
+  <span class="left">negativ</span> <span class="right">positiv</span>
+  <mat-slider
+    (input)="onInputChange($event, 6)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <b>Wie haben sich die Herausforderungen auf deine Motivation ausgewirkt?</b>
+  <p></p>
+  <span class="left">negativ</span> <span class="right">positiv</span>
+  <mat-slider
+    (input)="onInputChange($event, 7)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <b>
+    Wie haben sich die sammelbaren Abzeichen auf deine Motivation ausgewirkt?
+  </b>
+  <p></p>
+
+  <span class="left">negativ</span> <span class="right">positiv</span>
+
+  <mat-slider
+    (input)="onInputChange($event, 8)"
+    thumbLabel
+    tickInterval="1"
+    min="1"
+    max="5"
+  ></mat-slider>
+
+  <mat-divider></mat-divider>
+  <p></p>
+  <b>
+    Bitte überprüfe noch einmal, ob du alle Felder korrekt ausgefüllt hast und
+    sende erst dann den Fragebogen ab.
+  </b>
+
+  <span class="thanks" *ngIf="sent">
+    <p></p>
+    <span class="sent"> Fragebogen abgeschickt </span>
+    <p></p>
+    <b
+      >Wir bedanken uns bei dir herzlich für die Teilnahme an unserer
+      Fallstudie.</b
+    >
+  </span>
+  <p></p>
   <button mat-raised-button color="primary" (click)="onSubmitEvaluation()">
     Abschicken
   </button>

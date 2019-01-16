@@ -16,6 +16,7 @@ export class RankingComponent implements OnInit {
   previousRanking: number;
   showMessage: boolean;
 
+  //mocks fake data, not used
   createMutlipleCompetitors() {
     for (var i = 0; i < 10; i++) {
       this.newCompetitor = new Competitor();
