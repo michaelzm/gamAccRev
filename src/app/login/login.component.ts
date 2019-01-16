@@ -6,6 +6,7 @@ import { UserService } from "../user/user.service";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"]
 })
+//class changes during implementation to more of a startingscreen
 export class LoginComponent implements OnInit {
   constructor(private userService: UserService) {}
   showFormField: boolean;

@@ -1,5 +1,5 @@
 import { User } from "./user";
-
+//mockuser changed later on to the real user, dont get confused with namegiving
 var MOCKUSER = new User();
 MOCKUSER.user_lastName = "DefaultUsername";
 MOCKUSER.user_firstName = "DefaultUserFirstName";
