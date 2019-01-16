@@ -11,7 +11,6 @@ import { MatInputModule } from "@angular/material/input";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
-import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatStepperModule } from "@angular/material/stepper";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSliderModule } from "@angular/material/slider";
@@ -20,7 +19,6 @@ import { MatBadgeModule } from "@angular/material/badge";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatCardModule } from "@angular/material/card";
-
 import { NgModule } from "@angular/core";
 
 @NgModule({
@@ -36,7 +34,6 @@ import { NgModule } from "@angular/core";
     MatDividerModule,
     MatListModule,
     MatProgressBarModule,
-    MatFormFieldModule,
     MatStepperModule,
     MatToolbarModule,
     MatSliderModule,
@@ -58,7 +55,6 @@ import { NgModule } from "@angular/core";
     MatDividerModule,
     MatListModule,
     MatProgressBarModule,
-    MatFormFieldModule,
     MatStepperModule,
     MatToolbarModule,
     MatSliderModule,

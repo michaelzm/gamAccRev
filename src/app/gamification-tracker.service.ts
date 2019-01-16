@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { UserService } from "./user/user.service";
 import { AccessReviewComponent } from "./access-review/access-review.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { RankingComponent } from "./ranking/ranking.component";
 
 @Injectable({
   providedIn: "root"
@@ -15,22 +14,13 @@ export class GamificationTrackerService {
   constructor(
     private dashboard: DashboardComponent,
     private userService: UserService,
-    private accessReview: AccessReviewComponent,
-    private ranking: RankingComponent
+    private accessReview: AccessReviewComponent
   ) {}
   // "main"method which includes checking every possible popup
   checkForGamificationPopup() {
     console.log("Check for Gamification");
     this.checkForThreeReviews();
     this.checkIfXPBarFull();
-    /*
-    console.log(
-      "current Score = " +
-        this.userService.getUserScore() +
-        " and current reviewCounter = " +
-        this.userService.getUserCounter()
-    );
-    */
   }
   //shows popup if fulfilled
   checkForThreeReviews() {

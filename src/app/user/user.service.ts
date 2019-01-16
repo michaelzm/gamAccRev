@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { User } from "./user";
 import { MOCKUSER } from "./mock-user";
 import { DatePipe } from "@angular/common";
 

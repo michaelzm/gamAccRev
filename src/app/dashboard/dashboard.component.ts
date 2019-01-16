@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../user/user.service";
-import { MissionComponent } from "../mission/mission.component";
 import { MissionService } from "../mission/mission.service";
 
 @Component({

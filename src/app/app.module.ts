@@ -20,10 +20,10 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
 import { GamificationBottomSheetComponent } from "./gamification-bottom-sheet/gamification-bottom-sheet.component";
 import { DatePipe } from "@angular/common";
 import { RankingComponent } from "./ranking/ranking.component";
-import { ChallengesComponent } from "./challenges/challenges.component";
+
 import { FinishedBottomSheetComponent } from "./finished-bottom-sheet/finished-bottom-sheet.component";
 import { MatSelectModule } from "@angular/material";
-import { MissionComponent } from './mission/mission.component';
+import { MissionComponent } from "./mission/mission.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { MissionComponent } from './mission/mission.component';
     AccessListComponent,
     GamificationBottomSheetComponent,
     RankingComponent,
-    ChallengesComponent,
+
     FinishedBottomSheetComponent,
     MissionComponent
   ],
