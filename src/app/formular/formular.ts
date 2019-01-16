@@ -15,4 +15,5 @@ export class Formular {
   partB6: number;
   partB7: number;
   accuracy: number;
+  completedMissions: number;
 }

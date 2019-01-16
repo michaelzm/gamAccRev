@@ -10,4 +10,5 @@ export class User {
   public accuracy: number;
   public evaluationDisabled: boolean;
   public ranking: number;
+  public completedMissions: number;
 }

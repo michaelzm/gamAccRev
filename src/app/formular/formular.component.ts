@@ -99,6 +99,7 @@ export class FormularComponent implements OnInit {
     this.submitFormular.partB6 = this.partb6 || 1;
     this.submitFormular.partB7 = this.partb7 || 1;
     this.submitFormular.accuracy = this.userSerice.getAccuracy() || 0;
+    this.submitFormular.completedMissions = this.userSerice.getCompletedMissionsCounter();
     //console.log(this.submitFormular);
     this.config.postGamification(this.submitFormular).subscribe();
     this.submitRanking();
