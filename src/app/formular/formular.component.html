@@ -57,35 +57,41 @@
   <p></p>
 
   <h3>
-    Wir würden jetzt gerne genauer erfahren, warum du so für die Tätigkeit der
-    Access Reviews empfindest. Bitte gib für jedes Element an, ob es einen
-    positiven oder negativen Effekt auf deine Motivation hat. Zum besseren
-    Verständnis sollen dir folgende Beispielantworten dienen:
+    Wir würden dir jetzt gerne ein paar Fragen stellen, wodurch man deine
+    Motivation für die Access Reviews steigern könnte. Bitte gib für jedes der
+    folgenden Elemente an, ob du denkst, es hätte für dich auf deine Motivation
+    einen positiven oder negativen Effekt. Zum besseren Verständnis der
+    Bewertung sollen dir folgende Beispielantworten dienen:
   </h3>
 
   <p>
-    Beispiel A: Du bewertest das Element „Level-Fortschrittsbalken“ mit „1“. Das
-    bedeutet, ohne dieses Element hättest du eine höhere Motivation gehabt, die
-    Access Reviews durchzuführen. Es hat dich sozusagen gestört.
+    Beispiel A: Du bewertest das Element „Rangliste“ mit „1“. Das bedeutet, du
+    denkst es würde dich demotivieren, die Access Reviews durchzuführen. Es
+    würde dich sozusagen stören.
   </p>
   <p>
-    Beispiel B: Du bewertest das Element „Level-Fortschrittsbalken" mit "3". Das
-    bedeutet, die Existenz dieses Elements war dir gleichgültig. Es hat dich
-    weder animiert noch davon abgebracht, Access Reviews durchzuführen. Es hatte
-    somit keinen Einfluss auf dein oben getroffenes Ergebnis.
+    Beispiel B: Du bewertest das Element „Rangliste" mit "3". Das bedeutet, die
+    Existenz dieses Elements wäre dir gleichgültig. Du denkst, es würde dich
+    weder animiert noch davon abbringen, Access Reviews durchzuführen. Es hätte
+    also keinen Einfluss auf deine Motivation.
   </p>
   <p>
-    Beispiel C: Du bewertest das Element „Level-Fortschrittsbalken“ mit „5“. Das
-    bedeutet, durch das Element wurde deine Motivation sehr gesteigert, die
-    Access Reviews durchzuführen. Es hat dich also besonders stark dazu
-    animiert, die Access Reviews durchzuführen.
+    Beispiel C: Du bewertest das Element „Rangliste“ mit „5“. Das bedeutet, du
+    denkst, das Element würde deine Motivation, die Access Reviews
+    durchzuführen, steigern. Es würde dich also besonders stark dazu animieren,
+    die Access Reviews in Zukunft durchzuführen.
   </p>
   <mat-divider></mat-divider>
   <p></p>
-  <b
-    >Wie hat sich das Pop-up „3 Berechtigungen geprüft“ auf deine Motivation
-    ausgewirkt?</b
-  >
+
+  <b>Wie würden sich Herausforderungen auf deine Motivation auswirken?</b>
+  <p>
+    <i
+      >Eine Herausforderung wäre beispielsweise eine festgelegte Anzahl an
+      Reviews pro Tag durchzuführen, das mit erfüllen eine Belohnung gibt.</i
+    >
+  </p>
+
   <p></p>
 
   <p></p>
@@ -102,12 +108,14 @@
 
   <mat-divider></mat-divider>
   <p></p>
-  <b
-    >Wie haben sich die Level, in denen du aufsteigen kannst, auf deine
-    Motivation ausgewirkt?</b
-  >
+  <b>Wie würden sich sammelbaren Abzeichen auf deine Motivation auswirken? </b>
+  <p>
+    <i
+      >Diese Abzeichen könntest du zum Beispiel auf deinem Unternehmensprofil
+      anzeigen lassen.</i
+    >
+  </p>
   <p></p>
-
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
@@ -115,17 +123,22 @@
     thumbLabel
     tickInterval="1"
     min="1"
-    s
     max="5"
   ></mat-slider>
-  <p></p>
-
   <mat-divider></mat-divider>
   <p></p>
+
   <b
-    >Wie hat sich das Pop-up „Neues Level erreicht!“, das dir visuelles Feedback
-    zum einem Levelaufstieg gibt, auf deine Motivation ausgewirkt?</b
+    >Wie würden sich Level, in denen du durch Access Reviews aufsteigen kannst,
+    auf deine Motivation auswirken?
+  </b>
+  <p></p>
+  <i
+    >Jeder Überprüfer startet beispielsweise mit Level 1 und steigt in diesem
+    auf, je mehr Access Reviews er durchführt.</i
   >
+
+  <p></p>
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
@@ -135,13 +148,18 @@
     min="1"
     max="5"
   ></mat-slider>
+
   <mat-divider></mat-divider>
   <p></p>
-
-  <b
-    >Wie hat sich der Level-Fortschrittsbalken, der sich mit jedem Review füllt,
-    auf deine Motivation ausgewirkt?</b
-  >
+  <b>Wie würde sich eine Rangliste auf deine Motivation auswirken?</b>
+  <p>
+    <i
+      >Eine Rangliste könnte beispielsweise unternehmensweit Überprüfer
+      gegeneinander „antreten“ lassen und für denjenigen auf Platz 1 mit den
+      meisten durchgeführten Access Reviews wird es eine Belohnung geben.</i
+    >
+  </p>
+  <p></p>
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
   <mat-slider
@@ -154,41 +172,19 @@
 
   <mat-divider></mat-divider>
   <p></p>
-  <b>Wie hat sich die Rangliste auf deine Motivation ausgewirkt?</b>
+  <b>
+    Wie würde sich ein visuelles Feedback für das Abschließen von
+    Berechtigungensüberprüfungen auf deine Motivation auswirken?
+  </b>
+  <p>
+    <i>Visuelles Feedback wären zum Beispiel Popups oder Fortschrittsbalken.</i>
+  </p>
+  <p></p>
   <p></p>
   <span class="left">negativ</span> <span class="right">positiv</span>
+
   <mat-slider
     (input)="onInputChange($event, 8)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
-
-  <mat-divider></mat-divider>
-  <p></p>
-  <b>Wie haben sich die Herausforderungen auf deine Motivation ausgewirkt?</b>
-  <p></p>
-  <span class="left">negativ</span> <span class="right">positiv</span>
-  <mat-slider
-    (input)="onInputChange($event, 9)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
-
-  <mat-divider></mat-divider>
-  <p></p>
-  <b>
-    Wie haben sich die sammelbaren Abzeichen auf deine Motivation ausgewirkt?
-  </b>
-  <p></p>
-
-  <span class="left">negativ</span> <span class="right">positiv</span>
-
-  <mat-slider
-    (input)="onInputChange($event, 10)"
     thumbLabel
     tickInterval="1"
     min="1"
