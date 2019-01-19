@@ -35,12 +35,10 @@
       Anwendung: Unter dem Reiter <b>Zugriffsrechtverwaltung</b> findest du die
       eigentliche Berechtigungsprüfung, womit du dich in dem Rahmen der Studie
       genauer befasst, sowie die Tabellenübersicht, die dir alle deine
-      getroffenen Entscheidungen in einer Matrix noch einmal anzeigt. Daneben
-      findest du dein persönliches Profil, in dem deine Erfolge und
-      Herausforderungen gespeichert und eingesehen werden können. Abschließend
-      gibt es noch die Rangliste, in der du und deine Kollegen des Unternehmens
-      jeden Monat gegeneinander antretet, um der fleißigste Berechtigungsprüfer
-      zu sein.
+      getroffenen Entscheidungen in einer Matrix noch einmal anzeigt. Zusätzlich
+      gibt es dort noch den Studienablauf, der dich wieder auf diese Seite
+      führt, falls du zum Beispiel den Text später noch einmal durchlesen
+      möchstest.
     </p>
     <p>
       Noch eine kurze Anleitung für die Access Reviews: Wähle die zutreffenden
@@ -74,12 +72,8 @@
         "Studienablauf" unter dem Punkt "Zugriffsverwaltung" einsehen. Vielen
         Dank, dass du mitmachst und viel Spaß mit den Access Reviews! 😊
       </p>
-      <mat-form-field appearance="outline">
-        <mat-label>Vorname</mat-label>
-        <input matInput type="text" placeholder="Vorname" #usernameLogin />
-      </mat-form-field>
       <button
-        mat-button
+        mat-flat-button
         color="primary"
         (click)="login(usernameLogin)"
         routerLink="/accessreview"
