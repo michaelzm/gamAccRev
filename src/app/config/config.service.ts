@@ -4,7 +4,6 @@ import { Formular } from "../formular/formular";
 import { HttpHeaders } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
-import { Competitor } from "../ranking/competitor";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,10 +14,10 @@ const httpOptions = {
 @Injectable({
   providedIn: "root"
 })
+
+//configService handles all the HTTP requests to urserver
 export class ConfigService {
-  configUrl = "https://urserver.herokuapp.com/formular";
-  rankingUrl = "https://urserver.herokuapp.com/ranking";
-  gamificationUrl = "https://urserver.herokuapp.com/gamification";
+  basicUrl = "https://urserver.herokuapp.com/basic";
   serverUrl = "https://urserver.herokuapp.com/"; //needed for activating server at beginning of a session
 
   constructor(private http: HttpClient) {}
@@ -34,33 +33,15 @@ export class ConfigService {
   //this should send a request in order to simply wake up the database server on heroku
   activateServer() {
     console.log("activating server");
-    this.http.get(this.serverUrl);
+    this.http.get(this.basicUrl, httpOptions);
   }
 
-  postGamification(data: Formular) {
+  postBasic(data: Formular) {
     console.log("posting ...");
     //console.log(data);
-    return this.http.post(this.gamificationUrl, data, httpOptions);
+    return this.http.post(this.basicUrl, data, httpOptions);
   }
-  getConfig() {
-    return this.http.get(this.configUrl);
-  }
-  //fetch renkings from the server
-  getRanking(): Observable<Competitor[]> {
-    return this.http
-      .get<Competitor[]>(this.rankingUrl)
-      .pipe(catchError(this.handleError("get Rankings", [])));
-  }
-  //submits ranking
-  postRanking(data: Competitor) {
-    //console.log("posting ...");
-    //console.log(data);
-    return this.http.post(this.rankingUrl, data, httpOptions);
-  }
-  //no more needed
-  postConfig(data: Formular) {
-    return this.http.post(this.configUrl, data, httpOptions);
-  }
+
   /**
    * this is copy pasta
    * Handle Http operation that failed.

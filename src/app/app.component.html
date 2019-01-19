@@ -8,29 +8,5 @@
     <button mat-menu-item routerLink="/table">Tabellenübersicht</button>
     <button mat-menu-item routerLink="/start">Studienablauf</button>
   </mat-menu>
-  <button
-    mat-button
-    [matBadge]="badge"
-    (click)="resetBadge()"
-    matBadgePosition="after"
-    matBadgeHidden="{{ isHidden }}"
-    matBadgeColor="accent"
-    routerLink="/dashboard"
-    matBadgeSize="small"
-  >
-    Profil
-  </button>
-  <button
-    mat-button
-    [matBadge]="badge2"
-    (click)="resetBadge2()"
-    matBadgePosition="after"
-    matBadgeHidden="{{ isHidden2 }}"
-    matBadgeColor="accent"
-    matBadgeSize="small"
-    routerLink="/ranking"
-  >
-    Rangliste
-  </button>
 </mat-toolbar>
 <div class="bottom"><router-outlet></router-outlet></div>

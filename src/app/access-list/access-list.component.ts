@@ -12,7 +12,7 @@ import { GamificationTrackerService } from "../gamification-tracker.service";
 export class AccessListComponent implements OnInit {
   @Input() employeeToAlterRights: Employee;
   typesOfRights: string[] = [];
-
+  //used to shuffle thru and assign shuffled array to typesOfRights
   typesOfRightsOld: string[] = [
     "ERP-System",
     "Kalender",
@@ -43,7 +43,7 @@ export class AccessListComponent implements OnInit {
     //console.log("shuffeling the currently displayed access rights");
     this.typesOfRights = this.typesOfRightsOld;
   }
-
+  //handles given rights as checked in access rights list
   checkIfSelected(hasToGetChecked) {
     switch (hasToGetChecked) {
       case "ERP-System":
@@ -65,9 +65,6 @@ export class AccessListComponent implements OnInit {
     }
   }
 
-  printToConsole(toPrint) {
-    //console.log(toPrint);
-  }
   /*
   wipeEmployeeRights() sets all rights of the given employee to false, so if ones about to change the rights twice, it will start from the scratch
   */
@@ -108,7 +105,6 @@ export class AccessListComponent implements OnInit {
       );
       this.accessReviewComponent.scrollToNext();
       //this.accessReviewComponent.buttonDisabled = false;
-      this.gamificationTracker.checkForGamificationPopup();
       this.checkIfAuthorized();
     }
   }
@@ -120,7 +116,7 @@ export class AccessListComponent implements OnInit {
       }
     }
   }
-
+  //easiest way to update rights on second time mod rights
   wipeEmployeeRights() {
     this.employeeToAlterRights.accessRights.hasCal = false;
     this.employeeToAlterRights.accessRights.hasCode = false;

@@ -69,12 +69,10 @@
     </div>
     <div class="formField" *ngIf="showFormField">
       <p>
-        Jetzt kann’s losgehen! Gib nachfolgend einen Namen für dein Profil ein
-        (zum Beispiel deinen Vornamen) und beginne anschließend die Studie mit
-        dem Button „Starten“. Den Ablauf der Studie kannst du bei aufkommenden
-        Fragen erneut unter "Studienablauf" unter dem Punkt "Zugriffsverwaltung"
-        einsehen. Vielen Dank, dass du mitmachst und viel Spaß mit den Access
-        Reviews! 😊
+        Jetzt kann’s losgehen! Beginne die Studie mit dem Button „Starten“. Den
+        Ablauf der Studie kannst du bei aufkommenden Fragen erneut unter
+        "Studienablauf" unter dem Punkt "Zugriffsverwaltung" einsehen. Vielen
+        Dank, dass du mitmachst und viel Spaß mit den Access Reviews! 😊
       </p>
       <mat-form-field appearance="outline">
         <mat-label>Vorname</mat-label>
@@ -84,7 +82,7 @@
         mat-button
         color="primary"
         (click)="login(usernameLogin)"
-        routerLink="/dashboard"
+        routerLink="/accessreview"
       >
         Starten
       </button>
