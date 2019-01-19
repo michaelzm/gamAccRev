@@ -89,4 +89,10 @@ export class UserService {
     //console.log("called getRanking on user.Service value: " + MOCKUSER.ranking);
     return MOCKUSER.ranking;
   }
+  increaseCompletedMissionsByOne() {
+    MOCKUSER.completedMissions++;
+  }
+  getCompletedMissionsCounter() {
+    return MOCKUSER.completedMissions;
+  }
 }

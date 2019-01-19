@@ -19,6 +19,7 @@ export class ConfigService {
   configUrl = "https://urserver.herokuapp.com/formular";
   rankingUrl = "https://urserver.herokuapp.com/ranking";
   gamificationUrl = "https://urserver.herokuapp.com/gamification";
+  serverUrl = "https://urserver.herokuapp.com/"; //needed for activating server at beginning of a session
 
   constructor(private http: HttpClient) {}
 
@@ -30,6 +31,12 @@ export class ConfigService {
     console.error(error.message || error);
     return Observable.throw(error.message || error);
   }
+  //this should send a request in order to simply wake up the database server on heroku
+  activateServer() {
+    console.log("activating server");
+    this.http.get(this.serverUrl);
+  }
+
   postGamification(data: Formular) {
     console.log("posting ...");
     //console.log(data);

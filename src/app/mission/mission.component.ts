@@ -39,6 +39,7 @@ export class MissionComponent implements OnInit {
       this.missionService.hideFirst();
       this.missionService.setFirstBadge();
       this.dashboard.updateLevelBadges();
+      this.userService.increaseCompletedMissionsByOne();
     }
   }
 
@@ -48,6 +49,7 @@ export class MissionComponent implements OnInit {
       this.missionService.hideSecond();
       this.missionService.setSecondBadge();
       this.dashboard.updateLevelBadges();
+      this.userService.increaseCompletedMissionsByOne();
     }
   }
 
@@ -57,6 +59,7 @@ export class MissionComponent implements OnInit {
       this.missionService.hideThird();
       this.missionService.setThirdBadge();
       this.dashboard.updateLevelBadges();
+      this.userService.increaseCompletedMissionsByOne();
     }
   }
   getFourthMissionReward() {
@@ -73,6 +76,7 @@ export class MissionComponent implements OnInit {
       this.showFormular = false;
       this.dashboard.updateLevelBadges();
       this.missionService.hideFormular();
+      this.userService.increaseCompletedMissionsByOne();
     }
   }
 
