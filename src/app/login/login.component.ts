@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(name: HTMLInputElement) {
-    this.userService.setUserLastName(name.value);
+    this.userService.setUserLastName("basicSoNoName");
     return false;
   }
   checkIfShowFormField() {
