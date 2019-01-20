@@ -35,7 +35,7 @@ export class GamificationTrackerService {
   //sets button to enabled to be clickable by user
   checkIfAuthorizedForEvaluation() {
     //console.log("check if authorized");
-    if (this.userService.getUserCounter() == 4) {
+    if (this.userService.getUserCounter() == 25) {
       this.accessReview.buttonDisabled = false;
       this.accessReview.openBottomSheetAuthorized();
       this.userService.setUserAuthorized();
