@@ -1,4 +1,4 @@
-<div class="formular">
+<div class="marginOfContent">
   <div class="demographicData"><h2>Daten zur Person</h2></div>
   <p>
     Bitte wähle hier dein Alter und Geschlecht, damit wir die Studie besser
@@ -27,30 +27,31 @@
 
   Die Durchführung der Access Reviews war für dich rückblickend:
   <p></p>
-
-  <span class="left"> langweilig</span>
-  <span class="right"> abwechslungsreich</span>
-  <mat-slider
-    (input)="onInputChange($event, 2)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
-
+  <div class="answer">
+    <span class="left"> langweilig</span>
+    <span class="right"> abwechslungsreich</span>
+    <mat-slider
+      (input)="onInputChange($event, 2)"
+      thumbLabel
+      tickInterval="1"
+      min="1"
+      max="5"
+    ></mat-slider>
+  </div>
   Die Access Reviews jede Woche durchzuführen wäre für dich auf lange Sicht:
   <p></p>
-  <span class="left"> demotivierend</span>
-  <span class="right"> motivierend</span>
+  <div class="answer">
+    <span class="left"> demotivierend</span>
+    <span class="right"> motivierend</span>
 
-  <mat-slider
-    (input)="onInputChange($event, 3)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
-
+    <mat-slider
+      (input)="onInputChange($event, 3)"
+      thumbLabel
+      tickInterval="1"
+      min="1"
+      max="5"
+    ></mat-slider>
+  </div>
   <mat-divider></mat-divider>
   <p></p>
   <h2>Teil B des Fragebogens</h2>
@@ -60,7 +61,7 @@
     Wir würden dir jetzt gerne ein paar Fragen stellen, wodurch man deine
     Motivation für die Access Reviews steigern könnte. Bitte gib für jedes der
     folgenden Elemente an, ob du denkst, es hätte für dich auf deine Motivation
-    einen positiven oder negativen Effekt. Zum besseren Verständnis der
+    einen positiven oder negativen Effekt. <br />Zum besseren Verständnis der
     Bewertung sollen dir folgende Beispielantworten dienen:
   </h3>
 
@@ -95,15 +96,17 @@
   <p></p>
 
   <p></p>
-  <span class="left">negativ</span> <span class="right">positiv</span>
-  <mat-slider
-    (input)="onInputChange($event, 4)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    s
-    max="5"
-  ></mat-slider>
+  <div class="answer">
+    <span class="left">negativ</span> <span class="right">positiv</span>
+    <mat-slider
+      (input)="onInputChange($event, 4)"
+      thumbLabel
+      tickInterval="1"
+      min="1"
+      s
+      max="5"
+    ></mat-slider>
+  </div>
   <p></p>
 
   <mat-divider></mat-divider>
@@ -117,14 +120,16 @@
   </p>
   <p></p>
   <p></p>
-  <span class="left">negativ</span> <span class="right">positiv</span>
-  <mat-slider
-    (input)="onInputChange($event, 5)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
+  <div class="answer">
+    <span class="left">negativ</span> <span class="right">positiv</span>
+    <mat-slider
+      (input)="onInputChange($event, 5)"
+      thumbLabel
+      tickInterval="1"
+      min="1"
+      max="5"
+    ></mat-slider>
+  </div>
   <mat-divider></mat-divider>
   <p></p>
 
@@ -140,15 +145,16 @@
 
   <p></p>
   <p></p>
-  <span class="left">negativ</span> <span class="right">positiv</span>
-  <mat-slider
-    (input)="onInputChange($event, 6)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
-
+  <div class="answer">
+    <span class="left">negativ</span> <span class="right">positiv</span>
+    <mat-slider
+      (input)="onInputChange($event, 6)"
+      thumbLabel
+      tickInterval="1"
+      min="1"
+      max="5"
+    ></mat-slider>
+  </div>
   <mat-divider></mat-divider>
   <p></p>
   <b>Wie würde sich eine Rangliste auf deine Motivation auswirken?</b>
@@ -161,15 +167,16 @@
   </p>
   <p></p>
   <p></p>
-  <span class="left">negativ</span> <span class="right">positiv</span>
-  <mat-slider
-    (input)="onInputChange($event, 7)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
-
+  <div class="answer">
+    <span class="left">negativ</span> <span class="right">positiv</span>
+    <mat-slider
+      (input)="onInputChange($event, 7)"
+      thumbLabel
+      tickInterval="1"
+      min="1"
+      max="5"
+    ></mat-slider>
+  </div>
   <mat-divider></mat-divider>
   <p></p>
   <b>
@@ -181,16 +188,17 @@
   </p>
   <p></p>
   <p></p>
-  <span class="left">negativ</span> <span class="right">positiv</span>
+  <div class="answer">
+    <span class="left">negativ</span> <span class="right">positiv</span>
 
-  <mat-slider
-    (input)="onInputChange($event, 8)"
-    thumbLabel
-    tickInterval="1"
-    min="1"
-    max="5"
-  ></mat-slider>
-
+    <mat-slider
+      (input)="onInputChange($event, 8)"
+      thumbLabel
+      tickInterval="1"
+      min="1"
+      max="5"
+    ></mat-slider>
+  </div>
   <mat-divider></mat-divider>
   <p></p>
   <b>
