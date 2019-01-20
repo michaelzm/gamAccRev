@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   showFormField: boolean;
   ngOnInit() {
     this.checkIfShowFormField();
-    this.configService.activateServer();
+    this.configService.activateServer().subscribe();
   }
 
   login(name: HTMLInputElement) {
