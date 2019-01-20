@@ -18,7 +18,7 @@ const httpOptions = {
 //configService handles all the HTTP requests to urserver
 export class ConfigService {
   basicUrl = "https://urserver.herokuapp.com/basic";
-  serverUrl = "https://urserver.herokuapp.com/"; //needed for activating server at beginning of a session
+  serverUrl = "https://urserver.herokuapp.com"; //needed for activating server at beginning of a session, emtpy
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +33,7 @@ export class ConfigService {
   //this should send a request in order to simply wake up the database server on heroku
   activateServer() {
     console.log("activating server");
-    return this.http.get(this.basicUrl, httpOptions);
+    return this.http.get(this.serverUrl);
   }
 
   postBasic(data: Formular) {
