@@ -21,8 +21,6 @@ export class FormularComponent implements OnInit {
   partb3: number;
   partb4: number;
   partb5: number;
-  partb6: number;
-  partb7: number;
 
   constructor(private config: ConfigService, private userSerice: UserService) {}
   ngOnInit() {}
@@ -43,10 +41,6 @@ export class FormularComponent implements OnInit {
       this.partb4 = event.value;
     } else if (slider == 8) {
       this.partb5 = event.value;
-    } else if (slider == 9) {
-      this.partb6 = event.value;
-    } else if (slider == 10) {
-      this.partb7 = event.value;
     } else if (slider == 0) {
       this.age = event.value;
     } else if (slider == 1) {
@@ -70,8 +64,6 @@ export class FormularComponent implements OnInit {
     this.submitFormular.partB3 = this.partb3 || 1;
     this.submitFormular.partB4 = this.partb4 || 1;
     this.submitFormular.partB5 = this.partb5 || 1;
-    this.submitFormular.partB6 = this.partb6 || 1;
-    this.submitFormular.partB7 = this.partb7 || 1;
     this.submitFormular.accuracy = this.userSerice.getAccuracy() || 0;
     this.config.postBasic(this.submitFormular).subscribe();
     this.hasbeenSubmitted = true;

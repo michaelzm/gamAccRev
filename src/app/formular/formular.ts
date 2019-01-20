@@ -3,8 +3,6 @@ export class Formular {
   age: String;
   gender: String;
   reviewCount: number;
-  userLevel: number;
-  userRanking: number;
   partA1: number;
   partA2: number;
   partB1: number;
@@ -12,8 +10,5 @@ export class Formular {
   partB3: number;
   partB4: number;
   partB5: number;
-  partB6: number;
-  partB7: number;
   accuracy: number;
-  completedMissions: number;
 }
