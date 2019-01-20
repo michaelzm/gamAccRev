@@ -34,7 +34,7 @@ export class ConfigService {
   //this should send a request in order to simply wake up the database server on heroku
   activateServer() {
     console.log("activating server");
-    this.http.get(this.serverUrl);
+    return this.http.get(this.serverUrl);
   }
 
   postGamification(data: Formular) {
