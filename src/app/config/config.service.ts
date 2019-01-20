@@ -19,7 +19,7 @@ export class ConfigService {
   configUrl = "https://urserver.herokuapp.com/formular";
   rankingUrl = "https://urserver.herokuapp.com/ranking";
   gamificationUrl = "https://urserver.herokuapp.com/gamification";
-  serverUrl = "https://urserver.herokuapp.com/"; //needed for activating server at beginning of a session
+  serverUrl = "https://urserver.herokuapp.com"; //needed for activating server at beginning of a session, emtpy
 
   constructor(private http: HttpClient) {}
 
@@ -34,7 +34,7 @@ export class ConfigService {
   //this should send a request in order to simply wake up the database server on heroku
   activateServer() {
     console.log("activating server");
-    this.http.get(this.serverUrl);
+    return this.http.get(this.serverUrl);
   }
 
   postGamification(data: Formular) {
