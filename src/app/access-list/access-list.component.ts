@@ -99,10 +99,6 @@ export class AccessListComponent implements OnInit {
     if (this.employeeToAlterRights.beenChecked == false) {
       this.accessReviewComponent.permitRight();
       this.employeeToAlterRights.beenChecked = true;
-      console.log(
-        "The Offset to scroll to is now: " +
-          this.accessReviewComponent.viewport.measureScrollOffset()
-      );
       this.accessReviewComponent.setOffset(
         this.accessReviewComponent.viewport.measureScrollOffset()
       );
