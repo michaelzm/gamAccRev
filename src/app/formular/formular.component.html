@@ -223,7 +223,12 @@
     >
   </span>
   <p></p>
-  <button mat-raised-button color="primary" (click)="onSubmitEvaluation()">
+  <button
+    *ngIf="!sent"
+    mat-raised-button
+    color="primary"
+    (click)="onSubmitEvaluation()"
+  >
     Abschicken
   </button>
 </div>
